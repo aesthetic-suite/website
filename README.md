@@ -1,2 +1,3 @@
-# website
+# Aesthetic
+
 Documentation website.

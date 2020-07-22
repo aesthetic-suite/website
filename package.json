@@ -1,0 +1,50 @@
+{
+  "name": "aesthetic-website",
+  "version": "1.0.0",
+  "description": "Documentation website for all of Aesthetic.",
+  "scripts": {
+    "prepare": "beemo create-config --silent",
+    "build": "beemo run-script build",
+    "coverage": "yarn run jest --coverage",
+    "lint": "beemo eslint",
+    "jest": "beemo jest",
+    "prettier": "beemo prettier",
+    "release": "npx np --yolo --no-yarn",
+    "type": "beemo typescript --noEmit",
+    "prerelease": "yarn test && yarn run build",
+    "pretest": "yarn run type",
+    "test": "yarn run jest",
+    "posttest": "yarn run eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aesthetic-suite/website.git"
+  },
+  "license": "MIT",
+  "module": "./esm/index.js",
+  "types": "./lib/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=10.10.0"
+  },
+  "browserslist": [
+    "ie 11"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@milesj/build-tools": "^2.9.0"
+  },
+  "beemo": {
+    "module": "@milesj/build-tools",
+    "drivers": [
+      "babel",
+      "eslint",
+      "jest",
+      "prettier",
+      "typescript"
+    ],
+    "settings": {
+      "react": true
+    }
+  }
+}

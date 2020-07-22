@@ -30,10 +30,17 @@ node_modules/
 .eslintrc.js
 .flowconfig
 .prettierignore
-babel.config.js
 jest.config.js
 prettier.config.js
 tsconfig.json
 tsconfig.options.json
 webpack.config.js
 *.tsbuildinfo
+
+# Generated files
+.docusaurus
+.cache-loader
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

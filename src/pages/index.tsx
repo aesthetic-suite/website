@@ -56,7 +56,7 @@ function Home() {
             <div className={clsx('row', styles.sectionSpacer)}>
               <div className="col col--4" />
 
-              <div className="col col--8">
+              <div className="col col--8 text--right">
                 <h2>Expressive themes</h2>
 
                 <p>

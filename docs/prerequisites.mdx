@@ -2,6 +2,9 @@
 title: Prerequisites
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Aesthetic is written in Typescript and compiled to JavaScript. As such, all tooling requires at
 minimum NodeJS v10.10 to run correctly.
 
@@ -17,13 +20,29 @@ with 1 of the following patterns.
 
 Install the package globally to make the `aesthetic` binary available everywhere.
 
-```bash
-# NPM
-npm install -g @aesthetic/cli
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
 
-# Yarn
+```bash
 yarn global add @aesthetic/cli
 ```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm install -g @aesthetic/cli
+```
+
+  </TabItem>
+</Tabs>
 
 Then run the binary as-is.
 
@@ -35,13 +54,29 @@ aesthetic <cmd>
 
 Install the package locally to the project to make the `aesthetic` binary available within scripts.
 
-```bash
-# NPM
-npm install --save-dev @aesthetic/cli
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
 
-# Yarn
+```bash
 yarn add --dev @aesthetic/cli
 ```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm install --save-dev @aesthetic/cli
+```
+
+  </TabItem>
+</Tabs>
 
 Update `package.json` to define the script.
 
@@ -55,13 +90,29 @@ Update `package.json` to define the script.
 
 Then run the script with NPM or Yarn.
 
-```bash
-# NPM
-npm run compile
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
 
-# Yarn
+```bash
 yarn run compile
 ```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm run compile
+```
+
+  </TabItem>
+</Tabs>
 
 ### NPX
 

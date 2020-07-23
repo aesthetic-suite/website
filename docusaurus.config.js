@@ -2,17 +2,18 @@
 
 module.exports = {
   title: 'Aesthetic',
-  tagline: 'An end-to-end styling and design suite for Web, Android, and iOS.',
+  tagline:
+    'Aesthetic is an end-to-end design and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'aesthetic-suite', // Usually your GitHub org/user name.
-  projectName: 'framework', // Usually your repo name.
+  organizationName: 'aesthetic-suite',
+  projectName: 'website',
   themeConfig: {
     navbar: {
       title: 'Aesthetic',
       logo: {
-        alt: 'Aesthetic suite',
+        alt: 'Aesthetic',
         src: 'img/logo.svg',
       },
       links: [
@@ -33,7 +34,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'How to',
+          title: 'Learn',
           items: [
             {
               label: 'Design system',
@@ -59,19 +60,15 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Roadmap',
+              href: 'https://github.com/aesthetic-suite/framework/blob/master/ROADMAP.md',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Changelog',
+              href: 'https://github.com/aesthetic-suite/framework/blob/master/CHANGELOG.md',
             },
           ],
         },

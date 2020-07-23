@@ -24,14 +24,19 @@
   justify-content: center;
 }
 
-.features {
-  display: flex;
-  align-items: center;
+.section {
   padding: 2rem 0;
-  width: 100%;
 }
 
-.featureImage {
-  height: 200px;
-  width: 200px;
+.sectionAltColor {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.sectionSpacer {
+  margin-top: 2rem;
+}
+
+.muted {
+  font-size: 80%;
+  opacity: 0.75;
 }

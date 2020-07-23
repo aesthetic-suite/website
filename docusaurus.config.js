@@ -4,8 +4,8 @@ module.exports = {
   title: 'Aesthetic',
   tagline:
     'Aesthetic is an end-to-end design and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://aesthetic-suite.github.io',
+  baseUrl: '/website/',
   favicon: 'img/favicon.ico',
   organizationName: 'aesthetic-suite',
   projectName: 'website',

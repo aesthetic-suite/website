@@ -7,8 +7,7 @@ would like to customize these options, import and call the method with an option
 customization should happen near the root of the application, _before_ any Aesthetic styled React
 component is imported or rendered.
 
-```ts
-// setup.ts
+```ts title="setup.ts"
 import { configure } from '@aesthetic/core';
 
 configure({

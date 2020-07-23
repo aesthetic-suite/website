@@ -1,6 +1,6 @@
 ---
 title: Theme style sheets
-sidebar_label: For components
+sidebar_label: For themes
 ---
 
 While [component style sheets](./components.md) are used to style elements in isolation, a theme
@@ -11,8 +11,7 @@ Use the `createThemeStyles()` method to create a theme style sheet. This style s
 passed on a theme-by-theme basis during registration with `registerTheme()` or
 `registerDefaultTheme()`. Feel free to add a style sheet to one or many themes.
 
-```ts
-// setup.ts
+```ts title="setup.ts"
 import { createThemeStyles, registerTheme } from '@aesthetic/core';
 import dayTheme from './system/dls/themes/day';
 import nightTheme from './system/dls/themes/night';

@@ -204,7 +204,7 @@ child element.
 If using a bundler like Webpack or Parcel, import the CSS file within the root entry point, or as
 early as possible.
 
-```js
+```ts
 import './styles/<target>/index.css';
 import './styles/<target>/themes/day.css';
 ```

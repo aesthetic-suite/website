@@ -12,7 +12,7 @@ generate atomic class names.
 To continue with the example found in the style sheet documentation, let's design and style a button
 component. The button file would look something like the following.
 
-```tsx
+```tsx {4,37}
 import React from 'react';
 import { useStyles, createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
 
@@ -70,7 +70,7 @@ Both the hook and HOC provide a class name generation function that we aptly nam
 function requires a list of selector names (keys from the style sheet object) in which to render CSS
 and apply a class name with, for example.
 
-```tsx
+```tsx {2,7,10,12}
 function Button({ selected, disabled }: ButtonProps) {
   const cx = useStyles(styleSheet);
 
@@ -96,7 +96,7 @@ We can take this a step further by supporting
 [variants](../../development/style-sheets/components.md#variants). All that's required is to pass an
 object to `cx()` with the name of every variant, and the variation to activate.
 
-```tsx
+```tsx {2,7-12,15,17}
 function Button({ selected, disabled, size = 'df', palette = 'primary' }: ButtonProps) {
   const cx = useStyles(styleSheet);
 
@@ -128,7 +128,7 @@ We provide an HOC based API to support legacy and class components. This HOC use
 so you'll at least need the latest React version to function correctly. Below is what an HOC button
 class component would look like, using the example from above.
 
-```tsx
+```tsx {4,14,26}
 import React from 'react';
 import { withStyles, WithStylesWrappedProps, createComponentStyles } from '@aesthetic/react';
 

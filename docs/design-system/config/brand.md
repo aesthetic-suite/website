@@ -14,6 +14,6 @@ through the `.aesthetic/<name>/brand.yaml` file.
 
 What is a brand without a name? The name should be unique across all possible design systems.
 
-```yaml
+```yaml title="brand.yaml"
 name: Aesthetic 2020
 ```

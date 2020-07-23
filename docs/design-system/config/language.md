@@ -19,7 +19,7 @@ it, like breakpoints.
 By default, the `responsive.strategy` setting is set to "mobile-first", but also accepts
 "desktop-first".
 
-```yaml
+```yaml title="language.yaml"
 responsive:
   strategy: mobile-first
 ```
@@ -39,7 +39,7 @@ values will be converted to `em` values, while Android uses `dp`, and
 [ignored by iOS](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/).
 By default, the setting is configured to the values in the example below.
 
-```yaml
+```yaml title="language.yaml"
 # List
 responsive:
   breakpoints:
@@ -72,7 +72,7 @@ Responsive text uses [type scaling](https://type-scale.com) under the hood. Beca
 explicit font size configurations for each breakpoint is not supported. At the moment, text and line
 height can be scaled with `textScale` and `lineHeightScale` respectively.
 
-```yaml
+```yaml title="language.yaml"
 responsive:
   textScale: major-second
   lineHeightScale: 1.1
@@ -94,7 +94,7 @@ choose the best for your application. Only 1 type may be chosen.
 Uses an explicit platform dependent [unit](../config.md#unitless-values) to calculate with. When
 using this type, the `spacing.unit` setting must also be defined.
 
-```yaml
+```yaml title="language.yaml"
 spacing:
   type: unit
   unit: 8
@@ -106,7 +106,7 @@ A concept from print typography where the spacing between elements are consisten
 is based on the sum of `font size * line height` (using [typography](#typography) settings).
 [Learn more about vertical rhythm](https://zellwk.com/blog/why-vertical-rhythms/).
 
-```yaml
+```yaml title="language.yaml"
 spacing:
   type: vertical-rhythm
 ```
@@ -117,7 +117,7 @@ For developers, there are 6 spacing sizes to choose from, ranging from extra sma
 These 6 sizes are provided so that all implementations use consistent spacing. However, the
 multipliers for each of these sizes can be customized, like so (defaults used below).
 
-```yaml
+```yaml title="language.yaml"
 spacing:
   multipliers:
     xs: 0.25
@@ -142,7 +142,7 @@ locales. If this setting is not defined, it will default to the platform system 
 
 In it's simplest form, a string will set the font for all typography.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   font: 'Roboto, sans-serif'
 ```
@@ -150,7 +150,7 @@ typography:
 However, the font for both body text, heading text, and even monospace text can be defined
 separately, as a means to differentiate them all. This can be achieved with the following settings.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   font:
     text: 'Roboto, sans-serif'
@@ -162,7 +162,7 @@ When internationalizing an application, it's a great idea to use locale specific
 support the language. This can be achieved with the `typography.font.locale` setting, which maps a
 locale to a font family.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   font:
     text: 'Roboto, sans-serif'
@@ -186,7 +186,7 @@ The scaled approach will use scale equivalent settings to calculate small and la
 default being the middle, and scaling outwards. The values configured should be the default text
 size.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   text:
     # Default
@@ -198,7 +198,7 @@ typography:
 
 Otherwise, the settings can be explicitly defined for each size using a map.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   text:
     small:
@@ -226,7 +226,7 @@ spacing, and per level configuration (instead of per size).
 When using the [scaled approach](../config.md#scaled-patterns), the settings should be configured
 for level 6, as 5-1 will be automatically calculated based on the scaling factor (going upwards).
 
-```yaml
+```yaml title="language.yaml"
 typography:
   heading:
     # Level 6
@@ -240,7 +240,7 @@ typography:
 
 For the fixed approach, define a map with `level*` named properties.
 
-```yaml
+```yaml title="language.yaml"
 typography:
   heading:
     level1:
@@ -272,7 +272,7 @@ in the neutral [theme palette](./themes.md#palettes-and-states).
 Like other settings, borders can be configured with scaling or fixed values. Scaled borders are
 calculated from the inside out, with default as the middle, and small and large as the edges.
 
-```yaml
+```yaml title="language.yaml"
 borders:
   # Default
   radius: 3
@@ -283,7 +283,7 @@ borders:
 
 Or use a size map for fixed values.
 
-```yaml
+```yaml title="language.yaml"
 borders:
   small:
     radius: 2
@@ -333,7 +333,7 @@ configure shadows, and comes in 5 sizes: extra small, small, medium, large, and 
 Like other settings, shadows can be configured with scaling or fixed values. Scaled shadows are
 calculated from extra small upwards to extra large.
 
-```yaml
+```yaml title="language.yaml"
 shadows:
   # Extra small
   x: 0
@@ -348,7 +348,7 @@ shadows:
 
 Or use a size map for fixed values.
 
-```yaml
+```yaml title="language.yaml"
 shadows:
   xsmall:
     x: 0
@@ -385,7 +385,7 @@ unique colors without the chance of collision.
 
 Feel free to define as many colors as you want, either using actual color names.
 
-```yaml
+```yaml title="language.yaml"
 colors:
   - red
   - green
@@ -396,7 +396,7 @@ colors:
 
 Or with custom color names that are unique to your brand.
 
-```yaml
+```yaml title="language.yaml"
 colors:
   - gerudo
   - kokiri

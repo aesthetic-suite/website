@@ -8,8 +8,7 @@ To provide the active theme to all React components, we'll need to render a `The
 root of your application. By default, the active theme will automatically be detected based on a
 user's preference, like preferred color scheme, contrast levels, and more!
 
-```tsx
-// index.ts
+```tsx title="index.ts" {3,8-10}
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@aesthetic/react';
@@ -72,7 +71,7 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 To manually access the provided `Theme` object, either from the root or contextually, use the
 `useTheme()` hook.
 
-```tsx
+```tsx {4,6}
 import { useTheme } from '@aesthetic/react';
 
 export default function Component() {
@@ -88,7 +87,7 @@ export default function Component() {
 
 Or use the `withTheme()` HOC, which passes the theme as a `theme` prop.
 
-```tsx
+```tsx {3,4,11}
 import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
 
 function Component({ theme }: WithThemeWrappedProps) {

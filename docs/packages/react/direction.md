@@ -53,7 +53,7 @@ the user is typing in Arabic, the direction would be `rtl`, so on and so forth.
 To manually access the current direction, either from the document or a provider, use the
 `useDirection()` hook.
 
-```tsx
+```tsx {4,6}
 import { useDirection } from '@aesthetic/react';
 
 export default function Component() {
@@ -69,7 +69,7 @@ export default function Component() {
 
 Or use the `withDirection()` HOC, which passes the direction as a `direction` prop.
 
-```tsx
+```tsx {3,4,11}
 import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
 
 function Component({ direction }: WithDirectionWrappedProps) {

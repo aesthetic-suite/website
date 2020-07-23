@@ -13,8 +13,7 @@ this using the `registerTheme()` and `registerDefaultTheme()` methods, both of w
 unique name and an optional [theme style sheet](./style-sheets/themes.md). A default theme can only
 be defined twice, once for a light color scheme, the other for a dark color scheme.
 
-```ts
-// setup.ts
+```ts title="setup.ts"
 import { registerTheme, registerDefaultTheme } from '@aesthetic/core';
 import dayTheme from './system/dls/themes/day';
 import nightTheme from './system/dls/themes/night';

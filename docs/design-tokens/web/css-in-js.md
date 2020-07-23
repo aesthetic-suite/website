@@ -42,7 +42,7 @@ primitive variables from the parent design system.
 
 The compiled design system file looks something like the following:
 
-```js
+```ts
 import { Design } from '@aesthetic/system';
 
 export default new Design('example', {
@@ -197,7 +197,7 @@ export default new Design('example', {
 
 While the compiled theme files look loosely like this (removed some repetition for brevity):
 
-```js
+```ts
 import design from '..';
 
 export default design.createTheme(
@@ -276,7 +276,7 @@ Coming soon...
 Variables can be accessed from both `Design` and `Theme` instances using the `tokens` class
 property, which is a multidimensional object.
 
-```js
+```ts
 import theme from './styles/<target>/themes/day';
 
 const tokens = theme.toTokens();

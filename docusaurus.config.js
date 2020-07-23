@@ -78,6 +78,10 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with Docusaurus.`,
     },
+    prism: {
+      // additionalLanguages: ['sass'],
+      // theme: require('prism-react-renderer/themes/nightOwl'),
+    },
   },
   presets: [
     [

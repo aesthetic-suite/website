@@ -14,7 +14,7 @@ One such setting is `scheme`, which requires either "light" or "dark", and is ut
 scheme preference detection. This allows for the automatic detection of light or dark modes for a
 user.
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   default:
     scheme: light
@@ -30,7 +30,7 @@ In a light color scheme, the `00` shade is the lightest color, while `90` is the
 reversed for dark color schemes, where `00` is darkest, and `90` is lightest. In both schemes, the
 `40` shade is the base "common" shade.
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   default:
     scheme: light
@@ -74,7 +74,7 @@ Each palette requires a `color`, `fg` (foreground), and `bg` (background) settin
 setting must reference a valid [color name](./language.md#colors), and will be the designated color
 for the palette. The `fg` and `bg` variants will map states to shade references.
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   default:
     scheme: light
@@ -119,7 +119,7 @@ All of the states are optional, and will default to the shade references above. 
 always use the defaults, a shorthand configuration is available, where the value can simply be set
 to the color name. The above example can now be written as:
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   default:
     scheme: light
@@ -145,7 +145,7 @@ A contrast variant usually extends a base theme, as we want to use the same pale
 colors. For example, say we have a "night" dark theme, and want to provide a vibrant high contrast
 variant.
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   night:
     scheme: dark
@@ -175,7 +175,7 @@ then define individual settings, instead of having to define them all.
 To extend another theme, use the `extends` setting, which requires the parent theme's name. The
 child theme object will deep merge with the parent theme object.
 
-```yaml
+```yaml title="themes.yaml"
 themes:
   day:
     scheme: light

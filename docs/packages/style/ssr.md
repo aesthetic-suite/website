@@ -12,7 +12,7 @@ On the server, we'll need to import and instantiate the `ServerRenderer` from
 the React DOM server rendering process. In the example below, we'll use
 [Express](https://expressjs.com/) as our server.
 
-```tsx
+```tsx {3,10,13,16}
 import express from 'express';
 import ReactDOMServer from 'react-dom/server';
 import { ServerRenderer } from '@aesthetic/style/server';
@@ -84,7 +84,7 @@ On the client, we'll need to import and instantiate the `ClientRenderer`, which 
 to render CSS styles. The renderer _must_ then hydrate styles _before_ the React application is
 mounted to the DOM.
 
-```tsx
+```tsx {2,6,9}
 import ReactDOM from 'react-dom';
 import { ClientRenderer } from '@aesthetic/style';
 import App from './path/to/client/App';

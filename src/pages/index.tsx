@@ -13,7 +13,7 @@ import styles from './styles.module.css';
 
 function Home() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const siteConfig = context.siteConfig!;
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
@@ -23,6 +23,7 @@ function Home() {
           <p className="hero__subtitle">{siteConfig.tagline}</p>
 
           <div className={styles.buttons}>
+            {/* @ts-ignore Missing children type */}
             <Link
               className={clsx('button button--secondary button--lg', styles.getStarted)}
               to={useBaseUrl('docs/')}

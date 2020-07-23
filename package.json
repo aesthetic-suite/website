@@ -5,9 +5,10 @@
   "description": "Documentation website for all of Aesthetic.",
   "scripts": {
     "prepare": "beemo create-config --silent",
-    "lint": "beemo eslint",
+    "lint": "beemo eslint ./src",
     "prettier": "beemo prettier",
     "type": "beemo typescript --noEmit",
+    "test": "yarn run type && yarn run lint",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -60,7 +61,9 @@
     },
     "eslint": {
       "rules": {
-        "react/jsx-no-literals": "off"
+        "import/no-unresolved": "off",
+        "react/jsx-no-literals": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
       }
     }
   }

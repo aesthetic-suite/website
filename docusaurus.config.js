@@ -12,7 +12,7 @@ module.exports = {
     navbar: {
       title: 'Aesthetic',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Aesthetic suite',
         src: 'img/logo.svg',
       },
       links: [
@@ -33,19 +33,28 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'How to',
           items: [
             {
               label: 'Design system',
-              to: 'docs/design-system',
+              to: '/docs/design-system',
             },
             {
               label: 'Design tokens',
-              to: 'docs/design-tokens',
+              to: '/docs/design-tokens',
             },
             {
               label: 'Development',
-              to: 'docs/development',
+              to: '/docs/development',
+            },
+          ],
+        },
+        {
+          title: 'Integrations',
+          items: [
+            {
+              label: 'React',
+              to: '/docs/packages/react',
             },
           ],
         },
@@ -66,19 +75,6 @@ module.exports = {
             },
           ],
         },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with Docusaurus.`,
     },
@@ -88,15 +84,12 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
+          homePageId: 'index',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/aesthetic-suite/website/edit/master',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: 'https://github.com/aesthetic-suite/website/edit/master/blog',
         },
         theme: {
@@ -105,5 +98,4 @@ module.exports = {
       },
     ],
   ],
-  themes: ['@docusaurus/theme-live-codeblock', '@docusaurus/theme-search-algolia'],
 };

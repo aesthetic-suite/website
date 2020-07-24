@@ -1,5 +1,7 @@
 /* eslint-disable sort-keys */
 
+const config = require('./docusaurus.config');
+
 module.exports = {
   docs: [
     {
@@ -84,7 +86,7 @@ module.exports = {
         {
           type: 'link',
           label: 'React',
-          href: '/docs/packages/react',
+          href: `${config.baseUrl}docs/packages/react`,
         },
       ],
     },

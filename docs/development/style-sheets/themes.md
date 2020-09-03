@@ -13,8 +13,8 @@ passed on a theme-by-theme basis during registration with `registerTheme()` or
 
 ```ts title="setup.ts"
 import { createThemeStyles, registerTheme } from '@aesthetic/core';
-import dayTheme from './system/dls/themes/day';
-import nightTheme from './system/dls/themes/night';
+import dayTheme from './system/themes/day';
+import nightTheme from './system/themes/night';
 
 const styleSheet = createThemeStyles(() => ({
   '@font-face': {

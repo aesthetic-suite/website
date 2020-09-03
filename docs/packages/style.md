@@ -6,7 +6,7 @@ sidebar_label: Overview
 The `@aesthetic/style` package is a low-level, high-performance, atomic-based CSS-in-JS styling
 engine. It can be used stand-alone but has been designed to power additional abstractions or APIs.
 
-- [Getting started](./style/setup.md)
+- [Getting started](./style/setup.mdx)
 - [Rendering concepts](./style/concepts.md)
 - [Features & options](./style/options.md)
 - [Server-side rendering](./style/ssr.md)

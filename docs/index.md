@@ -1,5 +1,6 @@
 ---
 title: Introduction
+slug: /
 ---
 
 Aesthetic is an end-to-end design and development framework for declaring consistent visual styles

@@ -16,7 +16,7 @@ module.exports = {
         alt: 'Aesthetic',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs',
           activeBasePath: 'docs',
@@ -85,7 +85,6 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          homePageId: 'index',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/aesthetic-suite/website/edit/master',
         },

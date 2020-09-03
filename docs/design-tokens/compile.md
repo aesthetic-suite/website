@@ -4,7 +4,7 @@ title: Compile design tokens
 
 Once your design system has been [created](../design-system/create.md) and
 [configured](../design-system/config.md), you may compile the configuration into the tokens
-mentioned above by running the `compile` [command](../prerequisites.md#command-line). This command
+mentioned above by running the `compile` [command](../prerequisites.mdx#command-line). This command
 requires a name (a folder within `.aesthetic`), an [output format](#formats), and a target folder to
 write files to.
 

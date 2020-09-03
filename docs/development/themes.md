@@ -15,9 +15,9 @@ be defined twice, once for a light color scheme, the other for a dark color sche
 
 ```ts title="setup.ts"
 import { registerTheme, registerDefaultTheme } from '@aesthetic/core';
-import dayTheme from './system/dls/themes/day';
-import nightTheme from './system/dls/themes/night';
-import twilightTheme from './system/dls/themes/twilight';
+import dayTheme from './system/themes/day';
+import nightTheme from './system/themes/night';
+import twilightTheme from './system/themes/twilight';
 
 registerDefaultTheme('day', dayTheme);
 registerDefaultTheme('night', nightTheme);

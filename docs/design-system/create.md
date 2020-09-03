@@ -4,7 +4,7 @@ title: Create a design system
 
 Aesthetic itself isn't a design system, instead, it provides a design system "manager", in which a
 company or individual can create and manage a design system for their project. To create a design
-system, run the `init` [command](../prerequisites.md#command-line) in your project root with a
+system, run the `init` [command](../prerequisites.mdx#command-line) in your project root with a
 unique name (in kebab-case).
 
 ```bash

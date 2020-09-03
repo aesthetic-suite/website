@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Documentation website for all of Aesthetic.",
   "scripts": {
+    "ds:compile": "npx @aesthetic/cli compile aesthetic ./src/css/system --format web-css",
     "prepare": "beemo create-config --silent",
     "lint": "beemo eslint ./src",
     "format": "beemo prettier",

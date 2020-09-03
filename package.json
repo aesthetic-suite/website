@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "beemo create-config --silent",
     "lint": "beemo eslint ./src",
-    "prettier": "beemo prettier",
+    "format": "beemo prettier",
     "type": "beemo typescript --noEmit",
     "test": "yarn run type && yarn run lint",
     "start": "docusaurus start",
@@ -26,15 +26,15 @@
     "node": ">=10.10.0"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.58",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.58",
+    "@docusaurus/core": "^2.0.0-alpha.63",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.63",
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
-    "@milesj/build-tools": "^2.9.0",
-    "@types/react": "^16.9.43",
+    "@milesj/build-tools": "^2.11.0",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8"
   },
   "browserslist": {

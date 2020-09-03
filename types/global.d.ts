@@ -25,3 +25,7 @@ declare module '@docusaurus/useDocusaurusContext' {
 }
 
 declare module '@theme/*';
+
+declare module 'webpack-merge' {
+  export type MergeStrategy = any;
+}

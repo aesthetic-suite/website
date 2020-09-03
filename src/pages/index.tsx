@@ -23,8 +23,8 @@ function Home() {
           <p className="hero__subtitle">{siteConfig.tagline}</p>
 
           <div className={styles.buttons}>
-            {/* @ts-ignore Missing children type */}
             <Link
+              // @ts-expect-error
               className={clsx('button button--secondary button--lg', styles.getStarted)}
               to={useBaseUrl('docs/')}
             >

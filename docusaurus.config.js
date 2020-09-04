@@ -5,8 +5,9 @@ module.exports = {
   tagline:
     'Aesthetic is an end-to-end design and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
   url: 'https://aesthetic-suite.github.io',
-  baseUrl: '/website/',
-  favicon: 'img/favicon.ico',
+  baseUrl: '/',
+  onBrokenLinks: 'throw',
+  favicon: 'img/favicon.svg',
   organizationName: 'aesthetic-suite',
   projectName: 'website',
   themeConfig: {
@@ -74,6 +75,7 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with <a href="https://docusaurus.io/">Docusaurus</a>. Icon by <a href="https://thenounproject.com/tatiana.selicka/collection/triangle/?i=344801">Tatiana Selicka (Noun Project)</a>.`,
     },
     prism: {
       // additionalLanguages: ['sass'],

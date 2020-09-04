@@ -8,4 +8,4 @@ integrations.
 
 ## Web
 
-- [React](./packages/react.md)
+- [React](./integrations/react.md)

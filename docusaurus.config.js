@@ -77,7 +77,7 @@ module.exports = {
           items: [
             {
               label: 'React',
-              to: '/docs/packages/react',
+              to: '/docs/integrations/react',
             },
           ],
         },
@@ -95,7 +95,6 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with Docusaurus.`,
       copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with <a href="https://docusaurus.io/">Docusaurus</a>. Icon by <a href="https://thenounproject.com/tatiana.selicka/collection/triangle/?i=344801">Tatiana Selicka (Noun Project)</a>.`,
     },
     prism: {

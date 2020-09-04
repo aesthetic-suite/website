@@ -30,6 +30,13 @@ function Home() {
             >
               Get started
             </Link>
+
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=aesthetic-suite&repo=framework&type=star&count=true&size=large"
+              frameBorder="0"
+              scrolling="0"
+              title="GitHub"
+            />
           </div>
         </div>
       </header>

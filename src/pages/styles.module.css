@@ -27,6 +27,11 @@
   background-size: auto 175%;
 }
 
+.heroBanner > div {
+  z-index: 1;
+  position: relative;
+}
+
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
@@ -37,6 +42,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons > iframe {
+  margin-left: 1rem;
+  width: 135px;
+  height: 30px;
+  overflow: hidden;
+  border: 0;
 }
 
 .section {

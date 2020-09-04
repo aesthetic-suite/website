@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Documentation website for all of Aesthetic.",
   "scripts": {
-    "ds:compile": "npx @aesthetic/cli compile aesthetic ./src/css/system --format web-css",
+    "ds:compile": "aesthetic compile aesthetic ./src/css/system --format web-css",
     "prepare": "beemo create-config --silent",
     "lint": "beemo eslint ./src",
     "format": "beemo prettier",
@@ -34,6 +34,14 @@
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
+    "@aesthetic/cli": "^0.2.2",
+    "@aesthetic/compiler": "^0.2.2",
+    "@aesthetic/core": "^0.2.2",
+    "@aesthetic/react": "^0.2.2",
+    "@aesthetic/sss": "^0.2.2",
+    "@aesthetic/style": "^0.2.2",
+    "@aesthetic/system": "^0.2.2",
+    "@aesthetic/utils": "^0.2.1",
     "@milesj/build-tools": "^2.11.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8"

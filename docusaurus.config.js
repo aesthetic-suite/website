@@ -1,10 +1,23 @@
 /* eslint-disable sort-keys */
 
+const pkgs = [
+  'cli',
+  'compiler',
+  'core',
+  'react',
+  'sss',
+  'style',
+  'system',
+  'types',
+  'utils',
+  // eslint-disable-next-line
+].map((name) => require(`@aesthetic/${name}/package.json`));
+
 module.exports = {
   title: 'Aesthetic',
   tagline:
     'Aesthetic is an end-to-end design and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
-  url: 'https://aesthetic-suite.github.io',
+  url: 'https://aestheticsuite.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.svg',
@@ -18,6 +31,14 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          label: 'ALPHA',
+          position: 'left',
+          items: pkgs.map((pkg) => ({
+            label: `v${pkg.version} · ${pkg.name.split('/')[1]}`,
+            href: `https://www.npmjs.com/package/${pkg.name}`,
+          })),
+        },
         {
           to: 'docs',
           activeBasePath: 'docs',

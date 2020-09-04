@@ -84,9 +84,17 @@ module.exports = {
       collapsed: false,
       items: [
         {
-          type: 'link',
+          type: 'category',
           label: 'React',
-          href: `${config.baseUrl}docs/packages/react`,
+          items: [
+            'integrations/react',
+            'integrations/react/setup',
+            'integrations/react/themes',
+            'integrations/react/styles',
+            'integrations/react/direction',
+            'integrations/react/ui',
+            'integrations/react/api',
+          ],
         },
       ],
     },
@@ -95,16 +103,9 @@ module.exports = {
       label: 'Packages',
       items: [
         {
-          type: 'category',
+          type: 'link',
           label: '@aesthetic/react',
-          items: [
-            'packages/react',
-            'packages/react/setup',
-            'packages/react/themes',
-            'packages/react/styles',
-            'packages/react/direction',
-            'packages/react/api',
-          ],
+          href: `${config.baseUrl}docs/integrations/react`,
         },
         {
           type: 'category',

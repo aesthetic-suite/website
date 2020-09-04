@@ -22,9 +22,10 @@ output of a design system configuration. Pass the `--format` option to choose on
 - **iOS**
   - _(Coming soon)_
 - **Web**
-  - [web-ts](./web/css-in-js.md) - CSS-in-JS with TypeScript.
-  - [web-js](./web/css-in-js.md) - CSS-in-JS with JavaScript.
-  - [web-cjs](./web/css-in-js.md) - CSS-in-JS with JavaScript (CommonJS).
+  - [web-ts](./web/js.md) - TypeScript variables.
+  - [web-js](./web/js.md) - JavaScript variables.
+  - [web-css-in-ts](./web/css-in-js.md) - CSS-in-JS with TypeScript.
+  - [web-css-in-js](./web/css-in-js.md) - CSS-in-JS with JavaScript.
   - [web-css](./web/css.md) - CSS variables and classes.
   - [web-scss](./web/scss.md) - SCSS variables and mixins.
   - [web-sass](./web/sass.md) - Sass variables and mixins.

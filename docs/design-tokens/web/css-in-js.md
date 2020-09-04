@@ -3,11 +3,10 @@ title: CSS-in-JS
 ---
 
 The following format is provided when compiling design tokens for CSS-in-JS solutions. It currently
-supports 3 different targets:
+supports 2 different targets:
 
-- `web-ts` for TypeScript.
-- `web-js` for JavaScript using ECMA modules.
-- `web-cjs` for JavaScript using CommonJS.
+- `web-css-in-ts` for TypeScript.
+- `web-css-in-js` for JavaScript (using ECMA modules).
 
 This format is different from other CSS-like formats, as it _does not_ generate a standard list of
 variables (design tokens), but instead generates a design system and theme hierarchy composed of

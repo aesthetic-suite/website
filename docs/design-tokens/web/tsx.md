@@ -254,10 +254,13 @@ export default design.createTheme(
       info: {
         // ...
       },
+      danger: {
+        // ...
+      },
       warning: {
         // ...
       },
-      danger: {
+      failure: {
         // ...
       },
       success: {

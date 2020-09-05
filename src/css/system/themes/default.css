@@ -172,6 +172,27 @@
   --palette-warning-fg-hovered: #a9620a;
   --palette-warning-fg-selected: #d48112;
 
+  --palette-failure-color-00: #ffece6;
+  --palette-failure-color-10: #fac5b7;
+  --palette-failure-color-20: #f19f8e;
+  --palette-failure-color-30: #dd7e6f;
+  --palette-failure-color-40: #cc5a4d;
+  --palette-failure-color-50: #b24033;
+  --palette-failure-color-60: #902c22;
+  --palette-failure-color-70: #71150e;
+  --palette-failure-color-80: #480805;
+  --palette-failure-color-90: #190100;
+  --palette-failure-bg-base: #cc5a4d;
+  --palette-failure-bg-disabled: #dd7e6f;
+  --palette-failure-bg-focused: #b24033;
+  --palette-failure-bg-hovered: #902c22;
+  --palette-failure-bg-selected: #b24033;
+  --palette-failure-fg-base: #cc5a4d;
+  --palette-failure-fg-disabled: #dd7e6f;
+  --palette-failure-fg-focused: #b24033;
+  --palette-failure-fg-hovered: #902c22;
+  --palette-failure-fg-selected: #b24033;
+
   --palette-success-color-00: #e8fce9;
   --palette-success-color-10: #bff2c1;
   --palette-success-color-20: #9ce39e;

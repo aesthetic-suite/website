@@ -125,4 +125,5 @@ themes:
       info: blue
       warning: yellow
       danger: red
+      failure: red
       success: green

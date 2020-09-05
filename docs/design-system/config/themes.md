@@ -61,12 +61,13 @@ colors, grouped by states and interactions. The available palettes are:
 - `primary` - Primary color. Typically buttons, links, bars, active states, etc.
 - `secondary` - Accent color. Provides emphasis and contrast to the primary color.
 - `tertiary` - Additional complementary color for more variation.
-- `neutral` - Whites, grays, or blacks that make up background, border, shadow, and other layout
+- `neutral` - Whites, grays, blacks, etc that make up background, border, shadow, and other layout
   related pieces.
 - `muted` - Disabled and empty like states.
 - `info` - State that denotes something as informational.
 - `warning` - State that warns the user of something minor.
 - `danger` - State that indicates a destructive, atomic, or irreversible action.
+- `failure` - State when something errors or fails.
 - `success` - State when something succeeds or passes.
 
 Hopefully you have a better understanding of all the palettes, so let's dive into the configuration.
@@ -196,8 +197,8 @@ Like the design language, themes also enforce the following constraints as the s
 relies on fixed settings.
 
 - 10 color shades (00, 10, 20, 30, 40 (default), 50, 60, 70, 80, 90)
-- 10 palettes (brand, primary, secondary, tertiary, neutral/layout, muted, info, success, warning,
-  danger)
+- 11 palettes (brand, primary, secondary, tertiary, neutral/layout, muted, info, success, warning,
+  danger, failure)
 - 5 palette states (base, hovered, selected, disabled, focused)
 - Light scheme OR dark scheme
 - High, low, OR normal contrast

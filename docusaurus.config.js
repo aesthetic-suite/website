@@ -82,6 +82,23 @@ module.exports = {
           ],
         },
         {
+          title: 'Packages',
+          items: [
+            {
+              label: 'Design system abstraction',
+              to: '/docs/packages/system',
+            },
+            {
+              label: 'Atomic CSS-in-JS engine',
+              to: '/docs/packages/style',
+            },
+            {
+              label: 'Structured style sheets',
+              to: '/docs/packages/sss',
+            },
+          ],
+        },
+        {
           title: 'Resources',
           items: [
             {
@@ -95,11 +112,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with <a href="https://docusaurus.io/">Docusaurus</a>. Icon by <a href="https://thenounproject.com/tatiana.selicka/collection/triangle/?i=344801">Tatiana Selicka (Noun Project)</a>.`,
-    },
-    prism: {
-      // additionalLanguages: ['sass'],
-      // theme: require('prism-react-renderer/themes/nightOwl'),
+      copyright: `Copyright © ${new Date().getFullYear()} Aesthetic. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>. Icon by <a href="https://thenounproject.com/tatiana.selicka/collection/triangle/?i=344801" target="_blank">Tatiana Selicka (Noun Project)</a>.`,
     },
   },
   presets: [

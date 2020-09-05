@@ -47,7 +47,8 @@ module.exports = {
               type: 'category',
               label: 'Web',
               items: [
-                'design-tokens/web/css-in-js',
+                'design-tokens/web/ts',
+                'design-tokens/web/tsx',
                 'design-tokens/web/css',
                 'design-tokens/web/scss',
                 'design-tokens/web/sass',

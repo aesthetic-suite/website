@@ -1,16 +1,17 @@
 ---
-title: CSS-in-JS
+title: JavaScript/TypeScript (expanded)
 ---
 
-The following format is provided when compiling design tokens for CSS-in-JS solutions. It currently
-supports 2 different targets:
+The following format is provided when compiling design tokens for advanced solutions, like
+CSS-in-JS. It currently supports 2 different targets:
 
-- `web-css-in-ts` for TypeScript.
-- `web-css-in-js` for JavaScript (using ECMA modules).
+- `web-tsx` for TypeScript.
+- `web-jsx` for JavaScript (using ECMA modules).
 
-This format is different from other CSS-like formats, as it _does not_ generate a standard list of
-variables (design tokens), but instead generates a design system and theme hierarchy composed of
-classes. This layer is powered by the [@aesthetic/system](../../packages/system.md) package.
+This format is different from other CSS-like formats, and the base JS/TS format, as it _does not_
+generate a standard list of variables (design tokens), but instead generates a design system and
+theme hierarchy composed of classes. This layer is powered by the
+[@aesthetic/system](../../packages/system.md) package.
 
 For the remainder of this documentation, we'll use TypeScript as our format.
 

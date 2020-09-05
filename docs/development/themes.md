@@ -4,7 +4,7 @@ title: Themes
 
 Themes are an encapsulation of reusable variables and mixins for consistent styling, represented as
 a `Theme` class. Themes are automatically generated when compiling a
-[design system](../design-system.md) into [design tokens](../design-tokens/web/css-in-js.md).
+[design system](../design-system.md) into [design tokens](../design-tokens/web/tsx.md).
 
 ## Registering themes
 

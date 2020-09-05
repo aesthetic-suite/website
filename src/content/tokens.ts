@@ -1,4 +1,4 @@
-export const CSSINJS_FORMAT = `import { Design } from '@aesthetic/system';
+export const TSX_FORMAT = `import { Design } from '@aesthetic/system';
 
 export default new Design('example', {
   border: {

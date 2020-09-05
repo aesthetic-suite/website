@@ -7,7 +7,7 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { CSSINJS_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
+import { TSX_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
 import { REACT_EXAMPLE } from '../content/integrations';
 import styles from './styles.module.css';
 
@@ -97,17 +97,17 @@ function Home() {
 
               <div className="col col--6 code-block--condensed">
                 <Tabs
-                  defaultValue="css-in-js"
+                  defaultValue="tsx"
                   values={[
-                    { label: 'CSS-in-JS', value: 'css-in-js' },
+                    { label: 'JS/TS', value: 'tsx' },
                     { label: 'CSS', value: 'css' },
                     { label: 'SCSS', value: 'scss' },
                     { label: 'Less', value: 'less' },
                     { label: '...', value: 'other' },
                   ]}
                 >
-                  <TabItem value="css-in-js">
-                    <CodeBlock className="language-ts">{CSSINJS_FORMAT}</CodeBlock>
+                  <TabItem value="tsx">
+                    <CodeBlock className="language-ts">{TSX_FORMAT}</CodeBlock>
                   </TabItem>
 
                   <TabItem value="css">

@@ -1,5 +1,6 @@
 ---
 title: JavaScript/TypeScript (expanded)
+sidebar_label: JS/TS (exp)
 ---
 
 The following format is provided when compiling design tokens for advanced solutions, like

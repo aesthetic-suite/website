@@ -7,7 +7,7 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { TSX_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
+import { TS_FORMAT, TSX_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
 import { REACT_EXAMPLE } from '../content/integrations';
 import styles from './styles.module.css';
 
@@ -84,7 +84,7 @@ function Home() {
                 <p>
                   Compile your design system configuration to consistent, reusable, and scalable
                   design tokens for Android*, iOS*, and Web platforms, and popular technologies such
-                  as CSS, CSS-in-JS, SCSS, and many more.
+                  as JavaScript, TypeScript, CSS-in-JS, CSS, SCSS, and many more.
                 </p>
 
                 <p>
@@ -92,20 +92,25 @@ function Home() {
                   safety, autocompletion, and documentation.
                 </p>
 
-                <p className={styles.muted}>* Mobile platforms coming soon</p>
+                <p className={styles.muted}>* Mobile platforms coming soon!</p>
               </div>
 
               <div className="col col--6 code-block--condensed">
                 <Tabs
-                  defaultValue="tsx"
+                  defaultValue="ts"
                   values={[
-                    { label: 'JS/TS', value: 'tsx' },
+                    { label: 'JS/TS', value: 'ts' },
+                    { label: 'CSS-in-JS/TS', value: 'tsx' },
                     { label: 'CSS', value: 'css' },
                     { label: 'SCSS', value: 'scss' },
                     { label: 'Less', value: 'less' },
                     { label: '...', value: 'other' },
                   ]}
                 >
+                  <TabItem value="ts">
+                    <CodeBlock className="language-ts">{TS_FORMAT}</CodeBlock>
+                  </TabItem>
+
                   <TabItem value="tsx">
                     <CodeBlock className="language-ts">{TSX_FORMAT}</CodeBlock>
                   </TabItem>
@@ -124,7 +129,7 @@ function Home() {
 
                   <TabItem value="other">
                     <div className="alert alert--secondary" role="alert">
-                      And many more supported or to come in the future!
+                      And many more supported formats to come in the future!
                     </div>
                   </TabItem>
                 </Tabs>

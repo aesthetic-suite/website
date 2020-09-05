@@ -221,19 +221,31 @@ export * from '..';
 
 export const brand: PaletteToken = {
   color: {
-    '10': '#000',
-    '20': '#000',
-    '30': '#000',
-    '40': '#000',
-    '50': '#000',
-    '60': '#000',
-    '70': '#000',
-    '80': '#000',
-    '90': '#000',
-    '00': '#000',
+    '00': '#eceff1',
+    '10': '#cfd8dc',
+    '20': '#b0bec5',
+    '30': '#90a4ae',
+    '40': '#78909c',
+    '50': '#607d8b',
+    '60': '#546e7a',
+    '70': '#455a64',
+    '80': '#37474f',
+    '90': '#263238',
   },
-  bg: { base: '#000', disabled: '#000', focused: '#000', hovered: '#000', selected: '#000' },
-  fg: { base: '#000', disabled: '#000', focused: '#000', hovered: '#000', selected: '#000' },
+  bg: {
+    base: '#78909c',
+    disabled: '#90a4ae',
+    focused: '#607d8b',
+    hovered: '#546e7a',
+    selected: '#607d8b',
+  },
+  fg: {
+    base: '#546e7a',
+    disabled: '#607d8b',
+    focused: '#455a64',
+    hovered: '#37474f',
+    selected: '#455a64',
+  },
 };
 
 // export const primary: PaletteToken = {};

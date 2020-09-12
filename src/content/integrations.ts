@@ -6,12 +6,16 @@ export const styleSheet = createComponentStyles((css) => ({
     padding: css.var('spacing-df'),
 
     '@variants': {
-      size_sm: { fontSize: css.var('text-sm-size') },
-      size_df: { fontSize: css.var('text-df-size') },
-      size_lg: { fontSize: css.var('text-lg-size') },
-      palette_primary: { backgroundColor: css.var('palette-primary-bg-base') },
-      palette_success: { backgroundColor: css.var('palette-success-bg-base') },
-      palette_warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      size: {
+        sm: { fontSize: css.var('text-sm-size') },
+        df: { fontSize: css.var('text-df-size') },
+        lg: { fontSize: css.var('text-lg-size') },
+      },
+      palette: {
+        primary: { backgroundColor: css.var('palette-primary-bg-base') },
+        success: { backgroundColor: css.var('palette-success-bg-base') },
+        warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      },
     },
   }),
   button_selected: {},

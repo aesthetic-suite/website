@@ -12,7 +12,7 @@ generate atomic class names.
 To continue with the example found in the style sheet documentation, let's design and style a button
 component. The button file would look something like the following.
 
-```tsx {4,37}
+```tsx {4,41}
 import React from 'react';
 import { useStyles, createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
 
@@ -23,12 +23,16 @@ export const styleSheet = createComponentStyles((css) => ({
     textAlign: 'center',
 
     '@variants': {
-      size_sm: { fontSize: css.var('text-sm-size') },
-      size_df: { fontSize: css.var('text-df-size') },
-      size_lg: { fontSize: css.var('text-lg-size') },
-      palette_brand: { backgroundColor: css.var('palette-brand-bg-base') },
-      palette_success: { backgroundColor: css.var('palette-success-bg-base') },
-      palette_warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      size: {
+        sm: { fontSize: css.var('text-sm-size') },
+        df: { fontSize: css.var('text-df-size') },
+        lg: { fontSize: css.var('text-lg-size') },
+      },
+      palette: {
+        brand: { backgroundColor: css.var('palette-brand-bg-base') },
+        success: { backgroundColor: css.var('palette-success-bg-base') },
+        warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      },
     },
   }),
   button_selected: {},

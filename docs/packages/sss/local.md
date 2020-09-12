@@ -194,13 +194,17 @@ const localSheet: LocalStyleSheet = {
     display: 'block',
 
     '@variants': {
-      size_small: { fontSize: 14 },
-      size_default: { fontSize: 16 },
-      size_large: { fontSize: 18 },
+      size: {
+        small: { fontSize: 14 },
+        default: { fontSize: 16 },
+        large: { fontSize: 18 },
+      },
 
-      type_failure: {},
-      type_success: {},
-      type_brandPrimary: {},
+      type: {
+        failure: {},
+        success: {},
+        brandPrimary: {},
+      },
     },
   },
 };

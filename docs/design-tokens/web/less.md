@@ -37,23 +37,23 @@ The compiled design system file looks something like the following:
 @border-lg-radius: 0.32rem; // 4.50px
 @border-lg-width: 0.14rem; // 2px
 
-@breakpoint-xs-query: '(min-width: 45.71em)';
+@breakpoint-xs-query: 'screen and (min-width: 45.71em)';
 @breakpoint-xs-query-size: 640;
 @breakpoint-xs-root-line-height: 1.33;
 @breakpoint-xs-root-text-size: 14.94px;
-@breakpoint-sm-query: '(min-width: 68.57em)';
+@breakpoint-sm-query: 'screen and (min-width: 68.57em)';
 @breakpoint-sm-query-size: 960;
 @breakpoint-sm-root-line-height: 1.42;
 @breakpoint-sm-root-text-size: 15.94px;
-@breakpoint-md-query: '(min-width: 91.43em)';
+@breakpoint-md-query: 'screen and (min-width: 91.43em)';
 @breakpoint-md-query-size: 1280;
 @breakpoint-md-root-line-height: 1.52;
 @breakpoint-md-root-text-size: 17.01px;
-@breakpoint-lg-query: '(min-width: 114.29em)';
+@breakpoint-lg-query: 'screen and (min-width: 114.29em)';
 @breakpoint-lg-query-size: 1600;
 @breakpoint-lg-root-line-height: 1.62;
 @breakpoint-lg-root-text-size: 18.15px;
-@breakpoint-xl-query: '(min-width: 137.14em)';
+@breakpoint-xl-query: 'screen and (min-width: 137.14em)';
 @breakpoint-xl-query-size: 1920;
 @breakpoint-xl-root-line-height: 1.73;
 @breakpoint-xl-root-text-size: 19.36px;

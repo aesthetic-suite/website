@@ -208,8 +208,8 @@ time. If you need to apply more than 1, then you should use the element-modifier
 the beginning of the chapter.
 
 To utilize variants, we define a `@variants` object on a per element basis that maps each variant
-name to a _style object_ (that'll be applied when activated). Variant names are critically important
-and must be written in a format of `<type>_<variant>`, as demonstrated below.
+using nested objects. Variant names are critically important as they must match what's passed to
+`cx()`.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
@@ -217,13 +217,17 @@ const styleSheet = createComponentStyles((css) => ({
     // ...
 
     '@variants': {
-      size_sm: { fontSize: css.var('text-sm-size') },
-      size_df: { fontSize: css.var('text-df-size') },
-      size_lg: { fontSize: css.var('text-lg-size') },
+      size: {
+        sm: { fontSize: css.var('text-sm-size') },
+        df: { fontSize: css.var('text-df-size') },
+        lg: { fontSize: css.var('text-lg-size') },
+      },
 
-      palette_brand: { backgroundColor: css.var('palette-brand-bg-base') },
-      palette_success: { backgroundColor: css.var('palette-success-bg-base') },
-      palette_warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      palette: {
+        brand: { backgroundColor: css.var('palette-brand-bg-base') },
+        success: { backgroundColor: css.var('palette-success-bg-base') },
+        warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      },
     },
   },
 
@@ -248,9 +252,11 @@ on the element directly. This is necessary as it avoids style collisions and spe
 const styleSheet = createComponentStyles((css) => ({
   button: {
     '@variants': {
-      size_sm: { fontSize: 14 },
-      size_df: { fontSize: 16 },
-      size_lg: { fontSize: 18 },
+      size: {
+        sm: { fontSize: 14 },
+        df: { fontSize: 16 },
+        lg: { fontSize: 18 },
+      },
     },
   },
 }));
@@ -261,8 +267,10 @@ const styleSheet = createComponentStyles((css) => ({
     fontSize: 16,
 
     '@variants': {
-      size_sm: { fontSize: 14 },
-      size_lg: { fontSize: 18 },
+      size: {
+        sm: { fontSize: 14 },
+        lg: { fontSize: 18 },
+      },
     },
   },
 }));

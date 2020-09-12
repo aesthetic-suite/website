@@ -26,31 +26,31 @@ export const border: BorderTokens = {
 
 export const breakpoint: BreakpointTokens = {
   xs: {
-    query: '(min-width: 45.71em)',
+    query: 'screen and (min-width: 45.71em)',
     querySize: 640,
     rootLineHeight: 1.33,
     rootTextSize: '14.94px',
   },
   sm: {
-    query: '(min-width: 68.57em)',
+    query: 'screen and (min-width: 68.57em)',
     querySize: 960,
     rootLineHeight: 1.42,
     rootTextSize: '15.94px',
   },
   md: {
-    query: '(min-width: 91.43em)',
+    query: 'screen and (min-width: 91.43em)',
     querySize: 1280,
     rootLineHeight: 1.52,
     rootTextSize: '17.01px',
   },
   lg: {
-    query: '(min-width: 114.29em)',
+    query: 'screen and (min-width: 114.29em)',
     querySize: 1600,
     rootLineHeight: 1.62,
     rootTextSize: '18.15px',
   },
   xl: {
-    query: '(min-width: 137.14em)',
+    query: 'screen and (min-width: 137.14em)',
     querySize: 1920,
     rootLineHeight: 1.73,
     rootTextSize: '19.36px',
@@ -193,31 +193,31 @@ export default new Design('example', {
   },
   breakpoint: {
     xs: {
-      query: '(min-width: 45.71em)',
+      query: 'screen and (min-width: 45.71em)',
       querySize: 640,
       rootLineHeight: 1.33,
       rootTextSize: '14.94px',
     },
     sm: {
-      query: '(min-width: 68.57em)',
+      query: 'screen and (min-width: 68.57em)',
       querySize: 960,
       rootLineHeight: 1.42,
       rootTextSize: '15.94px',
     },
     md: {
-      query: '(min-width: 91.43em)',
+      query: 'screen and (min-width: 91.43em)',
       querySize: 1280,
       rootLineHeight: 1.52,
       rootTextSize: '17.01px',
     },
     lg: {
-      query: '(min-width: 114.29em)',
+      query: 'screen and (min-width: 114.29em)',
       querySize: 1600,
       rootLineHeight: 1.62,
       rootTextSize: '18.15px',
     },
     xl: {
-      query: '(min-width: 137.14em)',
+      query: 'screen and (min-width: 137.14em)',
       querySize: 1920,
       rootLineHeight: 1.73,
       rootTextSize: '19.36px',
@@ -333,23 +333,23 @@ export const CSS_FORMAT = `:root {
   --border-lg-radius: 0.32rem; /* 4.50px */
   --border-lg-width: 0.14rem; /* 2px */
 
-  --breakpoint-xs-query: '(min-width: 45.71em)';
+  --breakpoint-xs-query: 'screen and (min-width: 45.71em)';
   --breakpoint-xs-query-size: 640;
   --breakpoint-xs-root-line-height: 1.33;
   --breakpoint-xs-root-text-size: 14.94px;
-  --breakpoint-sm-query: '(min-width: 68.57em)';
+  --breakpoint-sm-query: 'screen and (min-width: 68.57em)';
   --breakpoint-sm-query-size: 960;
   --breakpoint-sm-root-line-height: 1.42;
   --breakpoint-sm-root-text-size: 15.94px;
-  --breakpoint-md-query: '(min-width: 91.43em)';
+  --breakpoint-md-query: 'screen and (min-width: 91.43em)';
   --breakpoint-md-query-size: 1280;
   --breakpoint-md-root-line-height: 1.52;
   --breakpoint-md-root-text-size: 17.01px;
-  --breakpoint-lg-query: '(min-width: 114.29em)';
+  --breakpoint-lg-query: 'screen and (min-width: 114.29em)';
   --breakpoint-lg-query-size: 1600;
   --breakpoint-lg-root-line-height: 1.62;
   --breakpoint-lg-root-text-size: 18.15px;
-  --breakpoint-xl-query: '(min-width: 137.14em)';
+  --breakpoint-xl-query: 'screen and (min-width: 137.14em)';
   --breakpoint-xl-query-size: 1920;
   --breakpoint-xl-root-line-height: 1.73;
   --breakpoint-xl-root-text-size: 19.36px;
@@ -434,23 +434,23 @@ $border-df-width: 0.07rem !default; // 1px
 $border-lg-radius: 0.32rem !default; // 4.50px
 $border-lg-width: 0.14rem !default; // 2px
 
-$breakpoint-xs-query: '(min-width: 45.71em)' !default;
+$breakpoint-xs-query: 'screen and (min-width: 45.71em)' !default;
 $breakpoint-xs-query-size: 640 !default;
 $breakpoint-xs-root-line-height: 1.33 !default;
 $breakpoint-xs-root-text-size: 14.94px !default;
-$breakpoint-sm-query: '(min-width: 68.57em)' !default;
+$breakpoint-sm-query: 'screen and (min-width: 68.57em)' !default;
 $breakpoint-sm-query-size: 960 !default;
 $breakpoint-sm-root-line-height: 1.42 !default;
 $breakpoint-sm-root-text-size: 15.94px !default;
-$breakpoint-md-query: '(min-width: 91.43em)' !default;
+$breakpoint-md-query: 'screen and (min-width: 91.43em)' !default;
 $breakpoint-md-query-size: 1280 !default;
 $breakpoint-md-root-line-height: 1.52 !default;
 $breakpoint-md-root-text-size: 17.01px !default;
-$breakpoint-lg-query: '(min-width: 114.29em)' !default;
+$breakpoint-lg-query: 'screen and (min-width: 114.29em)' !default;
 $breakpoint-lg-query-size: 1600 !default;
 $breakpoint-lg-root-line-height: 1.62 !default;
 $breakpoint-lg-root-text-size: 18.15px !default;
-$breakpoint-xl-query: '(min-width: 137.14em)' !default;
+$breakpoint-xl-query: 'screen and (min-width: 137.14em)' !default;
 $breakpoint-xl-query-size: 1920 !default;
 $breakpoint-xl-root-line-height: 1.73 !default;
 $breakpoint-xl-root-text-size: 19.36px !default;
@@ -534,23 +534,23 @@ export const LESS_FORMAT = `@border-sm-radius: 0.11rem; // 1.50px
 @border-lg-radius: 0.32rem; // 4.50px
 @border-lg-width: 0.14rem; // 2px
 
-@breakpoint-xs-query: '(min-width: 45.71em)';
+@breakpoint-xs-query: 'screen and (min-width: 45.71em)';
 @breakpoint-xs-query-size: 640;
 @breakpoint-xs-root-line-height: 1.33;
 @breakpoint-xs-root-text-size: 14.94px;
-@breakpoint-sm-query: '(min-width: 68.57em)';
+@breakpoint-sm-query: 'screen and (min-width: 68.57em)';
 @breakpoint-sm-query-size: 960;
 @breakpoint-sm-root-line-height: 1.42;
 @breakpoint-sm-root-text-size: 15.94px;
-@breakpoint-md-query: '(min-width: 91.43em)';
+@breakpoint-md-query: 'screen and (min-width: 91.43em)';
 @breakpoint-md-query-size: 1280;
 @breakpoint-md-root-line-height: 1.52;
 @breakpoint-md-root-text-size: 17.01px;
-@breakpoint-lg-query: '(min-width: 114.29em)';
+@breakpoint-lg-query: 'screen and (min-width: 114.29em)';
 @breakpoint-lg-query-size: 1600;
 @breakpoint-lg-root-line-height: 1.62;
 @breakpoint-lg-root-text-size: 18.15px;
-@breakpoint-xl-query: '(min-width: 137.14em)';
+@breakpoint-xl-query: 'screen and (min-width: 137.14em)';
 @breakpoint-xl-query-size: 1920;
 @breakpoint-xl-root-line-height: 1.73;
 @breakpoint-xl-root-text-size: 19.36px;

@@ -152,15 +152,15 @@ polyfilled.
   --palette-brand-color-80: #37474f;
   --palette-brand-color-90: #263238;
   --palette-brand-bg-base: #78909c;
-  --palette-brand-bg-disabled: #90a4ae;
   --palette-brand-bg-focused: #607d8b;
   --palette-brand-bg-hovered: #546e7a;
   --palette-brand-bg-selected: #607d8b;
+  --palette-brand-bg-disabled: #90a4ae;
   --palette-brand-fg-base: #546e7a;
-  --palette-brand-fg-disabled: #607d8b;
   --palette-brand-fg-focused: #455a64;
   --palette-brand-fg-hovered: #37474f;
   --palette-brand-fg-selected: #455a64;
+  --palette-brand-fg-disabled: #607d8b;
 
   /*
   --palette-primary-...

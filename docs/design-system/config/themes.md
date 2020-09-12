@@ -89,15 +89,15 @@ themes:
         bg:
           base: 40
           focused: 50
-          selected: 50
           hovered: 60
+          selected: 50
           disabled: 30
         # While text uses a darker shade for legibility (a11y)
         fg:
           base: 50
           focused: 60
-          selected: 60
           hovered: 70
+          selected: 60
           disabled: 40
       secondary:
         color: orange

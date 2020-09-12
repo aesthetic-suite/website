@@ -147,15 +147,15 @@ $palette-brand-color-70: #455a64 !default;
 $palette-brand-color-80: #37474f !default;
 $palette-brand-color-90: #263238 !default;
 $palette-brand-bg-base: #78909c !default;
-$palette-brand-bg-disabled: #90a4ae !default;
 $palette-brand-bg-focused: #607d8b !default;
 $palette-brand-bg-hovered: #546e7a !default;
 $palette-brand-bg-selected: #607d8b !default;
+$palette-brand-bg-disabled: #90a4ae !default;
 $palette-brand-fg-base: #546e7a !default;
-$palette-brand-fg-disabled: #607d8b !default;
 $palette-brand-fg-focused: #455a64 !default;
 $palette-brand-fg-hovered: #37474f !default;
 $palette-brand-fg-selected: #455a64 !default;
+$palette-brand-fg-disabled: #607d8b !default;
 
 // $palette-primary-...
 // $palette-secondary-...

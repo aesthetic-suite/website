@@ -223,17 +223,17 @@ export default design.createTheme(
         },
         bg: {
           base: '#78909c',
-          disabled: '#90a4ae',
           focused: '#607d8b',
           hovered: '#546e7a',
           selected: '#607d8b',
+          disabled: '#90a4ae',
         },
         fg: {
           base: '#546e7a',
-          disabled: '#607d8b',
           focused: '#455a64',
           hovered: '#37474f',
           selected: '#455a64',
+          disabled: '#607d8b',
         },
       },
       primary: {

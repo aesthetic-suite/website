@@ -9,7 +9,7 @@ The following format is provided when compiling design tokens to [Sass](https://
 
 During compilation, an `_index.sass` file will be created based on the design system YAML
 configuration file. Additional `themes/_<name>.sass` files will be created for each theme configured
-in the YAML file. And lastly, a `_mixins.sass` file will also be created.
+in the YAML file.
 
 This would look something like the following:
 
@@ -19,7 +19,6 @@ styles/<target>/
 │   ├── _day.sass
 │   └── _night.sass
 ├── _index.sass
-└── _mixins.sass
 ```
 
 ## Variables
@@ -176,7 +175,7 @@ Coming soon...
 
 ## Integration
 
-The compiled Sass variables and mixins can be imported with the
+The compiled Sass variables can be imported with the
 [@use](https://sass-lang.com/documentation/at-rules/use) at-rule. Only the theme files need to be
 imported, as the design system file is pre-imported within each theme.
 

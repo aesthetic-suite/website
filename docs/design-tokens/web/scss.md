@@ -9,7 +9,7 @@ The following format is provided when compiling design tokens to
 
 During compilation, an `_index.scss` file will be created based on the design system YAML
 configuration file. Additional `themes/_<name>.scss` files will be created for each theme configured
-in the YAML file. And lastly, a `_mixins.scss` file will also be created.
+in the YAML file.
 
 This would look something like the following:
 
@@ -19,7 +19,6 @@ styles/<target>/
 │   ├── _day.scss
 │   └── _night.scss
 ├── _index.scss
-└── _mixins.scss
 ```
 
 ## Variables
@@ -176,7 +175,7 @@ Coming soon...
 
 ## Integration
 
-The compiled SCSS variables and mixins can be imported with the
+The compiled SCSS variables can be imported with the
 [@use](https://sass-lang.com/documentation/at-rules/use) at-rule. Only the theme files need to be
 imported, as the design system file is pre-imported within each theme.
 

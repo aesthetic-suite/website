@@ -11,7 +11,7 @@ reusability. If you need to support legacy browsers, we suggest the
 
 During compilation, an `index.css` file will be created based on the design system YAML
 configuration file. Additional `themes/<name>.css` files will be created for each theme configured
-in the YAML file. And lastly, a `mixins.css` file will also be created.
+in the YAML file.
 
 This would look something like the following:
 
@@ -21,7 +21,6 @@ styles/<target>/
 │   ├── day.css
 │   └── night.css
 ├── index.css
-└── mixins.css
 ```
 
 ## Variables
@@ -180,7 +179,7 @@ polyfilled.
 
 ## Mixins
 
-Coming soon...
+Mixins are not supported by CSS. Use SCSS, Less, or a CSS-in-JS based format.
 
 ## Integration
 

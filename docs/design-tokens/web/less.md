@@ -9,7 +9,7 @@ The following format is provided when compiling design tokens to [Less](http://l
 
 During compilation, an `index.less` file will be created based on the design system YAML
 configuration file. Additional `themes/<name>.less` files will be created for each theme configured
-in the YAML file. And lastly, a `mixins.less` file will also be created.
+in the YAML file.
 
 This would look something like the following:
 
@@ -19,7 +19,6 @@ styles/<target>/
 │   ├── day.less
 │   └── night.less
 ├── index.less
-└── mixins.less
 ```
 
 ## Variables
@@ -176,7 +175,7 @@ Coming soon...
 
 ## Integration
 
-The compiled Less variables and mixins can be imported with the
+The compiled Less variables can be imported with the
 [@import](http://lesscss.org/features/#import-atrules-feature) at-rule. Only the theme files need to
 be imported, as the design system file is pre-imported within each theme.
 

@@ -85,8 +85,8 @@ const styleSheet = createComponentStyles((css) => ({
 
 Mixins also provide reusability, but instead of providing a single value, they provide a collection
 of pre-styled CSS properties that can be merged into your own style objects via the
-`mixin(name: string, styles: object)` method. The list of properties are hard-coded in Aesthetic but
-can be customized through the design system package.
+`mixin(name: string, options: object, ...styles: object[])` method. The list of properties are
+hard-coded in Aesthetic but can be customized through the design system package.
 
 Continuing our example even further, let's easily reset our button. You'll notice that we removed
 most of the properties. That's because they are provided by the mixin and we no longer have to
@@ -94,13 +94,17 @@ define them manually!
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: css.mixin('pattern-reset-button', {
-    padding: {
-      topBottom: css.var('spacing-df'),
-      leftRight: css.var('spacing-md'),
+  button: css.mixin(
+    'reset-button',
+    {},
+    {
+      padding: {
+        topBottom: css.var('spacing-df'),
+        leftRight: css.var('spacing-md'),
+      },
+      textAlign: 'center',
     },
-    textAlign: 'center',
-  }),
+  ),
 }));
 ```
 

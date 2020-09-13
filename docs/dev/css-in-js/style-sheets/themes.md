@@ -169,7 +169,7 @@ If the `url` property is not defined, or is `false`, the import path will not be
 ## References
 
 The structure of this style sheet is based on types provided by the
-[@aesthetic/sss](../../packages/sss.md) package.
+[@aesthetic/sss](../../../packages/sss.md) package.
 
-- [Local style sheets](../../packages/sss/local.md)
-- [Global style sheets](../../packages/sss/global.md)
+- [Local style sheets](../../../packages/sss/local.md)
+- [Global style sheets](../../../packages/sss/global.md)

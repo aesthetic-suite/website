@@ -1,0 +1,52 @@
+---
+title: Setup
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Firstly, the CSS-in-JS solution requires compiling your [design system](../../design-system.md) into
+expanded [design tokens](../../design-tokens/web/tsx.md) with either the `web-tsx` or `web-jsx`
+formats.
+
+Next you'll need to install an [integration](../../integrations.md) of your choice.
+
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
+
+
+```bash
+yarn add @aesthetic/<integration>
+```
+
+  </TabItem>
+  <TabItem value="npm">
+
+
+```bash
+npm install @aesthetic/<integration>
+```
+
+  </TabItem>
+</Tabs>
+
+
+Lastly, create a setup file for Aesthetic based configuration, typically within your project source.
+We'll name ours `setup.ts` going forward.
+
+```bash
+touch setup.ts
+```
+
+## Preface
+
+In this documentation, you'll come across code examples that import from `@aesthetic/core`. This
+module _should_ be replaced with your integration of choice. For example, if you're using React, you
+should import from `@aesthetic/react` instead.

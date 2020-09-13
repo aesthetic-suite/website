@@ -46,6 +46,30 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/integrations/react',
+          activeBasePath: 'docs/integrations/react',
+          label: 'React',
+          position: 'left',
+        },
+        {
+          label: 'Packages',
+          position: 'left',
+          items: [
+            {
+              label: 'Design system',
+              to: '/docs/packages/system',
+            },
+            {
+              label: 'CSS-in-JS style engine',
+              to: '/docs/packages/style',
+            },
+            {
+              label: 'Structured style sheets',
+              to: '/docs/packages/sss',
+            },
+          ],
+        },
+        {
           href: 'https://github.com/aesthetic-suite',
           label: 'GitHub',
           position: 'right',
@@ -66,9 +90,14 @@ module.exports = {
               label: 'Design tokens',
               to: '/docs/design-tokens',
             },
+          ],
+        },
+        {
+          title: 'Development',
+          items: [
             {
-              label: 'Development',
-              to: '/docs/development',
+              label: 'CSS-in-JS',
+              to: '/docs/dev/css-in-js',
             },
           ],
         },
@@ -78,23 +107,6 @@ module.exports = {
             {
               label: 'React',
               to: '/docs/integrations/react',
-            },
-          ],
-        },
-        {
-          title: 'Packages',
-          items: [
-            {
-              label: 'Design system abstraction',
-              to: '/docs/packages/system',
-            },
-            {
-              label: 'Atomic CSS-in-JS engine',
-              to: '/docs/packages/style',
-            },
-            {
-              label: 'Structured style sheets',
-              to: '/docs/packages/sss',
             },
           ],
         },

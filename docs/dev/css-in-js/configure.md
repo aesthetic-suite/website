@@ -18,7 +18,7 @@ configure({
 ## Options
 
 The following options are currently supported. These options are based on the `@aesthetic/style`
-package. Jump over to the [official documentation](../packages/style/options.md) for expanded
+package. Jump over to the [official documentation](../../packages/style/options.md) for expanded
 information on them.
 
 - `defaultUnit` (`string | (prop: string) => string`) - A unit to append to numerical values. Can be

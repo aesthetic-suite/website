@@ -413,13 +413,14 @@ The following options are supported:
 ## References
 
 The structure of style objects is based on types provided by the
-[@aesthetic/sss](../../packages/sss.md) and [@aesthetic/style](../../packages/style.md) packages.
+[@aesthetic/sss](../../../packages/sss.md) and [@aesthetic/style](../../../packages/style.md)
+packages.
 
-- [Local style sheets](../../packages/sss/local.md)
-- [Global style sheets](../../packages/sss/global.md)
-- [Styles](../../packages/style/concepts.md#styles)
-- [Selectors](../../packages/style/concepts.md#rules)
-- [Media queries](../../packages/style/concepts.md#media-queries)
-- [Feature queries](../../packages/style/concepts.md#feature-queries)
-- [Font faces](../../packages/style/concepts.md#font-faces)
-- [Keyframes](../../packages/style/concepts.md#keyframes)
+- [Local style sheets](../../../packages/sss/local.md)
+- [Global style sheets](../../../packages/sss/global.md)
+- [Styles](../../../packages/style/concepts.md#styles)
+- [Selectors](../../../packages/style/concepts.md#rules)
+- [Media queries](../../../packages/style/concepts.md#media-queries)
+- [Feature queries](../../../packages/style/concepts.md#feature-queries)
+- [Font faces](../../../packages/style/concepts.md#font-faces)
+- [Keyframes](../../../packages/style/concepts.md#keyframes)

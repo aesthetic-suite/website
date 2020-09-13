@@ -17,6 +17,7 @@ Install with NPM or Yarn. No additional dependencies are required.
 >
   <TabItem value="yarn">
 
+
 ```bash
 yarn add @aesthetic/style
 ```
@@ -24,12 +25,14 @@ yarn add @aesthetic/style
   </TabItem>
   <TabItem value="npm">
 
+
 ```bash
 npm install @aesthetic/style
 ```
 
   </TabItem>
 </Tabs>
+
 
 ## Usage
 
@@ -89,13 +92,3 @@ specificity and ordering of styles. In document order, the style sheets are:
 - **Conditional rules** are the 3rd and final style sheet. Only renders `@media` and `@supports`
   rules to ensure their styles override the standard styles. Media queries are also
   [sorted based on their query](https://www.npmjs.com/package/sort-css-media-queries).
-
-## Development vs production
-
-Depending on the `NODE_ENV` environment, the renderer will insert styles using different mechanisms.
-
-In `production` it uses the native `CSSStyleSheet#insertRule()` to render as performant and
-efficient as possible.
-
-In `development` it uses `style.textContent` to render styles. This approach is much slower but
-allows styles to be modified from within a browser's developer tools.

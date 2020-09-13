@@ -64,19 +64,25 @@ module.exports = {
       label: 'Development',
       collapsed: false,
       items: [
-        'development',
-        'development/configure',
-        'development/themes',
         {
           type: 'category',
-          label: 'Style sheets',
+          label: 'CSS-in-JS',
           items: [
-            'development/style-sheets',
-            'development/style-sheets/themes',
-            'development/style-sheets/components',
+            'dev/css-in-js/setup',
+            'dev/css-in-js/configure',
+            'dev/css-in-js/themes',
+            {
+              type: 'category',
+              label: 'Style sheets',
+              items: [
+                'dev/css-in-js/style-sheets',
+                'dev/css-in-js/style-sheets/themes',
+                'dev/css-in-js/style-sheets/components',
+              ],
+            },
+            'dev/css-in-js/direction',
           ],
         },
-        'development/direction',
       ],
     },
     {

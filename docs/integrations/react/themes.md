@@ -2,7 +2,7 @@
 title: Using themes
 ---
 
-> Knowledge of [themes](../../development/themes.md) is required.
+> Knowledge of [themes](../../dev/css-in-js/themes.md) is required.
 
 To provide the active theme to all React components, we'll need to render a `ThemeProvider` at the
 root of your application. By default, the active theme will automatically be detected based on a

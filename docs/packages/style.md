@@ -13,6 +13,37 @@ engine. It can be used stand-alone but has been designed to power additional abs
 - [Test utilities](./style/testing.md)
 - [API](./style/api.md)
 
+```ts
+import { ClientRenderer } from '@aesthetic/style';
+
+// Instantiate a client side renderer
+const renderer = new ClientRenderer();
+
+// Render a style decleration into individual atomic class names
+const className = renderer.renderRule(
+  {
+    margin: 0,
+    padding: '6px 12px',
+    textAlign: 'center',
+    color: 'var(--color)',
+    backgroundColor: 'transparent',
+    border: '2px solid #eee',
+
+    ':hover': {
+      borderColor: '#fff',
+    },
+
+    '@media (max-width: 600px)': {
+      display: 'block',
+    },
+  },
+  {
+    vendor: true,
+    rtl: true,
+  },
+); // -> a b c d e f g h
+```
+
 ## What it provides
 
 - Atomic based CSS. One declaration per class name.

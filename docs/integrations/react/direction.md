@@ -2,7 +2,7 @@
 title: Directionality
 ---
 
-> Knowledge of [directionality](../../development/direction.md) is required.
+> Knowledge of [directionality](../../dev/css-in-js/direction.md) is required.
 
 A `DirectionProvider` is available for controlling the direction of a target React component tree.
 While not necessary to render at the root, since the default direction is inferred from the

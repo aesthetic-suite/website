@@ -39,9 +39,9 @@ const styleSheet = createComponentStyles(() => ({
 
 Manually writing style objects over and over can be tiresome, especially when you need to reuse
 consistent values (font sizes, spacing, etc) across many components. Aesthetic solves this through
-its robust [design system](../design-system.md), which is a _hard requirement_ as it powers all
+its robust [design system](../../design-system.md), which is a _hard requirement_ as it powers all
 reusability. To make use of this, the design system must be compiled into JavaScript/TypeScript
-based [design tokens](../design-tokens.md).
+based [design tokens](../../design-tokens.md).
 
 A few design token based utility methods are passed to the 1st argument within the style sheet
 factory function. We like to name this object `css`, as demonstrated within the examples below.

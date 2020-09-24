@@ -1,6 +1,9 @@
 /* eslint-disable sort-keys */
 
 const pkgs = [
+  'addon-direction',
+  'addon-mixins',
+  'addon-vendor',
   'cli',
   'compiler',
   'core',

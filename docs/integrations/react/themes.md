@@ -52,13 +52,16 @@ Because we utilize CSS variables, we implicitly support nested themes by taking 
 element-level CSS variable cascading. To integrate nested themes, use the `ContextualThemeProvider`
 with an explicit theme name.
 
+The `wrapper` prop is required and must be passed a React element. The element is then used as the
+theme boundary and implicitly supports other environments like React Native.
+
 ```tsx
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 
 <ThemeProvider name="day">
   <div>Inherits styles from the day theme.</div>
 
-  <ContextualThemeProvider name="night">
+  <ContextualThemeProvider name="night" wrapper={<div />}>
     <div>Inherits styles from the night theme.</div>
   </ContextualThemeProvider>
 </ThemeProvider>;

@@ -157,3 +157,27 @@ function Component({ theme }: WithThemeWrappedProps) {
 
 export default withTheme()(Component);
 ```
+
+## Other
+
+### `createStyled`
+
+> createStyled(type: React.ElementType | React.ComponentType, styleSheet: LocalBlock |
+> LocalSheetFactory): StyledComponent
+
+Creates and returns a styled component using the provided style sheet.
+
+```tsx
+import { createStyled } from '@aesthetic/react';
+
+const Button = createStyled('button', (css) => ({
+  display: 'inline-flex',
+  textAlign: 'center',
+  padding: css.var('spacing-md'),
+}));
+
+const BlockButton = createStyled(Button, {
+  display: 'flex',
+  width: '100%',
+});
+```

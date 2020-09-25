@@ -12,10 +12,13 @@ document's `dir` attribute, it can be used to explicitly enforce a direction, li
 import { DirectionProvider } from '@aesthetic/react';
 import Component from './Component';
 
-<DirectionProvider direction="rtl">
+<DirectionProvider direction="rtl" wrapper={<div />}>
   <Component />
 </DirectionProvider>;
 ```
+
+The `wrapper` prop above is required and must be passed a React element. The element is then passed
+a `dir` attribute and implicitly supports other environments like React Native.
 
 ## Contextual direction
 
@@ -37,7 +40,7 @@ export default function MessageContainer() {
   };
 
   return (
-    <DirectionProvider value={value}>
+    <DirectionProvider value={value} wrapper={<div />}>
       <MessageThread />
       <MessageInput value={value} onChange={handleChange} />
     </DirectionProvider>

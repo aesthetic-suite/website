@@ -1,20 +1,20 @@
-export const REACT_EXAMPLE = `import React from 'react';
+export const REACT_HOOKS_EXAMPLE = `import React from 'react';
 import { useStyles, createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
 
 export const styleSheet = createComponentStyles((css) => ({
-  button: css.mixin('pattern-reset-button', {
+  button: css.mixin('reset-button', {
     padding: css.var('spacing-df'),
 
     '@variants': {
-      size: {
-        sm: { fontSize: css.var('text-sm-size') },
-        df: { fontSize: css.var('text-df-size') },
-        lg: { fontSize: css.var('text-lg-size') },
-      },
       palette: {
         primary: { backgroundColor: css.var('palette-primary-bg-base') },
         success: { backgroundColor: css.var('palette-success-bg-base') },
         warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      },
+      size: {
+        sm: { fontSize: css.var('text-sm-size') },
+        df: { fontSize: css.var('text-df-size') },
+        lg: { fontSize: css.var('text-lg-size') },
       },
     },
   }),
@@ -44,8 +44,8 @@ export default function Button({
     <button
       type="button"
       className={cx(
-        'button',
         { size, palette },
+        'button',
         selected && 'button_selected',
         disabled && 'button_disabled',
       )}
@@ -54,3 +54,37 @@ export default function Button({
     </button>
   );
 }`;
+
+export const REACT_STYLED_EXAMPLE = `import React from 'react';
+import { createdStyled, CommonSize, PaletteType } from '@aesthetic/react';
+
+export interface ButtonVariants {
+  palette?: PaletteType;
+  size?: CommonSize;
+}
+
+const Button = createdStyled<'button', ButtonVariants>('button', (css) =>
+  css.mixin('reset-button', {
+    padding: css.var('spacing-df'),
+
+    '@variants': {
+      palette: {
+        primary: { backgroundColor: css.var('palette-primary-bg-base') },
+        success: { backgroundColor: css.var('palette-success-bg-base') },
+        warning: { backgroundColor: css.var('palette-warning-bg-base') },
+      },
+      size: {
+        sm: { fontSize: css.var('text-sm-size') },
+        df: { fontSize: css.var('text-df-size') },
+        lg: { fontSize: css.var('text-lg-size') },
+      },
+    },
+  })
+);
+
+Button.defaultProps = {
+  palette: 'primary',
+  size: 'df',
+};
+
+export default Button;`;

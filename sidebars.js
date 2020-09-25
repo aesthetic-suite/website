@@ -98,6 +98,7 @@ module.exports = {
             'integrations/react/setup',
             'integrations/react/themes',
             'integrations/react/styles',
+            'integrations/react/styled',
             'integrations/react/direction',
             'integrations/react/ui',
             'integrations/react/api',

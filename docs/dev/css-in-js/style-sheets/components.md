@@ -135,6 +135,20 @@ const styleSheet = createComponentStyles(() => ({
 
 > Both `@media` and `@supports` may be nested within itself and each other.
 
+You can utilize the design system token's for consistent media query breakpoints.
+
+```ts
+const styleSheet = createComponentStyles((css) => ({
+  element: {
+    '@media': {
+      [css.tokens.breakpoint.lg.query]: {
+        width: '100%',
+      },
+    },
+  },
+}));
+```
+
 ### Font faces
 
 Fonts are special as they need to be defined on the document instead of an element, which should be
@@ -236,10 +250,10 @@ const styleSheet = createComponentStyles((css) => ({
 ```
 
 How a variant gets activated is highly dependent on the integration you are using, but it basically
-boils down to the following class name generation.
+boils down to the following class name generation. Pass an object of variants as the 1st argument!
 
 ```ts
-const className = cx('button', { size: 'sm', palette: 'brand' });
+const className = cx({ size: 'sm', palette: 'brand' }, 'button');
 ```
 
 #### Handling defaults

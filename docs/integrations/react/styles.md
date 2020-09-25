@@ -17,7 +17,7 @@ import React from 'react';
 import { useStyles, createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
 
 export const styleSheet = createComponentStyles((css) => ({
-  button: css.mixin('pattern-reset-button', {
+  button: css.mixin.resetButton({
     display: 'inline-flex',
     padding: css.var('spacing-df'),
     textAlign: 'center',
@@ -70,7 +70,7 @@ export default function Button({ children, beforeIcon, afterIcon }: ButtonProps)
 
 ## Generating class names
 
-Both the hook and HOC provide a class name generation function that we aptly name `cx`. This
+Both the hook and HOC APIs provide a class name generation function that we aptly name `cx`. This
 function requires a list of selector names (keys from the style sheet object) in which to render CSS
 and apply a class name with, for example.
 
@@ -93,12 +93,13 @@ function Button({ selected, disabled }: ButtonProps) {
 ```
 
 As demonstrated above, the `button` selector will always be rendered. However, the `button_selected`
-and `button_disabled` selectors will only be rendered when the button is conditionally updatd via
+and `button_disabled` selectors will only be rendered when the button is conditionally updated via
 the `selected` and `disabled` props respectively.
 
 We can take this a step further by supporting
 [variants](../../dev/css-in-js/style-sheets/components.md#variants). All that's required is to pass
-an object to `cx()` with the name of every variant, and the variation to activate.
+an object as the _1st argument_ to `cx()` with the name of every variant, and the variant to
+activate.
 
 ```tsx {2,7-12,15,17}
 function Button({ selected, disabled, size = 'df', palette = 'primary' }: ButtonProps) {
@@ -108,8 +109,8 @@ function Button({ selected, disabled, size = 'df', palette = 'primary' }: Button
     <button
       type="button"
       className={cx(
-        'button',
         { size, palette },
+        'button',
         selected && 'button_selected',
         disabled && 'button_disabled',
       )}
@@ -149,10 +150,10 @@ class Button extends React.Component<ButtonProps & WithStylesWrappedProps> {
     const { cx } = this.props;
 
     return (
-      <button type="button">
-        {beforeIcon && <span>{beforeIcon}</span>}
+      <button type="button" className={cx('button')}>
+        {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
         {children}
-        {afterIcon && <span>{afterIcon}</span>}
+        {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
       </button>
     );
   }

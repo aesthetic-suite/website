@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { TS_FORMAT, TSX_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
-import { REACT_EXAMPLE } from '../content/integrations';
+import { REACT_HOOKS_EXAMPLE, REACT_STYLED_EXAMPLE } from '../content/integrations';
 import styles from './styles.module.css';
 
 function Home() {
@@ -143,7 +143,28 @@ function Home() {
           <div className="container">
             <div className="row">
               <div className="col col--6 code-block--condensed">
-                <CodeBlock className="language-tsx">{REACT_EXAMPLE}</CodeBlock>
+                <Tabs
+                  defaultValue="react-styled"
+                  values={[
+                    { label: 'React Styled', value: 'react-styled' },
+                    { label: 'React Hooks', value: 'react-hooks' },
+                    { label: '...', value: 'other' },
+                  ]}
+                >
+                  <TabItem value="react-styled">
+                    <CodeBlock className="language-ts">{REACT_STYLED_EXAMPLE}</CodeBlock>
+                  </TabItem>
+
+                  <TabItem value="react-hooks">
+                    <CodeBlock className="language-ts">{REACT_HOOKS_EXAMPLE}</CodeBlock>
+                  </TabItem>
+
+                  <TabItem value="other">
+                    <div className="alert alert--secondary" role="alert">
+                      And many more supported integrations and APIs to come in the future!
+                    </div>
+                  </TabItem>
+                </Tabs>
               </div>
 
               <div className="col col--6">

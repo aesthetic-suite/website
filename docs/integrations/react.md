@@ -15,7 +15,8 @@ a design system.
 
 ## Features
 
-- Hook and HOC based APIs for styling components, accessing themes, and handling directionality.
+- Styled component, Hook, and HOC based APIs for styling, accessing themes, and handling
+  directionality.
 - Global, document, and element level themes powered through context.
 - Nested themes that avoid polluting the global scope.
 - First-class directionality support (RTL, LTR).

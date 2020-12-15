@@ -3,6 +3,7 @@
 const pkgs = [
   'addon-direction',
   'addon-mixins',
+  'addon-properties',
   'addon-vendor',
   'cli',
   'compiler',

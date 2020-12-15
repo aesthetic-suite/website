@@ -2,7 +2,7 @@
 title: Styled components
 ---
 
-An alternative to [styling components](./styles.md) manually is to use the `createStyled()` API,
+An alternative to [styling components](./styles.mdx) manually is to use the `createStyled()` API,
 which creates a reusable component at the lowest level -- per element. This approach was made
 popular by the [styled-components](https://styled-components.com) library.
 

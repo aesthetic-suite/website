@@ -8,9 +8,9 @@ itself. It enables components to easily and fluently style themselves with desig
 a design system.
 
 - [Getting started](./react/setup.mdx)
-- [Using themes](./react/themes.md)
-- [Styling components](./react/styles.md)
-- [Directionality](./react/direction.md)
+- [Using themes](./react/themes.mdx)
+- [Styling components](./react/styles.mdx)
+- [Directionality](./react/direction.mdx)
 - [API](./react/api.md)
 
 ## Features

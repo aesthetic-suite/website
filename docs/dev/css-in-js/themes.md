@@ -13,7 +13,7 @@ unique name and an optional [theme style sheet](./style-sheets/themes.md). A def
 be defined twice, once for a light color scheme, the other for a dark color scheme.
 
 ```ts title="setup.ts"
-import { registerTheme, registerDefaultTheme } from '@aesthetic/core';
+import { registerTheme, registerDefaultTheme } from '@aesthetic/<integration>';
 import dayTheme from './system/themes/day';
 import nightTheme from './system/themes/night';
 import twilightTheme from './system/themes/twilight';
@@ -32,7 +32,7 @@ The currently active theme can be changed programmatically by calling the `chang
 within in your application.
 
 ```ts
-import { changeTheme } from '@aesthetic/core';
+import { changeTheme } from '@aesthetic/<integration>';
 
 changeTheme('twilight');
 ```

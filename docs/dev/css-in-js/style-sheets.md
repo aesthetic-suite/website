@@ -15,7 +15,7 @@ respectively. Both methods require a function that returns a _style object_ (als
 function).
 
 ```ts
-import { createComponentStyles } from '@aesthetic/core';
+import { createComponentStyles } from '@aesthetic/<integration>';
 
 const styleSheet = createComponentStyles(() => ({
   button: {
@@ -85,7 +85,7 @@ const styleSheet = createComponentStyles((css) => ({
 
 Mixins also provide reusability, but instead of providing a single value, they provide a collection
 of pre-styled CSS properties that can be merged into your own style objects via the
-`mixin(name: string, options: object, ...styles: object[])` method. The list of properties are
+`mixin(name: string, optionsOrStyles?: object, styles?: object)` method. The list of properties are
 hard-coded in Aesthetic but can be customized through the design system package.
 
 Continuing our example even further, let's easily reset our button. You'll notice that we removed
@@ -94,17 +94,13 @@ define them manually!
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: css.mixin(
-    'reset-button',
-    {},
-    {
-      padding: {
-        topBottom: css.var('spacing-df'),
-        leftRight: css.var('spacing-md'),
-      },
-      textAlign: 'center',
+  button: css.mixin('reset-button', {
+    padding: {
+      topBottom: css.var('spacing-df'),
+      leftRight: css.var('spacing-md'),
     },
-  ),
+    textAlign: 'center',
+  }),
 }));
 ```
 

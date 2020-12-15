@@ -10,7 +10,7 @@ following.
 
 <!-- prettier-ignore -->
 ```ts
-import { createComponentStyles } from '@aesthetic/core';
+import { createComponentStyles } from '@aesthetic/<integration>';
 
 const styleSheet = createComponentStyles(() => ({
   button: {
@@ -275,7 +275,7 @@ const styleSheet = createComponentStyles((css) => ({
   },
 }));
 
-// INCORRECT
+// Incorrect
 const styleSheet = createComponentStyles((css) => ({
   button: {
     fontSize: 16,
@@ -405,7 +405,7 @@ customizable options as the 2nd argument, and returns an object of class names m
 selector.
 
 ```ts
-import { renderComponentStyles } from '@aesthetic/core';
+import { renderComponentStyles } from '@aesthetic/<integration>';
 import styleSheet from './some/styleSheet';
 
 const classNames = renderComponentStyles(styleSheet, {
@@ -420,9 +420,8 @@ The following options are supported:
 - `direction` (`ltr | rtl`) - Directionality of properties and their values.
 - `scheme` (`light | dark`) - Color scheme variant to activate.
 - `theme` (`string`) - Theme instance to pass to style sheets. Defaults to the active theme.
-- `unit` (`string | (prop: string) => string`) - Default unit suffix. Defaults to `defaultUnit`
-  option.
-- `vendor` (`boolean`) - Apply vendor prefixes. Defaults to `vendorPrefixes`.
+- `unit` (`string`) - Default unit suffix. Defaults to `defaultUnit` option.
+- `vendor` (`boolean`) - Apply vendor prefixes (if configured). Defaults to `vendorPrefixes`.
 
 ## References
 

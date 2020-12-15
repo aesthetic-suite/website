@@ -172,10 +172,12 @@ multiple properties and their values can be declared with a single property. For
 `border-width`, `border-style`, and `border-color` can be combined in `border`.
 
 However, in CSS-in-JS, shorthand properties cause issues when defined alongside their longhand
-properties, so Aesthetic offers an expanded form for a handful of shorthand properties (cue irony).
-The current shorthand properties that support an expanded form are: `animation`, `background`,
-`border`, `borderBottom`, `borderLeft`, `borderRight`, `borderTop`, `columnRule`, `flex`, `font`,
-`listStyle`, `margin`, `offset`, `outline`, `padding`, `textDecoration`, and `transition`;
+properties, so Aesthetic offers an expanded form for a handful of shorthand properties (cue irony)
+through the [@aesthetic/addon-properties](https://www.npmjs.com/package/@aesthetic/addon-properties)
+package. The current shorthand properties that support an expanded form are: `animation`,
+`background`, `border`, `borderBottom`, `borderLeft`, `borderRight`, `borderTop`, `columnRule`,
+`flex`, `font`, `listStyle`, `margin`, `offset`, `outline`, `padding`, `textDecoration`, and
+`transition`;
 
 To utilize the expanded form, define an object where each property within maps to an equivalent
 longhand property. Using the border example above, the object would look like the following:

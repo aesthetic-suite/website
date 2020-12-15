@@ -65,7 +65,7 @@ const globalSheet: GlobalStyleSheet = {
 > The `fontFamily` property can be omitted within the font face as it'll be inherited from the
 > at-rule key.
 
-Emits a `font-face` event for each declaration.
+Emits an `onFontFace` event for each declaration.
 
 ### `@import`
 
@@ -92,7 +92,7 @@ const globalSheet: GlobalStyleSheet = {
 If the `url` property is not defined, or is `false`, the import path will not be wrapped with
 `url()`.
 
-Emits an `import` event for each import.
+Emits an `onImport` event for each import.
 
 ### `@keyframes`
 
@@ -120,49 +120,7 @@ const globalSheet: GlobalStyleSheet = {
 };
 ```
 
-Emits a `keyframes` event for each declaration.
-
-### `@page`
-
-Defines a ruleset to be applied when the
-[document is printed](https://developer.mozilla.org/en-US/docs/Web/CSS/@page). Supports standard and
-pseudo-class (`:blank`, `:first`, `:left`, `:right`) declaration blocks.
-
-```ts
-const globalSheet: GlobalStyleSheet = {
-  '@page': {
-    margin: '1cm',
-
-    ':first': {
-      margin: '2cm',
-    },
-  },
-};
-```
-
-Page type selectors are also supported, and are defined with an object, where the key is the
-selector, and the value are property declarations. They can be defined in both standard and
-pseudo-class blocks.
-
-```ts
-const globalSheet: GlobalStyleSheet = {
-  '@page': {
-    size: '8.5in 11in',
-
-    '@top-right': {
-      content: '"Page" counter(page)',
-    },
-
-    ':blank': {
-      '@top-center': {
-        content: '"This page is intentionally left blank."',
-      },
-    },
-  },
-};
-```
-
-Emits a `page` event for each declaration, including selectors.
+Emits a `onKeyframes` event for each declaration.
 
 ### `@root`
 
@@ -206,28 +164,28 @@ const globalSheet: GlobalStyleSheet = {
 > The `html`, `:root`, or `*` global styles cannot be defined with a global style sheet. Those
 > category of globals should be handled outside of this system.
 
-Emits a single `root` event.
+Emits a single `onRoot` event.
 
-### `@viewport`
+### `@variables`
 
-Defines a ruleset that dictates how the
-[viewport](https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport) operates. Only accepts width,
-height, zoom, and orientation related properties.
+Defines and formats custom
+[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to be
+used at the `:root`.
 
 ```ts
 const globalSheet: GlobalStyleSheet = {
-  '@viewport': {
-    width: 'device-width',
-    orientation: 'landscape',
+  '@variables': {
+    backgroundColor: 'black',
+    fontSize: '16px',
   },
 };
 ```
 
-Emits a `viewport` event.
+Emits a single `onRootVariables` event.
 
 ## Parsing
 
-To parse a style sheet, import and instantiate the `GlobalParser`. To streamline consumption, the
+To parse a style sheet, import and run `parse()` with type `global`. To streamline consumption, the
 parser utilizes an event emitter, where each at-rule must be listened to and handled. Once listeners
 are registered, execute the `parse()` method with the style sheet.
 
@@ -235,11 +193,17 @@ Because of this architecture, you must "build" or "handle" the final result your
 below, when an event is emitted, we will insert a formatted rule into our style sheet.
 
 ```ts
-import { GlobalParser } from '@aesthetic/sss';
+import { parse } from '@aesthetic/sss';
 
 const sheet = new CSSStyleSheet();
+const styles = {
+  '@root': {
+    width: '100%',
+    textAlign: 'center',
+  },
+};
 
-const parser = new GlobalParser({
+parse('global', styles, {
   onFontFace(fontFace, family) {
     sheet.insertRule(`@font-face { ${cssify(fontFace)} }`, sheet.cssRules.length);
 
@@ -252,19 +216,6 @@ const parser = new GlobalParser({
     sheet.insertRule(`@keyframes ${name} { ${cssify(keyframes)} }`, sheet.cssRules.length);
 
     return name;
-  },
-  onPage(page) {
-    sheet.insertRule(`${page.selector} { ${cssify(page)} }`, sheet.cssRules.length);
-  },
-  onViewport(viewport) {
-    sheet.insertRule(`@viewport { ${cssify(viewport)} }`, sheet.cssRules.length);
-  },
-});
-
-parser.parse({
-  '@viewport': {
-    width: 'device-width',
-    orientation: 'landscape',
   },
 });
 ```

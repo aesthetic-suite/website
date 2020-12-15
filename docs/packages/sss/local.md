@@ -65,7 +65,7 @@ const localSheet: LocalStyleSheet = {
 };
 ```
 
-Emits a `block:fallback` event per property with an array of values.
+Emits an `onFallback` event per property with an array of values.
 
 ### `@media`
 
@@ -90,7 +90,7 @@ const localSheet: LocalStyleSheet = {
 };
 ```
 
-Emits a `block:media` event per media query declaration.
+Emits an `onMedia` event per media query declaration.
 
 ### `@selectors`
 
@@ -133,7 +133,7 @@ const localSheet: LocalStyleSheet = {
 };
 ```
 
-Emits a `block:selector`, `block:pseudo`, or `block:attribute` event per selector declaration.
+Emits an `onSelector`, `onPseudo`, or `onAttribute` event per selector declaration.
 
 ### `@supports`
 
@@ -158,7 +158,7 @@ const localSheet: LocalStyleSheet = {
 };
 ```
 
-Emits a `block:media` event per feature query declaration.
+Emits an `onSupports` event per feature query declaration.
 
 ### `@variables`
 
@@ -180,7 +180,7 @@ const localSheet: LocalStyleSheet = {
 > Variable values are not transformed in any way, so they must be explicit. For example, unitless
 > values are not supported for values that require a unit suffix.
 
-Emits a `block:variable` event for each CSS variable.
+Emits an `onVariable` event for each CSS variable.
 
 ### `@variants`
 
@@ -213,11 +213,11 @@ const localSheet: LocalStyleSheet = {
 The variant block _does not_ merge into the parent block, as the consumer should handle what to do
 with variants. If no custom handling is provided, variants are a no-op.
 
-Emits a `block:variant` event for each CSS variant object.
+Emits an `onVariant` event for each CSS variant object.
 
 ## Parsing
 
-To parse a style sheet, import and instantiate the `LocalParser`. To streamline consumption, the
+To parse a style sheet, import and run `parse()` with type `local`. To streamline consumption, the
 parser utilizes an event emitter, where each at-rule must be listened to and handled. Once listeners
 are registered, execute the `parse()` method with the style sheet.
 
@@ -226,11 +226,28 @@ event that starts with `block:` is automatically handled by modifying the object
 `block` and `ruleset` events. Typically these do not need to be defined.
 
 ```ts
-import { LocalParser } from '@aesthetic/sss';
+import { parse } from '@aesthetic/sss';
 
 const sheet = new CSSStyleSheet();
+const styles = {
+  container: {
+    display: 'flex',
+    maxWidth: '100%',
+  },
 
-const parser = new LocalParser({
+  button: {
+    display: 'inline-block',
+    textAlign: 'center',
+    padding: '8px 12px',
+    borderRadius: '3px',
+  },
+
+  button_active: {
+    fontWeight: 'bold',
+  },
+};
+
+parse('local', styles, {
   // For `fontFamily` property
   onFontFace(fontFace, family) {
     sheet.insertRule(`@font-face { ${cssify(fontFace)} }`, sheet.cssRules.length);
@@ -248,24 +265,6 @@ const parser = new LocalParser({
       `.${createClassName(selector)} { ${cssify(declaration)} }`,
       sheet.cssRules.length,
     );
-  },
-});
-
-parser.parse({
-  container: {
-    display: 'flex',
-    maxWidth: '100%',
-  },
-
-  button: {
-    display: 'inline-block',
-    textAlign: 'center',
-    padding: '8px 12px',
-    borderRadius: '3px',
-  },
-
-  button_active: {
-    fontWeight: 'bold',
   },
 });
 ```

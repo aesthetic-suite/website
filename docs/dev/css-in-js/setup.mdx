@@ -21,7 +21,6 @@ Next you'll need to install an [integration](../../integrations.md) of your choi
 >
   <TabItem value="yarn">
 
-
 ```bash
 yarn add @aesthetic/<integration>
 ```
@@ -29,14 +28,12 @@ yarn add @aesthetic/<integration>
   </TabItem>
   <TabItem value="npm">
 
-
 ```bash
 npm install @aesthetic/<integration>
 ```
 
   </TabItem>
 </Tabs>
-
 
 Lastly, create a setup file for Aesthetic based configuration, typically within your project source.
 We'll name ours `setup.ts` going forward.
@@ -47,6 +44,6 @@ touch setup.ts
 
 ## Preface
 
-In this documentation, you'll come across code examples that import from `@aesthetic/core`. This
-module _should_ be replaced with your integration of choice. For example, if you're using React, you
-should import from `@aesthetic/react` instead.
+In this documentation, you'll come across code examples that import from `@aesthetic/<integration>`.
+This module _should_ be replaced with your integration of choice. For example, if you're using
+React, you should import from `@aesthetic/react` instead.

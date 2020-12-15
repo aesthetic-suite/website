@@ -21,7 +21,7 @@ The currently active direction can be changed programmatically by calling the `c
 method within in your application. This will update the `dir` attribute on the document.
 
 ```ts
-import { changeDirection } from '@aesthetic/core';
+import { changeDirection } from '@aesthetic/<integration>';
 
 changeDirection('rtl');
 ```

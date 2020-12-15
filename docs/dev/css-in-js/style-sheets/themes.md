@@ -12,7 +12,7 @@ passed on a theme-by-theme basis during registration with `registerTheme()` or
 `registerDefaultTheme()`. Feel free to add a style sheet to one or many themes.
 
 ```ts title="setup.ts"
-import { createThemeStyles, registerTheme } from '@aesthetic/core';
+import { createThemeStyles, registerTheme } from '@aesthetic/<integration>';
 import dayTheme from './system/themes/day';
 import nightTheme from './system/themes/night';
 

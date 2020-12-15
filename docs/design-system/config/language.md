@@ -8,30 +8,12 @@ spacing, through the `.aesthetic/<name>/language.yaml` file.
 
 ## Responsive
 
-### Strategy
-
-> Platforms: Web
-
-First and foremost, the design system needs to know which device is top priority, mobile or desktop?
-This strategy is then referenced internally throughout the configuration, as other settings react to
-it, like breakpoints.
-
-By default, the `responsive.strategy` setting is set to "mobile-first", but also accepts
-"desktop-first".
-
-```yaml title="language.yaml"
-responsive:
-  strategy: mobile-first
-```
-
 ### Breakpoints
 
 > Platforms: Android, Web
 
-Breakpoints integrate with the strategy above to provide responsive support, based on the device
-viewport and orientation. When `responsive.strategy` is "mobile-first", the breakpoints will be
-sorted from lowest to highest, and reversed for "desktop-first". This ensures the correct
-specificity takes place.
+Breakpoints provide responsive support using a "mobile-first" approach are are based on the device
+viewport and orientation.
 
 The `responsive.breakpoints` setting _requires 5 breakpoints_ ranging from smallest to largest, in
 either a list or map, with values being a [unit](../config.md#unitless-values). On the web, these

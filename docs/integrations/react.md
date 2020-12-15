@@ -23,4 +23,4 @@ a design system.
 
 ## Requirements
 
-- React 16.6+
+- React 16.6+ / 17+

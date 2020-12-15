@@ -2,6 +2,9 @@
 title: Using themes
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 > Knowledge of [themes](../../dev/css-in-js/themes.md) is required.
 
 To provide the active theme to all React components, we'll need to render a `ThemeProvider` at the
@@ -72,7 +75,17 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 ## Accessing the theme
 
 To manually access the provided `Theme` object, either from the root or contextually, use the
-`useTheme()` hook.
+`useTheme()` hook or `withTheme()` HOC.
+
+<Tabs
+  groupId="api-type"
+  defaultValue="hook"
+  values={[
+    { label: 'Hook', value: 'hook' },
+    { label: 'HOC', value: 'hoc' },
+  ]}
+>
+  <TabItem value="hook">
 
 ```tsx {4,6}
 import { useTheme } from '@aesthetic/react';
@@ -88,7 +101,8 @@ export default function Component() {
 }
 ```
 
-Or use the `withTheme()` HOC, which passes the theme as a `theme` prop.
+  </TabItem>
+  <TabItem value="hoc">
 
 ```tsx {3,4,11}
 import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
@@ -103,3 +117,6 @@ function Component({ theme }: WithThemeWrappedProps) {
 
 export default withTheme()(Component);
 ```
+
+  </TabItem>
+</Tabs>

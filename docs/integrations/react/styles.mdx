@@ -2,6 +2,9 @@
 title: Styling components
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 > Knowledge of [style sheets](../../dev/css-in-js/style-sheets.md) is required.
 
 Components are styled with the `useStyles()` hook (preferred) or the `withStyles()`
@@ -12,9 +15,9 @@ to generate atomic class names.
 To continue with the example found in the style sheet documentation, let's design and style a button
 component. The button file would look something like the following.
 
-```tsx {4,41}
+```tsx {4}
 import React from 'react';
-import { useStyles, createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
+import { createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react';
 
 export const styleSheet = createComponentStyles((css) => ({
   button: css.mixin.resetButton({
@@ -51,19 +54,59 @@ export interface ButtonProps {
   selected?: boolean;
   size?: CommonSize;
 }
+```
+
+<Tabs
+  groupId="api-type"
+  defaultValue="hook"
+  values={[
+    { label: 'Hook', value: 'hook' },
+    { label: 'HOC', value: 'hoc' },
+  ]}
+>
+  <TabItem value="hook">
+
+```tsx {4}
+import { useStyles } from '@aesthetic/react';
 
 export default function Button({ children, beforeIcon, afterIcon }: ButtonProps) {
   const cx = useStyles(styleSheet);
 
   return (
-    <button type="button">
-      {beforeIcon && <span>{beforeIcon}</span>}
+    <button type="button" className={cx('button')}>
+      {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
       {children}
-      {afterIcon && <span>{afterIcon}</span>}
+      {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
     </button>
   );
 }
 ```
+
+  </TabItem>
+  <TabItem value="hoc">
+
+```tsx {5,17}
+import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
+
+class Button extends React.Component<ButtonProps & WithStylesWrappedProps> {
+  render() {
+    const { cx, children, beforeIcon, afterIcon } = this.props;
+
+    return (
+      <button type="button" className={cx('button')}>
+        {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
+        {children}
+        {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
+      </button>
+    );
+  }
+}
+
+export default withStyles(styleSheet)(Button);
+```
+
+  </TabItem>
+</Tabs>
 
 > If you're designing components for a library that'll be consumed externally, we suggest exporting
 > the style sheet so that consumers may customize variants.
@@ -126,38 +169,3 @@ function Button({ selected, disabled, size = 'df', palette = 'primary' }: Button
 
 > NOTE: The order of selectors passed to `cx()` does not determine the specificity. The order they
 > are defined in the style sheet does! Be aware of this when developing.
-
-## HOC example
-
-We provide an HOC based API to support legacy and class components. This HOC uses hooks internally,
-so you'll at least need the latest React version to function correctly. Below is what an HOC button
-class component would look like, using the example from above.
-
-```tsx {4,14,26}
-import React from 'react';
-import { withStyles, WithStylesWrappedProps, createComponentStyles } from '@aesthetic/react';
-
-export const styleSheet = createComponentStyles((css) => ({
-  // ...
-}));
-
-export interface ButtonProps {
-  // ...
-}
-
-class Button extends React.Component<ButtonProps & WithStylesWrappedProps> {
-  render() {
-    const { cx } = this.props;
-
-    return (
-      <button type="button" className={cx('button')}>
-        {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
-        {children}
-        {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
-      </button>
-    );
-  }
-}
-
-export default withStyles(styleSheet)(Button);
-```

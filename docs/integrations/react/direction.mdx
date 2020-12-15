@@ -2,6 +2,9 @@
 title: Directionality
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 > Knowledge of [directionality](../../dev/css-in-js/direction.md) is required.
 
 A `DirectionProvider` is available for controlling the direction of a target React component tree.
@@ -17,8 +20,8 @@ import Component from './Component';
 </DirectionProvider>;
 ```
 
-The `wrapper` prop above is required and must be passed a React element. The element is then passed
-a `dir` attribute and implicitly supports other environments like React Native.
+> The `wrapper` prop above is required and must be passed a React element. The element is then
+> passed a `dir` attribute and implicitly supports other environments like React Native.
 
 ## Contextual direction
 
@@ -54,7 +57,17 @@ the user is typing in Arabic, the direction would be `rtl`, so on and so forth.
 ## Accessing the direction
 
 To manually access the current direction, either from the document or a provider, use the
-`useDirection()` hook.
+`useDirection()` hook or `withDirection()` HOC.
+
+<Tabs
+  groupId="api-type"
+  defaultValue="hook"
+  values={[
+    { label: 'Hook', value: 'hook' },
+    { label: 'HOC', value: 'hoc' },
+  ]}
+>
+  <TabItem value="hook">
 
 ```tsx {4,6}
 import { useDirection } from '@aesthetic/react';
@@ -70,7 +83,8 @@ export default function Component() {
 }
 ```
 
-Or use the `withDirection()` HOC, which passes the direction as a `direction` prop.
+  </TabItem>
+  <TabItem value="hoc">
 
 ```tsx {3,4,11}
 import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
@@ -85,3 +99,6 @@ function Component({ direction }: WithDirectionWrappedProps) {
 
 export default withDirection()(Component);
 ```
+
+  </TabItem>
+</Tabs>

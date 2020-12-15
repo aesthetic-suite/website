@@ -104,7 +104,7 @@ const BlockButton = createStyled(Button, {
   width: '100%',
 });
 
-const PillButton = createStyled(BlockButton, {
+const PillBlockButton = createStyled(BlockButton, {
   borderRadius: '50%',
 });
 ```

@@ -12,11 +12,12 @@ Provides a direction to all children using context. Accepts the following option
 - `inline` (`boolean`) - Render an inline element instead of block.
 - `value` (`string`) - Locale aware string to deduce the direction from. Should not be used with
   `direction`.
+- `wrapper` (`ReactElement`) - Element to wrap the children in. _(Required)_
 
 ```tsx
 import { DirectionProvider } from '@aesthetic/react';
 
-<DirectionProvider direction="rtl">
+<DirectionProvider direction="rtl" wrapper={<div />}>
   <Component />
 </DirectionProvider>;
 ```
@@ -43,6 +44,7 @@ Provides a theme to a target component tree and will override the root theme. Re
 prop.
 
 - `name` (`string`) - Explicit name of a theme to provide.
+- `wrapper` (`ReactElement`) - Element to wrap the children in. _(Required)_
 
 ```tsx
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
@@ -50,7 +52,7 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 <ThemeProvider>
   <Component />
 
-  <ContextualThemeProvider name="night">
+  <ContextualThemeProvider name="night" wrapper={<div />}>
     <Component />
   </ContextualThemeProvider>
 </ThemeProvider>;

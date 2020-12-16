@@ -421,7 +421,7 @@ The following options are supported:
 - `scheme` (`light | dark`) - Color scheme variant to activate.
 - `theme` (`string`) - Theme instance to pass to style sheets. Defaults to the active theme.
 - `unit` (`string`) - Default unit suffix. Defaults to `defaultUnit` option.
-- `vendor` (`boolean`) - Apply vendor prefixes (if configured). Defaults to `vendorPrefixes`.
+- `vendor` (`boolean`) - Apply vendor prefixes (if configured). Defaults to `vendorPrefixer`.
 
 ## References
 

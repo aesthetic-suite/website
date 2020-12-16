@@ -2,7 +2,7 @@
 title: API
 ---
 
-## `Renderer`
+## Engine
 
 ### `RenderOptions`
 
@@ -11,26 +11,26 @@ for more information.
 
 - `deterministic` (`boolean`) - Generate class names using a deterministic hash (`c1sjakp`) instead
   of an auto-incremented value (`a1`). Useful for scenarios like unit tests. Defaults to `false`.
+- `direction` (`ltr | rtl`) - Convert and swap LTR (left-to-right) based declarations to RTL
+  (right-to-left).
+- `conditions` (`string[]`) - List of media and feature queries to wrap the declaration with.
 - `rankings` (`object`) - An empty object to use for specificity ranking cache lookups. Useful for
   ensuring the correct specificity when order of declarations change.
-- `rtl` (`boolean`) - Convert and swap LTR (left-to-right) based declarations to RTL
-  (right-to-left). Defaults to `false`.
 - `selector` (`string`) - A CSS selector to scope the declaration(s) within. This is handled
   automatically when using [rules](#renderrule).
-- `unit` (`string | (prop: string) => string`) - A unit to append to numerical values. Can be a
-  string or a function that returns a string. Defaults to `px`.
+- `unit` (`string`) - A unit to append to numerical values. Defaults to `px`.
 - `vendor` (`boolean`) - Apply vendor prefixes to properties and values that require it. We prefix
   features for browsers with >= 1% market share. Defaults to `false`.
 
-### `applyRootVariables`
+### `setRootVariables`
 
-> Renderer#applyRootVariables(vars: CSSVariables): void
+> Engine#setRootVariables(vars: CSSVariables): void
 
 Applies CSS variables to the document `:root`. Variable names can be defined in camel-case or
 standard variable format (leading `--`).
 
 ```ts
-renderer.applyRootVariables({
+engine.setRootVariables({
   '--font-color': 'black',
   backgroundColor: 'white',
 });
@@ -38,14 +38,14 @@ renderer.applyRootVariables({
 
 ### `renderDeclaration`
 
-> Renderer#renderDeclaration\<K extends Property\>(property: K, value: Properties[K], options?:
+> Engine#renderDeclaration\<K extends Property\>(property: K, value: Properties[K], options?:
 > RenderOptions): ClassName
 
 Renders a property-value pair, known as a CSS declaration, and returns a CSS class name. Will return
 the same class name for the same property-value pair.
 
 ```ts
-const className = renderer.renderDeclaration('display', 'block'); // -> a
+const className = engine.renderDeclaration('display', 'block'); // -> a
 ```
 
 ```css
@@ -58,7 +58,7 @@ Declarations can also be scoped within a selector (pseudo, attribute, etc) by us
 option.
 
 ```ts
-const className = renderer.renderDeclaration('display', 'block', { selector: ':hover' }); // -> b
+const className = engine.renderDeclaration('display', 'block', { selector: ':hover' }); // -> b
 ```
 
 ```css
@@ -69,13 +69,13 @@ const className = renderer.renderDeclaration('display', 'block', { selector: ':h
 
 ### `renderRule`
 
-> Renderer#renderRule(properties: Rule, options?: RenderOptions): ClassName
+> Engine#renderRule(properties: Rule, options?: RenderOptions): ClassName
 
 Renders a collection of property-value pairs, known as a CSS rule (or ruleset), and returns a CSS
 class name for each declaration. A collection of declarations is known as a _style object_.
 
 ```ts
-const className = renderer.renderRule({
+const className = engine.renderRule({
   display: 'block',
   textAlign: 'center',
   background: 'transparent',
@@ -98,7 +98,7 @@ Rules can also infinitely render nested `@media` queries, `@supports` queries, p
 elements, attributes, combinators, and other selectors, by declaring nested _style objects_.
 
 ```ts
-const className = renderer.renderRule({
+const className = engine.renderRule({
   display: 'block',
   background: 'gray',
 
@@ -114,7 +114,7 @@ const className = renderer.renderRule({
 
 ### `renderRuleGrouped`
 
-> Renderer#renderRuleGrouped(properties: Rule, options?: RenderOptions): ClassName
+> Engine#renderRuleGrouped(properties: Rule, options?: RenderOptions): ClassName
 
 Grouped rules work in a similar fashion to [rules](#renderrule), but instead of creating a unique
 class per declaration (atomic), they group all declarations within a single class (non-atomic). This
@@ -122,7 +122,7 @@ exists for situations where all styles need to be encapsulated under a single cl
 example, themes.
 
 ```ts
-const className = renderer.renderRuleGrouped({
+const className = engine.renderRuleGrouped({
   display: 'block',
   textAlign: 'center',
   background: 'transparent',
@@ -142,13 +142,13 @@ const className = renderer.renderRuleGrouped({
 
 ### `renderFontFace`
 
-> Renderer#renderFontFace(fontFace: FontFace, options?: RenderOptions): string
+> Engine#renderFontFace(fontFace: FontFace, options?: RenderOptions): string
 
 Renders a _font face object_ as a `@font-face` at-rule and returns the font family name. If the
 `fontFamily` property is not defined, a unique collision-free one will be generated.
 
 ```ts
-const fontFamily = renderer.renderFontFace({
+const fontFamily = engine.renderFontFace({
   fontFamily: 'Roboto',
   fontStyle: 'normal',
   fontWeight: 800,
@@ -164,13 +164,13 @@ const fontFamily = renderer.renderFontFace({
 
 ### `renderImport`
 
-> Renderer#renderImport(path: string): void
+> Engine#renderImport(url: string, options?: RenderOptions): void
 
-Renders a CSS file path as an `@import` at-rule. Does not format the path, so proper quotes and
-syntax are required.
+Renders a CSS file path as an `@import` at-rule. Only accepts the URL. Use the `conditions` option
+to apply media queries.
 
 ```ts
-renderer.renderImport(`url('./path/to/file.css')`);
+engine.renderImport('./path/to/file.css');
 ```
 
 ```css
@@ -179,14 +179,14 @@ renderer.renderImport(`url('./path/to/file.css')`);
 
 ### `renderKeyframes`
 
-> Renderer#renderKeyframes(keyframes: Keyframes, name?: string, options?: RenderOptions): string
+> Engine#renderKeyframes(keyframes: Keyframes, name?: string, options?: RenderOptions): string
 
 Renders a _keyframes object_ as a `@keyframes` at-rule and returns the animation name. A custom
 animation name may be provided as the 2rd argument (does not account for collision), otherwise a
 unique collision-free one will be generated.
 
 ```ts
-const animationName = renderer.renderKeyframes({
+const animationName = engine.renderKeyframes({
   from: {
     transform: 'translateX(0%)',
   },
@@ -202,47 +202,43 @@ const animationName = renderer.renderKeyframes({
 }
 ```
 
-## `ClientRenderer`
-
-### `hydrateStyles`
-
-> ClientRenderer#hydrateStyles(): void
-
-Queries the document for all Aesthetic owned `style` tags (rendered by the server) and hydrates the
-renderer's cache with applicable CSS information -- everything from class names to at-rules. _Must
-be_ run in the browser.
-
-```ts
-renderer.hydrateStyles();
-```
-
-## `ServerRenderer`
+## Server-side
 
 Read the documentation on [server-side rendering](./ssr.md) to utilize this correctly.
 
 ### `extractStyles`
 
-> ServerRenderer#extractStyles(app: React.ReactElement): React.ReactElement
+> extractStyles(app: React.ReactElement, engine: Engine): React.ReactElement
 
 Extracts critical CSS from the application being rendered (without layout HTML) by injecting the
-current server renderer. CSS must then be [rendered to style tags](#rendertostylemarkup).
+current server engine. CSS must then be [rendered to style tags](#rendertostylemarkup).
 
 ```tsx
-const app = renderer.extractStyles(<App />);
+const app = extractStyles(<App />, engine);
 ```
 
 ### `renderToStyleMarkup`
 
-> ServerRenderer#renderToStyleMarkup(): string
+> renderToStyleMarkup(engine: Engine): string
 
 Renders [extracted styles](#extractstyles) into a collection of `style` tags for
 [hydration](#hydratestyles). Tags must be included in the HTML response.
 
 ```ts
-const markup = renderer.renderToStyleMarkup();
+const markup = renderToStyleMarkup(engine);
 ```
 
 ## Testing
+
+### `createTestStyleEngine`
+
+> createTestStyleEngine(options?: EngineOptions): Engine
+
+Create a style engine pre-configured for testing.
+
+```ts
+const engine = createTestStyleEngine();
+```
 
 ### `getRenderedStyles`
 

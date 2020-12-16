@@ -32,7 +32,7 @@ information on them.
 - `directionConverter` - (`DirectionConverter`) - Function that converts a property or value to
   their opposite direction. Supported by
   [@aesthetic/addon-direction](https://www.npmjs.com/package/@aesthetic/addon-direction).
-- `vendorPrefixes` (`VendorPrefixer`) - Apply vendor prefixes to properties and values that require
+- `vendorPrefixer` (`VendorPrefixer`) - Apply vendor prefixes to properties and values that require
   it. We prefix features for browsers with >= 1% market share. Supported by
   [@aesthetic/addon-vendor](https://www.npmjs.com/package/@aesthetic/addon-vendor).
 

@@ -14,34 +14,30 @@ engine. It can be used stand-alone but has been designed to power additional abs
 - [API](./style/api.md)
 
 ```ts
-import { ClientRenderer } from '@aesthetic/style';
+import { createClientEngine } from '@aesthetic/style';
 
-// Instantiate a client side renderer
-const renderer = new ClientRenderer();
+// Instantiate a client side (DOM) engine
+const engine = createClientEngine();
 
 // Render a style decleration into individual atomic class names
-const className = renderer.renderRule(
-  {
-    margin: 0,
-    padding: '6px 12px',
-    textAlign: 'center',
-    color: 'var(--color)',
-    backgroundColor: 'transparent',
-    border: '2px solid #eee',
+const className = engine.renderRule({
+  '--color': 'black',
 
-    ':hover': {
-      borderColor: '#fff',
-    },
+  margin: 0,
+  padding: '6px 12px',
+  textAlign: 'center',
+  color: 'var(--color)',
+  backgroundColor: 'transparent',
+  border: '2px solid #eee',
 
-    '@media (max-width: 600px)': {
-      display: 'block',
-    },
+  ':hover': {
+    borderColor: '#fff',
   },
-  {
-    vendor: true,
-    rtl: true,
+
+  '@media (max-width: 600px)': {
+    display: 'block',
   },
-); // -> a b c d e f g h
+}); // -> a b c d e f g h
 ```
 
 ## What it provides

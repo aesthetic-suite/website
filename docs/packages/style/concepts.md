@@ -191,8 +191,7 @@ const rule: Rule = {
 };
 ```
 
-Root level variables can be defined with the [applyRootVariables()](./api.md#applyrootvariables)
-method.
+Root level variables can be defined with the [setRootVariables()](./api.md#setrootvariables) method.
 
 ### Font faces
 
@@ -218,13 +217,11 @@ Font faces can be rendered with the [renderFontFace()](./api.md#renderfontface) 
 
 Imports are used to include external
 [CSS style sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/@import), not CSS-in-JS, with
-the `@import` at-rule. Since imports are strings and not objects, be sure to properly
-[quote](#properly-quoted-values) and use valid syntax.
+the `@import` at-rule. Aesthetic abstracts all the complexity away, so only the URL should be
+provided.
 
 ```ts
-const path = '"test.css"';
-const path = 'url("test.css")';
-const path = 'url("test.css") print';
+const path = 'path/to/test.css';
 ```
 
 Imports can be rendered with the [renderImport()](./api.md#renderimport) method.

@@ -13,12 +13,12 @@ approach, where we combine an alphabet character and a counter, to return names 
 insertion may change, or the autoincremented value may differ, as shown below.
 
 ```ts
-renderer.renderDeclaration('margin', 0); // -> a
-renderer.renderDeclaration('display', 'flex'); // -> b
+engine.renderDeclaration('margin', 0); // -> a
+engine.renderDeclaration('display', 'flex'); // -> b
 
 // Page refreshed and order changes
-renderer.renderDeclaration('display', 'flex'); // -> a
-renderer.renderDeclaration('margin', 0); // -> b
+engine.renderDeclaration('display', 'flex'); // -> a
+engine.renderDeclaration('margin', 0); // -> b
 ```
 
 That being said, Aesthetic does support the concept of deterministic classes, where the same class
@@ -29,12 +29,12 @@ generating a unique class name based on the hash.
 Deterministic classes can be enabled when [rendering](./api.md) by using the `deterministic` option.
 
 ```ts
-renderer.renderDeclaration('margin', 0, { deterministic: true }); // -> c1cpw2zw
-renderer.renderDeclaration('display', 'flex', { deterministic: true }); // -> cu4ygwf
+engine.renderDeclaration('margin', 0, { deterministic: true }); // -> c1cpw2zw
+engine.renderDeclaration('display', 'flex', { deterministic: true }); // -> cu4ygwf
 
 // Page refreshed and order changes
-renderer.renderDeclaration('display', 'flex', { deterministic: true }); // -> cu4ygwf
-renderer.renderDeclaration('margin', 0, { deterministic: true }); // -> c1cpw2zw
+engine.renderDeclaration('display', 'flex', { deterministic: true }); // -> cu4ygwf
+engine.renderDeclaration('margin', 0, { deterministic: true }); // -> c1cpw2zw
 ```
 
 ## Directionality
@@ -42,13 +42,11 @@ renderer.renderDeclaration('margin', 0, { deterministic: true }); // -> c1cpw2zw
 Directionality is the concept of localizing the direction of styles to support
 [RTL (right-to-left)](https://developer.mozilla.org/en-US/docs/Glossary/rtl) languages. By default,
 Aesthetic assumes and requires all styles to be
-[LTR (left-to-right)](https://developer.mozilla.org/en-US/docs/Glossary/LTR). To swap property and
-value direction, we utilize the popular [rtl-css-js](https://github.com/kentcdodds/rtl-css-js)
-library.
+[LTR (left-to-right)](https://developer.mozilla.org/en-US/docs/Glossary/LTR).
 
 ```ts
 // Left-to-right
-const className = renderer.renderRule({
+const className = engine.renderRule({
   marginLeft: '10px',
   paddingRight: 0,
   textAlign: 'left',
@@ -67,18 +65,20 @@ const className = renderer.renderRule({
 }
 ```
 
-RTL can be enabled when [rendering](./api.md) by using the `rtl` option.
+RTL can be enabled when [rendering](./api.md) by configuring the
+[@aesthetic/addon-direction](https://www.npmjs.com/package/@aesthetic/addon-direction) package and
+using the `direction` option.
 
 ```ts
 // Right-to-left
-const className = renderer.renderRule(
+const className = engine.renderRule(
   {
     marginLeft: '10px',
     paddingRight: 0,
     textAlign: 'left',
   },
   {
-    rtl: true,
+    direction: 'rtl,
   },
 ); // -> d e f
 ```
@@ -107,7 +107,7 @@ to read and write, and as such, Aesthetic supports this pattern. By default, all
 are automatically suffixed with `px`, unless the property in question requires no unit.
 
 ```ts
-const className = renderer.renderRule({
+const className = engine.renderRule({
   marginLeft: 10,
   lineHeight: 1.25,
 }); // -> a b
@@ -127,7 +127,7 @@ string.
 
 ```ts
 // All units as "rem"
-const className = renderer.renderRule(
+const className = engine.renderRule(
   {
     marginLeft: 10,
     paddingBottom: 15,
@@ -147,35 +147,6 @@ const className = renderer.renderRule(
 }
 ```
 
-Or a function that returns a string, in which the unit can be changed based on property name (in
-kebab-case).
-
-```ts
-// Different unit per property
-const className = renderer.renderRule(
-  {
-    marginLeft: 10,
-    paddingBottom: 15,
-  },
-  {
-    unit(prop) {
-      if (prop === 'margin-left') return 'em';
-      if (prop === 'padding-bottom') return '%';
-      // Otherwise px
-    },
-  },
-); // -> a b
-```
-
-```css
-.a {
-  margin-left: 10em;
-}
-.b {
-  padding-bottom: 15%;
-}
-```
-
 ## Vendor prefixes
 
 Aesthetic implements a custom runtime for
@@ -186,7 +157,7 @@ prefixes.
 
 ```ts
 // Without vendor prefixing
-const className = renderer.renderRule({
+const className = engine.renderRule({
   appearance: 'none',
   minWidth: 'fit-content',
 }); // -> a b
@@ -201,11 +172,13 @@ const className = renderer.renderRule({
 }
 ```
 
-Prefixes can be enabled when [rendering](./api.md) by using the `vendor` option.
+Prefixes can be enabled when [rendering](./api.md) by configuring the
+[@aesthetic/addon-vendor](https://www.npmjs.com/package/@aesthetic/addon-vendor) package and using
+the `vendor` option.
 
 ```ts
 // With vendor prefixing
-const className = renderer.renderRule(
+const className = engine.renderRule(
   {
     appearance: 'none',
     minWidth: 'fit-content',
@@ -253,8 +226,8 @@ supports the concept of specificity rankings, where each class name is given a r
 insertion order.
 
 ```ts
-const a = renderer.renderDeclaration('color', 'red'); // -> a (rank 1)
-const b = renderer.renderDeclaration('color', 'blue'); // -> b (rank 2)
+const a = engine.renderDeclaration('color', 'red'); // -> a (rank 1)
+const b = engine.renderDeclaration('color', 'blue'); // -> b (rank 2)
 
 // Will be blue, even though a comes after b
 const className = `${b} ${a}`;
@@ -270,9 +243,9 @@ cache and lookup for rank resolutions.
 
 ```ts
 const rankings = {};
-const a = renderer.renderDeclaration('color', 'red', { rankings }); // -> a (rank 1)
-const b = renderer.renderDeclaration('color', 'blue', { rankings }); // -> b (rank 2)
-const c = renderer.renderDeclaration('color', 'red', { rankings }); // -> c (rank 3)
+const a = engine.renderDeclaration('color', 'red', { rankings }); // -> a (rank 1)
+const b = engine.renderDeclaration('color', 'blue', { rankings }); // -> b (rank 2)
+const c = engine.renderDeclaration('color', 'red', { rankings }); // -> c (rank 3)
 
 // Will be red since c overrides all
 const className = `${b} ${a} ${c}`;

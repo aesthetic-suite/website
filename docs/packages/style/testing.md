@@ -3,14 +3,14 @@ title: Test utilities
 ---
 
 Aesthetic provides a few utilities for testing rendered styles in a streamlined way, all of which
-can be imported from the `@aesthetic/style/testing` module.
+can be imported from the `@aesthetic/style/test` module.
 
 The most important utility is the `purgeStyles()` function, which should be called after each test
 so that document CSS is reset. If not called, you may see unexpected results, where the CSS from
 different tests will bleed into each other.
 
 ```ts
-import { purgeStyles } from '@aesthetic/style/testing';
+import { purgeStyles } from '@aesthetic/style/test';
 
 afterEach(() => {
   purgeStyles();
@@ -22,7 +22,7 @@ Useful for snapshots and visual comparisons. This function requires a type (`glo
 or `standard`) to determine which `<style />` element to read CSS from.
 
 ```tsx
-import { getRenderedStyles } from '@aesthetic/style/testing';
+import { getRenderedStyles } from '@aesthetic/style/test';
 
 it('renders a component', () => {
   render(<Example />);

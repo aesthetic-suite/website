@@ -17,14 +17,12 @@ Install with NPM or Yarn. No additional dependencies are required.
 >
   <TabItem value="yarn">
 
-
 ```bash
 yarn add @aesthetic/style
 ```
 
   </TabItem>
   <TabItem value="npm">
-
 
 ```bash
 npm install @aesthetic/style
@@ -33,21 +31,20 @@ npm install @aesthetic/style
   </TabItem>
 </Tabs>
 
-
 ## Usage
 
-We implement and provide what's known as a renderer. The renderer handles all the heavy lifting
-behind a streamlined API, but at a high-level, it converts _style objects_ to
+We implement and provide what's known as an engine. The engine handles all the heavy lifting behind
+a streamlined API, but at a high-level, it converts _style objects_ to
 [atomic CSS](https://css-tricks.com/lets-define-exactly-atomic-css/), which it then inserts into the
 document as performant as possible.
 
-To begin, import and instantiate the `ClientRenderer` from `@aesthetic/style`. This renderer was
-designed for the browser, but an alternative exists for [server-side rendering](./ssr.md).
+To begin, import and call `createClientEngine()` from `@aesthetic/style`. This engine was designed
+for the browser, but an alternative exists for [server-side rendering](./ssr.md).
 
 ```ts
-import { ClientRenderer } from '@aesthetic/style';
+import { createClientEngine } from '@aesthetic/style';
 
-const renderer = new ClientRenderer();
+const engine = createClientEngine();
 ```
 
 You can then render CSS declarations and rules to generate atomic class names (1 class name per
@@ -55,7 +52,7 @@ declaration). Rendered styles are batched and inserted every animation frame, in
 repaints and layout tearing.
 
 ```ts
-const className = renderer.renderRule({
+const className = engine.renderRule({
   margin: 0,
   padding: '6px 12px',
   textAlign: 'center',
@@ -82,9 +79,9 @@ continue reading the following chapters.
 
 ## Style sheet order
 
-The renderer implements a unique approach around managing `<style />` elements, as it uses 3
-elements unlike most competitors which use 1. By using multiple elements, we can ensure proper
-specificity and ordering of styles. In document order, the style sheets are:
+The engine implements a unique approach around managing `<style />` elements, as it uses 3 elements
+unlike most competitors which use 1. By using multiple elements, we can ensure proper specificity
+and ordering of styles. In document order, the style sheets are:
 
 - **Globals** are the 1st style sheet. Primarily used for rendering root level at-rules like
   `@font-face` and `@keyframes`, but can house anything.

@@ -2,33 +2,32 @@
 title: Server-side rendering
 ---
 
-Aesthetic supports server-side rendering _and_ client-side hydration. However, it does require a bit
-of setup on both ends.
+Aesthetic supports server-side rendering _and_ client-side hydration (this happens automatically).
+However, it does require a bit of setup.
 
 ## Server
 
-On the server, we'll need to import and instantiate the `ServerRenderer` from
-`@aesthetic/style/server` to extract critical CSS with `extractStyles()`. We can do this as part of
-the React DOM server rendering process. In the example below, we'll use
-[Express](https://expressjs.com/) as our server.
+On the server, we'll need to import and call `createServerEngine()` from `@aesthetic/style/server`
+to extract critical CSS with `extractStyles()`. We can do this as part of the React DOM server
+rendering process. In the example below, we'll use [Express](https://expressjs.com/) as our server.
 
 ```tsx {3,10,13,16}
 import express from 'express';
 import ReactDOMServer from 'react-dom/server';
-import { ServerRenderer } from '@aesthetic/style/server';
+import { createServerEngine, extractStyles, renderToStyleMarkup } from '@aesthetic/style/server';
 import App from './path/to/client/App';
 
 const server = express();
 
 server.get('/', (req, res) => {
-  // Instantiate a renderer for the server
-  const renderer = new ServerRenderer();
+  // Instantiate an engine for the server
+  const engine = createServerEngine();
 
-  // Render the application and extract critical CSS with the renderer
-  const content = ReactDOMServer.renderToString(renderer.extractStyles(<App />));
+  // Render the application and extract critical CSS with the engine
+  const content = ReactDOMServer.renderToString(extractStyles(<App />, engine));
 
   // Convert the extracted styles to HTML `style` tags
-  const styles = renderer.renderToStyleMarkup();
+  const styles = renderToStyleMarkup(engine);
 
   // Render using your preferred template engine
   res.render('layout', {
@@ -64,37 +63,16 @@ rendered 2nd with `renderToStaticMarkup()`.
 
 ```tsx
 server.get('/', (req, res) => {
-  // Instantiate a renderer for the server
-  const renderer = new ServerRenderer();
+  // Instantiate an engine for the server
+  const engine = createServerEngine();
 
-  // Render the application and extract critical CSS with the renderer
-  const content = ReactDOMServer.renderToString(renderer.extractStyles(<App />));
+  // Render the application and extract critical CSS with the engine
+  const content = ReactDOMServer.renderToString(extractStyles(<App />, engine));
 
   // Convert the extracted styles to HTML `style` tags
-  const styles = renderer.renderToStyleMarkup();
+  const styles = renderToStyleMarkup(engine);
 
   // Render using a layout HTML component
   res.send(ReactDOMServer.renderToStaticMarkup(<Layout content={content} styles={styles} />));
 });
-```
-
-## Client
-
-On the client, we'll need to import and instantiate the `ClientRenderer`, which should already exist
-to render CSS styles. The renderer _must_ then hydrate styles _before_ the React application is
-mounted to the DOM.
-
-```tsx {2,6,9}
-import ReactDOM from 'react-dom';
-import { ClientRenderer } from '@aesthetic/style';
-import App from './path/to/client/App';
-
-// Instantiate a renderer for the client
-const renderer = new ClientRenderer();
-
-// Hydrate CSS styles
-renderer.hydrateStyles();
-
-// Render and hydrate the application
-ReactDOM.hydrate(<App />, document.getElementById('root'));
 ```

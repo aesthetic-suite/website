@@ -85,10 +85,12 @@ export default function Button({ children, beforeIcon, afterIcon }: ButtonProps)
   </TabItem>
   <TabItem value="hoc">
 
-```tsx {5,17}
+```tsx {7,19}
 import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
 
-class Button extends React.Component<ButtonProps & WithStylesWrappedProps> {
+class Button extends React.Component<
+  ButtonProps & WithStylesWrappedProps<'button' | 'before' | 'after', string>
+> {
   render() {
     const { cx, children, beforeIcon, afterIcon } = this.props;
 
@@ -118,7 +120,7 @@ function requires a list of selector names (keys from the style sheet object) in
 and apply a class name with, for example.
 
 ```tsx {2,7,10,12}
-function Button({ selected, disabled }: ButtonProps) {
+function Button({ children, selected, disabled }: ButtonProps) {
   const cx = useStyles(styleSheet);
 
   return (
@@ -145,7 +147,7 @@ an object as the _1st argument_ to `cx()` with the name of every variant, and th
 activate.
 
 ```tsx {2,7-12,15,17}
-function Button({ selected, disabled, size = 'df', palette = 'primary' }: ButtonProps) {
+function Button({ children, selected, disabled, size = 'df', palette = 'primary' }: ButtonProps) {
   const cx = useStyles(styleSheet);
 
   return (
@@ -169,3 +171,38 @@ function Button({ selected, disabled, size = 'df', palette = 'primary' }: Button
 
 > NOTE: The order of selectors passed to `cx()` does not determine the specificity. The order they
 > are defined in the style sheet does! Be aware of this when developing.
+
+## Alternative styling
+
+Besides the `useStyles` hook, there is a special `useCss` hook, which is a low-level alternative for
+rendering a basic [rule object](../../packages/style/concepts.md#styles) and returning a class name.
+This is perfect for succinct components.
+
+> Be aware that this hook _**does not**_ use the
+> [component style sheet](../../dev/css-in-js/style-sheets/components.md) format!
+
+```tsx
+import React, { useMemo } from 'react';
+import { useCss } from '@aesthetic/react';
+
+function Button({ children }: ButtonProps) {
+  // Memoize the styles to avoid unnecessary renders
+  const styles = useMemo(
+    () => ({
+      display: 'inline-flex',
+      padding: 8,
+      textAlign: 'center',
+    }),
+    [],
+  );
+
+  // Immediately render and return a class name
+  const className = useCss(styles);
+
+  return (
+    <button type="button" className={className}>
+      {children}
+    </button>
+  );
+}
+```

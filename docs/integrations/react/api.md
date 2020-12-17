@@ -60,6 +60,26 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 
 ## Hooks
 
+### `useCss`
+
+> useCss(rule: Rule, options?: RenderOptions): Rule
+
+Renders a low-level rule object and returns a class name. If passing options, be sure to memoize it
+to avoid unnecessary renders!
+
+```tsx
+import { useCss } from '@aesthetic/react';
+
+const styles = { display: 'block' };
+
+export default function Component() {
+  const options = useMemo(() => ({ deterministic: true }), []);
+  const className = useCss(styles, options);
+
+  return <div className={className} />;
+}
+```
+
 ### `useDirection`
 
 > useDirection(): Direction
@@ -78,7 +98,7 @@ export default function Component() {
 
 ### `useStyles`
 
-> useStyles(styleSheet: LocalSheet): ClassNameGenerator
+> useStyles(styleSheet: LocalSheet): StyleResultGenerator
 
 Requires a local style sheet and returns a function to use for class name generation.
 
@@ -95,7 +115,7 @@ export default function Component() {
 
 ### `useTheme`
 
-> useTheme(): Theme
+> useTheme(): Theme<LocalBlock\>
 
 Returns the current theme or throws an error.
 
@@ -137,7 +157,7 @@ Wraps a component with a local style sheet to pass a `cx` prop to use for class 
 import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
 import styleSheet from './styles';
 
-function Component({ cx }: WithStylesWrappedProps) {
+function Component({ cx }: WithStylesWrappedProps<'element', string>) {
   return <div className={cx('element')} />;
 }
 
@@ -151,9 +171,9 @@ export default withStyles(styleSheet)(Component);
 Wraps a component to pass the current theme as a `theme` prop.
 
 ```tsx
-import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
+import { withTheme, WithThemeWrappedProps, LocalBlock } from '@aesthetic/react';
 
-function Component({ theme }: WithThemeWrappedProps) {
+function Component({ theme }: WithThemeWrappedProps<LocalBlock>) {
   return <div />;
 }
 

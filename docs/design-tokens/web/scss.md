@@ -221,10 +221,11 @@ We can utilize the compiled SCSS variables for reusability.
   font-size: $text-df-size;
   line-height: $text-df-line-height;
   padding: $spacing-sm $spacing-df;
-  color: $palette-neutral-color-00;
+  color: $palette-brand-fg-base;
   background-color: $palette-brand-bg-base;
 
   &:hover {
+    color: $palette-brand-fg-hovered;
     background-color: $palette-brand-bg-hovered;
   }
 }

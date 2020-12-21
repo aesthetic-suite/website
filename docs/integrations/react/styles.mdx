@@ -204,14 +204,15 @@ function Button({ children }: ButtonProps) {
 ```
 
 Be aware that this hook _**does not**_ use the
-[component style sheet](../../dev/css-in-js/style-sheets/components.md) format! Because of this, the
-following features are no longer available:
+[component style sheet](../../dev/css-in-js/style-sheets/components.md) format and instead uses
+plain [style objects](../../packages/style/concepts.md#styles)! Because of this, the following
+features are no longer available:
 
-- Theme object and utilities
+- Theme object and utility functions
 - Structured style blocks
 - Variant styles
 - Styling multiple elements
 - Re-rendering when theme or direction change
 - Class name composition
-- High-performance
+- High-performance and caching
 - And other design system related features...

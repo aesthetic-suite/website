@@ -64,7 +64,7 @@ module.exports = {
               to: '/docs/packages/system',
             },
             {
-              label: 'CSS-in-JS style engine',
+              label: 'CSS-in-JS engine',
               to: '/docs/packages/style',
             },
             {

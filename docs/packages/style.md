@@ -1,5 +1,5 @@
 ---
-title: CSS-in-JS style engine
+title: CSS-in-JS engine
 sidebar_label: Overview
 ---
 

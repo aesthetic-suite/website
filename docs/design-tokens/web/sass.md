@@ -156,6 +156,7 @@ $palette-brand-fg-focused: #455a64 !default
 $palette-brand-fg-hovered: #37474f !default
 $palette-brand-fg-selected: #455a64 !default
 $palette-brand-fg-disabled: #607d8b !default
+$palette-brand-text: #37474f !default
 
 // $palette-primary-...
 // $palette-secondary-...
@@ -219,10 +220,11 @@ We can utilize the compiled Sass variables for reusability.
   font-size: $text-df-size
   line-height: $text-df-line-height
   padding: $spacing-sm $spacing-df
-  color: $palette-neutral-color-00
+  color: $palette-brand-fg-base
   background-color: $palette-brand-bg-base
 
   &:hover
+    color: $palette-brand-fg-hovered
     background-color: $palette-brand-bg-hovered
 ```
 

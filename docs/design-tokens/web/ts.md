@@ -246,6 +246,7 @@ export const brand: PaletteToken = {
     selected: '#455a64',
     disabled: '#607d8b',
   },
+  text: '#37474f',
 };
 
 // export const primary: PaletteToken = {};

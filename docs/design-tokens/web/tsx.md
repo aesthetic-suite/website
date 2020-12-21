@@ -235,6 +235,7 @@ export default design.createTheme(
           selected: '#455a64',
           disabled: '#607d8b',
         },
+        text: '#37474f',
       },
       primary: {
         // ...
@@ -283,10 +284,8 @@ property, which is a multidimensional object.
 ```ts
 import theme from './styles/<target>/themes/day';
 
-const tokens = theme.toTokens();
-
-tokens.heading.l3.size; // 1.79rem
-tokens.palette.brand.color['30']; // #90a4ae
+theme.tokens.heading.l3.size; // 1.79rem
+theme.tokens.palette.brand.color['30']; // #90a4ae
 ```
 
 There are far more advanced ways of utilizing design tokens. We suggest reading the documentation on

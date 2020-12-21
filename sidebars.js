@@ -164,7 +164,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Legacy docs',
-          href: 'https://github.com/aesthetic-suite/framework/tree/legacy/docs',
+          href: 'https://github.com/aesthetic-suite/framework/tree/legacy/docs/legacy',
         },
       ],
     },

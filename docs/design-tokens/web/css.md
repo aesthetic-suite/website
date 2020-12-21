@@ -161,6 +161,7 @@ polyfilled.
   --palette-brand-fg-hovered: #37474f;
   --palette-brand-fg-selected: #455a64;
   --palette-brand-fg-disabled: #607d8b;
+  --palette-brand-text: #37474f;
 
   /*
   --palette-primary-...
@@ -221,11 +222,12 @@ Simply reference the variables listed above like so:
   font-size: var(--text-df-size);
   line-height: var(--text-df-line-height);
   padding: var(--spacing-sm) var(--spacing-df);
-  color: var(--palette-neutral-color-00);
+  color: var(--palette-brand-fg-base);
   background-color: var(--palette-brand-bg-base);
 }
 
 .button:hover {
+  color: var(--palette-brand-fg-hovered);
   background-color: var(--palette-brand-bg-hovered);
 }
 ```

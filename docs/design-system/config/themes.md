@@ -54,8 +54,8 @@ Palettes are the defining feature of Aesthetic, as they enable true interoperabi
 compatibility with other Aestheic powered design systems. In Aesthetic, colors _are not_ directly
 accessible to consumers, as colors are not deterministic between systems, but palettes are!
 
-A palette is a collection of color references for both foreground (text) and background (layout)
-colors, grouped by states and interactions. The available palettes are:
+A palette is a collection of color references for both text, foreground (text on background) and
+background colors, grouped by states and interactions. The available palettes are:
 
 - `brand` - Organization or company brand color.
 - `primary` - Primary color. Typically buttons, links, bars, active states, etc.
@@ -71,54 +71,63 @@ colors, grouped by states and interactions. The available palettes are:
 - `success` - State when something succeeds or passes.
 
 Hopefully you have a better understanding of all the palettes, so let's dive into the configuration.
-Each palette requires a `color`, `fg` (foreground), and `bg` (background) setting. The `color`
-setting must reference a valid [color name](./language.md#colors), and will be the designated color
-for the palette. The `fg` and `bg` variants will map states to shade references.
+Each palette contains the following settings, each of which requires a color + shade combination
+value.
+
+- `color` - The color range this palette is based on. Will make the color range available downstream
+  under this palette.
+- `text` - Text color when displayed on the document background (typically the `neutral` palette).
+- `bg` - Background color that maps shades to 5 different states.
+- `fg` - Text color that maps shades to 5 different states when displayed _on_ the background color
+  (`bg`).
 
 ```yaml title="themes.yaml"
 themes:
   default:
     scheme: light
     colors:
-      blue:
-        # 00-90 ...
+      blue: # 00-90 ...
+      white: # 00-90 ...
     palettes:
       primary:
         color: blue
-        # Backgrounds use a lighter shade
+        text: blue.80
         bg:
-          base: 40
-          focused: 50
-          hovered: 60
-          selected: 50
-          disabled: 30
-        # While text uses a darker shade for legibility (a11y)
+          base: blue.40
+          focused: blue.50
+          hovered: blue.60
+          selected: blue.50
+          disabled: blue.30
         fg:
-          base: 50
-          focused: 60
-          hovered: 70
-          selected: 60
-          disabled: 40
+          base: white.50
+          focused: white.60
+          hovered: white.70
+          selected: white.60
+          disabled: white.40
       secondary:
-        color: orange
+        color: # ...
+        text: # ...
         bg: # ...
         fg: # ...
       tertiary:
         # ...
 ```
 
-In the example above, you may have noticed 5 different states. In order of priority and specificity,
-they are:
+In the example above, we mentioned 5 different states. In order of priority and specificity, they
+are:
 
-- `base` - The base palette color.
-- `focused` - State when a target is focused through user interaction. _(optional)_
-- `hovered` - State when a target is being hovered. _(optional)_
-- `selected` - State when a target is selected, active, expanded, etc. _(optional)_
-- `disabled` - State when a target is disabled. Should override all previous states. _(optional)_
+- `base` - The base palette color. Defaults to shade `40`.
+- `focused` - State when a target is focused through user interaction. Defaults to shade `50`.
+  _(optional)_
+- `hovered` - State when a target is being hovered. Defaults to shade `60`. _(optional)_
+- `selected` - State when a target is selected, active, expanded, etc. Defaults to shade `50`.
+  _(optional)_
+- `disabled` - State when a target is disabled. Should override all previous states. Defaults to
+  shade `30`. _(optional)_
 
 All of the states are optional, and will default to the shade references above. If you prefer to
-always use the defaults, a shorthand configuration is available, where the value can simply be set
-to the color name. The above example can now be written as:
+always use the defaults, a shorthand configuration is available, where the setting value can simply
+be set to the color name. The above example can now be written as:
 
 ```yaml title="themes.yaml"
 themes:
@@ -127,10 +136,12 @@ themes:
     colors:
       # ...
     palettes:
-      primary: blue
-      secondary: orange
-      tertiary:
-        # ...
+      # Shorthand for `color`, `text`, `bg` as blue, and `fg` as yellow.
+      primary:
+        color: blue
+        fg: yellow
+      # Super shorthand for `color`, `text`, `bg` as red, and `fg` as white (implicit).
+      secondary: red
 ```
 
 > This may seem like a lot to configure, and it is, but it's thorough and covers many common and

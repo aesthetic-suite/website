@@ -16,8 +16,8 @@ for more information.
 - `conditions` (`string[]`) - List of media and feature queries to wrap the declaration with.
 - `rankings` (`object`) - An empty object to use for specificity ranking cache lookups. Useful for
   ensuring the correct specificity when order of declarations change.
-- `selector` (`string`) - A CSS selector to scope the declaration(s) within. This is handled
-  automatically when using [rules](#renderrule).
+- `selectors` (`string[]`) - List of CSS selector to scope the declaration(s) within. This is
+  handled automatically when using [rules](#renderrule).
 - `unit` (`string`) - A unit to append to numerical values. Defaults to `px`.
 - `vendor` (`boolean`) - Apply vendor prefixes to properties and values that require it. We prefix
   features for browsers with >= 1% market share. Defaults to `false`.
@@ -54,11 +54,11 @@ const className = engine.renderDeclaration('display', 'block'); // -> a
 }
 ```
 
-Declarations can also be scoped within a selector (pseudo, attribute, etc) by using the `selector`
+Declarations can also be scoped within a selector (pseudo, attribute, etc) by using the `selectors`
 option.
 
 ```ts
-const className = engine.renderDeclaration('display', 'block', { selector: ':hover' }); // -> b
+const className = engine.renderDeclaration('display', 'block', { selectors: [':hover'] }); // -> b
 ```
 
 ```css

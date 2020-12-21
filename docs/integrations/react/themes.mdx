@@ -105,9 +105,9 @@ export default function Component() {
   <TabItem value="hoc">
 
 ```tsx {3,4,11}
-import { withTheme, WithThemeWrappedProps, LocalBlock } from '@aesthetic/react';
+import { withTheme, WithThemeWrappedProps, ElementStyles } from '@aesthetic/react';
 
-function Component({ theme }: WithThemeWrappedProps<LocalBlock>) {
+function Component({ theme }: WithThemeWrappedProps<ElementStyles>) {
   if (theme.contrast === 'high') {
     // Do something
   }

@@ -64,8 +64,8 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 
 > useCss(rule: Rule, options?: RenderOptions): Rule
 
-Renders a low-level rule object and returns a class name. If passing options, be sure to memoize it
-to avoid unnecessary renders!
+Renders a low-level rule object and returns a class name. If passing options, be sure to memoize to
+avoid unnecessary renders!
 
 ```tsx
 import { useCss } from '@aesthetic/react';
@@ -115,7 +115,7 @@ export default function Component() {
 
 ### `useTheme`
 
-> useTheme(): Theme<LocalBlock\>
+> useTheme(): Theme<ElementStyles\>
 
 Returns the current theme or throws an error.
 
@@ -171,9 +171,9 @@ export default withStyles(styleSheet)(Component);
 Wraps a component to pass the current theme as a `theme` prop.
 
 ```tsx
-import { withTheme, WithThemeWrappedProps, LocalBlock } from '@aesthetic/react';
+import { withTheme, WithThemeWrappedProps, ElementStyles } from '@aesthetic/react';
 
-function Component({ theme }: WithThemeWrappedProps<LocalBlock>) {
+function Component({ theme }: WithThemeWrappedProps<ElementStyles>) {
   return <div />;
 }
 
@@ -184,7 +184,7 @@ export default withTheme()(Component);
 
 ### `createStyled`
 
-> createStyled(type: React.ElementType | React.ComponentType, styleSheet: LocalBlock |
+> createStyled(type: React.ElementType | React.ComponentType, styleSheet: ElementStyles |
 > LocalSheetFactory): StyledComponent
 
 Creates and returns a styled component using the provided style sheet.

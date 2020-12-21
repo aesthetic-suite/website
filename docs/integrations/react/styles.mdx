@@ -176,10 +176,6 @@ function Button({ children, selected, disabled, size = 'df', palette = 'primary'
 
 Besides the `useStyles` hook, there is a special `useCss` hook, which is a low-level alternative for
 rendering a basic [rule object](../../packages/style/concepts.md#styles) and returning a class name.
-This is perfect for succinct components.
-
-> Be aware that this hook _**does not**_ use the
-> [component style sheet](../../dev/css-in-js/style-sheets/components.md) format!
 
 ```tsx
 import React, { useMemo } from 'react';
@@ -206,3 +202,16 @@ function Button({ children }: ButtonProps) {
   );
 }
 ```
+
+Be aware that this hook _**does not**_ use the
+[component style sheet](../../dev/css-in-js/style-sheets/components.md) format! Because of this, the
+following features are no longer available:
+
+- Theme object and utilities
+- Structured style blocks
+- Variant styles
+- Styling multiple elements
+- Re-rendering when theme or direction change
+- Class name composition
+- High-performance
+- And other design system related features...

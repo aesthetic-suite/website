@@ -2,57 +2,58 @@
 # yarn lockfile v1
 
 
-"@aesthetic/addon-direction@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-direction/-/addon-direction-0.3.1.tgz#b2b0291e003783a4a96c1ca91ebc5476b29ac682"
-  integrity sha512-+2ald77OgDhjA5pnCbJ642s/h2EHnrPGR43DWd8xMJCIAgOFJOyLDrV6vaYt9rOZI87XH1KTHkbLc9jl4ryaLQ==
+"@aesthetic/addon-direction@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-direction/-/addon-direction-0.3.3.tgz#daff41ab0a1962a262cab8a026e8f40a567e0a2a"
+  integrity sha512-YTSQRe3w+QFGRIc9Aje7GONYbZrshO1UIub6uRQtD6e0O+BMz5fVdsWZtrNcIv4kgBGRVJKxgPenLdPQgKS+fQ==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
+    "@aesthetic/types" "^0.4.0"
     rtl-css-js "^1.14.0"
 
-"@aesthetic/addon-mixins@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-mixins/-/addon-mixins-0.2.1.tgz#3aa56c6cce565031f6872b0e82f58fbf0e325e05"
-  integrity sha512-kkisVpwV1K6ceQeqDqGb2WGrxamW/rXd7BGLUIHSlHhtl5AJvmCQiFavGxTJof1nUV3cVpyoZ6N68KVYYzLBlw==
+"@aesthetic/addon-mixins@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-mixins/-/addon-mixins-0.2.4.tgz#75d001756a3aad56628beeb05333cb25d701f29a"
+  integrity sha512-q9BY3N6E5qQSor0M+ApCPCbwyxMzcLF+WuNfLd6YqmovGjde1UUouJrLEP9WWucYC6yApRPHSuEzR5al6MHBMw==
   dependencies:
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/utils" "^0.6.0"
 
-"@aesthetic/addon-properties@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-properties/-/addon-properties-0.2.1.tgz#386d66a44fb58cd65920a8892cc43a235ce4486d"
-  integrity sha512-3WaAzBRLD/9pb4kxfXexRnIHaF3l1hn/TrhqEBmY0M3FRG+rqZeCp3dx0CmjA1iNhjHmhozqSjsJlV8JrgZpfw==
+"@aesthetic/addon-properties@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-properties/-/addon-properties-0.2.3.tgz#e6777ed1480d9385ca6f75fa74d484b5d3da2108"
+  integrity sha512-AwZQTwUceBOoZA/7Sd2v53PVUgft5Nzumh+82aTHONZ2fXVpA+iQXuiYVGxEIxfoCYrCzV8N6jV0Q+VMYMs2aQ==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
+    csstype "^3.0.5"
 
-"@aesthetic/addon-vendor@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-vendor/-/addon-vendor-0.2.1.tgz#4f63b224665eab7b002a53840a585bee7f38cefc"
-  integrity sha512-g7ZNJPHiWDf4vRoEopDePm4DOiLul85TAbZowsN5iSDw8VwgwcWoBvfTj2LBm4dE9s0AnSZhCh08DpUwi+20ww==
+"@aesthetic/addon-vendor@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-vendor/-/addon-vendor-0.2.3.tgz#6af5aa3feb710d962fcc94acc07d7912c7d47ad0"
+  integrity sha512-uBQg2nGq/i3L07rhN8SOGUuLjyZtRcLTRqiwsuNPxtkm49cB7AKFzS7TnHD+KH5T+RK+A7kg1RK+gECJTzW9Xg==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
 
-"@aesthetic/cli@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@aesthetic/cli/-/cli-0.5.3.tgz#a1488b30d650a0c3b5c911607aeca422d86c7b61"
-  integrity sha512-pEPZxwSZIKbhHAdt07RwgR8SgtkPljbM6s9prGz2WU6UntQOWV+0xzof7gtdsPETANobwQTULLphX51hu5lljg==
+"@aesthetic/cli@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/cli/-/cli-0.6.0.tgz#a6eef10444bcbb004d3a4d511c60f580238cd0c7"
+  integrity sha512-CdIrA7pLv1CSuHbIo74xqXfPeKOrdSs4Q9mG5hqygBmFnKW1B6S3wonxj88kMMpR6SPZePcV/4frH8dY/PxLGA==
   dependencies:
-    "@aesthetic/compiler" "^0.5.2"
-    "@aesthetic/core" "^0.6.1"
+    "@aesthetic/compiler" "^0.6.0"
+    "@aesthetic/core" "^0.7.0"
     "@boost/cli" "2.8.1"
     "@boost/common" "^2.4.1"
     fs-extra "^9.0.1"
     ink "^3.0.8"
     react "^16.13.1"
 
-"@aesthetic/compiler@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@aesthetic/compiler/-/compiler-0.5.2.tgz#58eb236069acbb6c4719706b118e8e063e2e1194"
-  integrity sha512-3p46F2JaFcJ9LwZ/AzisSMi5ujLfYJXnzl3ni0YHDTvDcOy1VlK494gt3gYwcMtEkvWVqq3z/27YnwBkWLzfYA==
+"@aesthetic/compiler@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/compiler/-/compiler-0.6.0.tgz#c505cc048f455af48b1f2eade11aed2d2764120e"
+  integrity sha512-ItOpMLpQO7mgKSAW43CbZpC8qL2Cp4y7thkSCcMRGS/nomVVqEdN67bD8ij0W5zk6AZtxhApQyPP8Xi19Kf5Ng==
   dependencies:
-    "@aesthetic/system" "^0.5.2"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/system" "^0.6.0"
+    "@aesthetic/utils" "^0.6.0"
     "@boost/common" "^2.4.1"
     ejs "^3.1.5"
     fs-extra "^9.0.1"
@@ -60,64 +61,123 @@
     optimal "^4.2.0"
     prettier "^2.2.1"
 
-"@aesthetic/core@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/core/-/core-0.6.1.tgz#3101f9f29dd290ad037c61a89393fba64d9f86b1"
-  integrity sha512-RkF7+fXIoCy78RzYHKoiwV5X51Y8rjmZQeJXCMBi1G56GP9JfiGrj2ZJtvtwftTT7wJYoQa/LBMHqr0YrJ4xaA==
+"@aesthetic/core-react@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core-react/-/core-react-0.1.1.tgz#402e521ffc96b8e13bc7821795ab02b343e38a4a"
+  integrity sha512-Wq+y7ThG6CKiW7fTGURRA5fMJ8P+tjTA3d8g578fFRj3Yqw+0LzQY6yUY8oHguJF4pNqvqyHe8atREIMPlXVaA==
   dependencies:
-    "@aesthetic/sss" "^0.5.1"
-    "@aesthetic/system" "^0.5.2"
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
-
-"@aesthetic/react@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.5.0.tgz#013cb15f9fb70a1393207d4e8a384fc690bcd34c"
-  integrity sha512-vQLwm6WthKmO25Chm77gxXjOFGUiDr99PmhV47nvWfn0BGch+DYVqTku5Nz6ND5Z3ypcnkDhzqAKuJt0Tt0vkQ==
-  dependencies:
-    "@aesthetic/core" "^0.6.1"
-    "@aesthetic/style" "^0.5.2"
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
     direction "^1.0.4"
     hoist-non-react-statics "^3.3.2"
 
-"@aesthetic/sss@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/sss/-/sss-0.5.1.tgz#e5cc2543244b1b0c40c585d2b459d17b24d87675"
-  integrity sha512-tyYN4fyc0yZuqKb4Jv8V7i3FBneRDF6mQIPIe0R8mKm4tHTClJPXtSIP+tiFAUmUdnl44Scqo6UJdI5j7N+WVA==
+"@aesthetic/core@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core/-/core-0.6.3.tgz#34b147c132af754260a9d8ff93afbd12dd7d8b56"
+  integrity sha512-GLfzcL+2fNofTYv3bd59LLvwQQogVxtZPuBK3r3oXm5iCn1BVONpEZhjkCdEmlLUZyrVlrqo+EO3G3j9f7KfSw==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/sss" "^0.5.2"
+    "@aesthetic/system" "^0.5.4"
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
 
-"@aesthetic/style@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@aesthetic/style/-/style-0.5.2.tgz#e4316075198e810a8d27caebd479eb668667af1d"
-  integrity sha512-BwfmppkNHSxKXAZm9AaWOtXrXVzUxANa0vX0q4sGCgNgA/MtAn+917t1jxlmvggwWzMzw5M345JDNgATBG8xOg==
+"@aesthetic/core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core/-/core-0.7.0.tgz#59eea81c34e3dfb178d40c771e6579877e212621"
+  integrity sha512-ywErP0dQ5vSBIiKEdJmfZeT/9QztGdFShLFj3MWCYYMLQj3mjiAtzdNzokUj12lSRqbskxnxq/TdJvbZe0CejA==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/sss" "^0.6.0"
+    "@aesthetic/system" "^0.6.0"
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
+
+"@aesthetic/react@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.6.1.tgz#ea12e8885fa4f9608b435efe516b9ce2b3bdda81"
+  integrity sha512-BpGX+MQ/GyiQbh8Tf/wdAyOwdEqghuuy6sVFd9/lDKlUuR6hOWcFRyqa6BEF1Eb+854z7B9p7/BpGw8voxrZJg==
+  dependencies:
+    "@aesthetic/core" "^0.6.3"
+    "@aesthetic/core-react" "^0.1.1"
+    "@aesthetic/style" "^0.5.3"
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
+
+"@aesthetic/sss@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@aesthetic/sss/-/sss-0.5.2.tgz#ed96798cb0a019d860c797ac7973a61e01f7547f"
+  integrity sha512-VaZPHOWRc/rwzLk/Ab5iZvlrSYlVJyi7eL1H6PPq7LMrfoZNTBDN7Q151m0XLu+n4aMoeLBeWeB7hpL+Vi/ZxQ==
+  dependencies:
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
+
+"@aesthetic/sss@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/sss/-/sss-0.6.0.tgz#3e9b1a4e30e99b2be506c5a965c602fc65e22d3f"
+  integrity sha512-CqeycVKtULm7q1uBmcSn8mq6iE0/tPegxBzXb6BDx+oD/UIAtd5DomBGOXAzREYpZkswvFYDS5jbMUVqDq1G7A==
+  dependencies:
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
+    csstype "^3.0.5"
+
+"@aesthetic/style@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@aesthetic/style/-/style-0.5.3.tgz#06aadc9cac71849c08b36b1727484ba491f8a3bd"
+  integrity sha512-j2XhkJ7QrvJ32nkfmjn+uCMOvJdmdayQkFm3nQ09ReqL7AtaY/bgKkUa79x2F1zFHWk9rgPZjM3tzYThM9TnaA==
+  dependencies:
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
     sort-css-media-queries "^1.5.2"
 
-"@aesthetic/system@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@aesthetic/system/-/system-0.5.2.tgz#111180900832f53b7a18ee8464f916e82b655d8d"
-  integrity sha512-4fXyRwByS67nx4pfrJ0/BWShyn1XYc2cS6ucp8TKBVFBLvjik8KEqPd/ePEhdCyby+BwknxaRJA3psvhFKI+7A==
+"@aesthetic/style@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/style/-/style-0.6.0.tgz#7bb35c93a3b1b8e4e314cff5eaffdc9eb4f30ca0"
+  integrity sha512-wD+pPxtkaFqTjYGf+TZmJVlDTZaHhzmeZq68GJ+kjxNel2F+aetsnwO9ln0NX60ETWE3TEYBdmiRZ05U/QWcIQ==
   dependencies:
-    "@aesthetic/types" "^0.3.1"
-    "@aesthetic/utils" "^0.5.1"
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
+    sort-css-media-queries "^1.5.2"
 
-"@aesthetic/types@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/types/-/types-0.3.1.tgz#c151f50000a05222fff17a4fa96334ca37304b2a"
-  integrity sha512-wIgY4zdsUCADqcSQckKOOk5MuecX+5j8IifioI1Bn6pjOAaCa5Xxa5zwTpcoXaOXGFpleE4+YXqoJw9Tj2wfwg==
+"@aesthetic/system@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@aesthetic/system/-/system-0.5.4.tgz#8fd31307af241445e4ae7eeb6989487c48f2f964"
+  integrity sha512-6qS80AeyFFuebUjtzF3gKGSlHDbvRp7PgMaVCBB6wglU6lV2PCwMGh3KEMaGvyM2Udx0D5vCAA0wtKskbcwHFw==
+  dependencies:
+    "@aesthetic/types" "^0.3.2"
+    "@aesthetic/utils" "^0.5.2"
+
+"@aesthetic/system@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/system/-/system-0.6.0.tgz#7726ca72427f66e2a5367f367e586fb420021ecb"
+  integrity sha512-wDyaKWbLnYyEXmF+HyYhljg1RmHVpblpTNFimCovO+z/SLBIp4zNx4wkmuRuQ5xAIp64xbRwuPGoQFgqJ7a6PQ==
+  dependencies:
+    "@aesthetic/types" "^0.4.0"
+    "@aesthetic/utils" "^0.6.0"
+
+"@aesthetic/types@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@aesthetic/types/-/types-0.3.2.tgz#36b75aad21706ea180f849eeaac349fe81058dea"
+  integrity sha512-QJLRn9WxAEWIhdW3AxR7okA5VYbzGIv/TyXFto/B98Gg05qamevqwPQNYFAzmVcIgeOp0HmcxUSrjkkHWB/j2A==
   dependencies:
     csstype "^3.0.5"
 
-"@aesthetic/utils@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@aesthetic/utils/-/utils-0.5.1.tgz#8b262155aea499768cb7f0ec26e292e32dfa9423"
-  integrity sha512-c37gwrEw0oKw372k5Aq1v1QvhsVQyeqLu4jypJnrBfYwUiLHELfEHbRRHrr4fZ0Cqat5JYG2FggUd5Q8bqlkhQ==
+"@aesthetic/types@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/types/-/types-0.4.0.tgz#157b2de86be5a5cf0d2bbfff294d9af9cd50f95a"
+  integrity sha512-HIvJJkzd9fyjOT/gb4de2/yYHx2wOLN33++MibsLpIeJKeoMieWBO2fCF4H9sL2VsqLMiO1+iIc6AaqC8y3yWg==
+  dependencies:
+    csstype "^3.0.5"
+
+"@aesthetic/utils@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@aesthetic/utils/-/utils-0.5.2.tgz#d1a56e20817a4f2502eb12d25cc1b3f24d42ace7"
+  integrity sha512-Z/ZmrjgDMPS7P+NRfWJVpWJq23rLOhb6tu8uIJB1PpBVVLDqxKR5i6WO3MzKWchN73egeP8pACfIvETS00lU3A==
+  dependencies:
+    string-hash "^1.1.3"
+
+"@aesthetic/utils@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@aesthetic/utils/-/utils-0.6.0.tgz#d113572f8ca98cb5771ae1b72eb49b85278b3f22"
+  integrity sha512-uDTFA3QKu1yRtAt/Vue15pHE5/pUn3ZcxXfFJud81NoC71S6+A2+iPU9bA1kiBYJl3rfWSa6wFy3CKfMg4zBAQ==
   dependencies:
     string-hash "^1.1.3"
 

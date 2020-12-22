@@ -210,7 +210,7 @@ parse('global', styles, {
     return family;
   },
   onImport(path) {
-    sheet.insertRule(`@import ${path};`, sheet.cssRules.length);
+    sheet.insertRule(`@import ${path};`, 0);
   },
   onKeyframes(keyframes, name) {
     sheet.insertRule(`@keyframes ${name} { ${cssify(keyframes)} }`, sheet.cssRules.length);

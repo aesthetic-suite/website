@@ -13,11 +13,12 @@ for more information.
   of an auto-incremented value (`a1`). Useful for scenarios like unit tests. Defaults to `false`.
 - `direction` (`ltr | rtl`) - Convert and swap LTR (left-to-right) based declarations to RTL
   (right-to-left).
-- `conditions` (`string[]`) - List of media and feature queries to wrap the declaration with.
+- `media` (`string`) - A media query to wrap the declaration with (without `@media`).
 - `rankings` (`object`) - An empty object to use for specificity ranking cache lookups. Useful for
   ensuring the correct specificity when order of declarations change.
-- `selectors` (`string[]`) - List of CSS selector to scope the declaration(s) within. This is
-  handled automatically when using [rules](#renderrule).
+- `selector` (`string`) - A CSS selector to scope the declaration within. This is handled
+  automatically when using [rules](#renderrule).
+- `supports` (`string`) - A feature query to wrap the declaration with (without `@supports`).
 - `unit` (`string`) - A unit to append to numerical values. Defaults to `px`.
 - `vendor` (`boolean`) - Apply vendor prefixes to properties and values that require it. We prefix
   features for browsers with >= 1% market share. Defaults to `false`.
@@ -54,11 +55,11 @@ const className = engine.renderDeclaration('display', 'block'); // -> a
 }
 ```
 
-Declarations can also be scoped within a selector (pseudo, attribute, etc) by using the `selectors`
+Declarations can also be scoped within a selector (pseudo, attribute, etc) by using the `selector`
 option.
 
 ```ts
-const className = engine.renderDeclaration('display', 'block', { selectors: [':hover'] }); // -> b
+const className = engine.renderDeclaration('display', 'block', { selector: ':hover' }); // -> b
 ```
 
 ```css

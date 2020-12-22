@@ -249,7 +249,7 @@ const styles = {
 
 parse('local', styles, {
   // For `fontFamily` property
-  onFontFace(fontFace, family) {
+  onFontFace(fontFace) {
     sheet.insertRule(`@font-face { ${cssify(fontFace)} }`, sheet.cssRules.length);
 
     return family;

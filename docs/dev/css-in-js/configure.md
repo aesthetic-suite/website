@@ -41,6 +41,5 @@ information on them.
 These addons are typically used in conjuction with options.
 
 - [@aesthetic/addon-direction](https://www.npmjs.com/package/@aesthetic/addon-direction)
-- [@aesthetic/addon-mixins](https://www.npmjs.com/package/@aesthetic/addon-mixins)
 - [@aesthetic/addon-properties](https://www.npmjs.com/package/@aesthetic/addon-properties)
 - [@aesthetic/addon-vendor](https://www.npmjs.com/package/@aesthetic/addon-vendor)

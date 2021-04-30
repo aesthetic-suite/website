@@ -16,7 +16,7 @@ import React from 'react';
 import { createStyled } from '@aesthetic/react';
 
 const Button = createStyled('button', (css) =>
-  css.mixin.resetButton({
+  css.mixin('reset-button', {
     display: 'inline-flex',
     padding: css.var('spacing-df'),
     textAlign: 'center',

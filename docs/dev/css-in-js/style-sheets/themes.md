@@ -42,7 +42,8 @@ so they're not truely global, but are applied in 1 of 2 ways:
 - Per element through a `<div>` element. Manually applied when using nested/contextual themes.
 
 Container styles can be defined with the `@root` at-rule, which accepts standard style objects (as
-if you're styling a component). It pairs well with the `root` mixin.
+if you're styling a component). It pairs well with the `root` mixin, which provides _fluid
+typography_.
 
 ```ts
 const styleSheet = createThemeStyles((css) => ({

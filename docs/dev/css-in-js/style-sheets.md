@@ -85,8 +85,7 @@ const styleSheet = createComponentStyles((css) => ({
 
 Mixins also provide reusability, but instead of providing a single value, they provide a collection
 of pre-styled CSS properties that can be merged into your own style objects via the
-`mixin(name: string, optionsOrStyles?: object, styles?: object)` method. The list of properties are
-hard-coded in Aesthetic but can be customized through the design system package.
+`mixin(name: string, styles?: object)` method.
 
 Continuing our example even further, let's easily reset our button. You'll notice that we removed
 most of the properties. That's because they are provided by the mixin and we no longer have to
@@ -104,11 +103,8 @@ const styleSheet = createComponentStyles((css) => ({
 }));
 ```
 
-> Mixins are very experimental. Feedback is greatly appreciated!
-
-- [List of valid mixin names](https://github.com/aesthetic-suite/framework/blob/master/packages/system/src/types.ts#L494)
-- [Built-in mixins and their CSS properties](https://github.com/aesthetic-suite/framework/tree/master/packages/system/src/mixins)
-- Customizing mixins _(coming soon)_
+- [List of valid mixin names](https://github.com/aesthetic-suite/framework/blob/master/packages/system/src/types.ts#L461)
+- [Built-in mixins and their CSS properties](https://github.com/aesthetic-suite/framework/blob/master/packages/system/src/mixins.ts)
 
 ### Units
 

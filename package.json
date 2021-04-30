@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@aesthetic/addon-direction": "^0.3.10",
-    "@aesthetic/addon-mixins": "^0.2.11",
     "@aesthetic/addon-properties": "^0.2.10",
     "@aesthetic/addon-vendor": "^0.2.10",
     "@aesthetic/cli": "^0.6.10",

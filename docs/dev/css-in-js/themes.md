@@ -2,8 +2,8 @@
 title: Themes
 ---
 
-Themes are an encapsulation of reusable variables and mixins for consistent styling, represented as
-a `Theme` class.
+Themes are an encapsulation of reusable variables for consistent styling, represented as a `Theme`
+class.
 
 ## Registering themes
 

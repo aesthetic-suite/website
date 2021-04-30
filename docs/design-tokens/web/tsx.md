@@ -1,6 +1,6 @@
 ---
 title: JavaScript/TypeScript (expanded)
-sidebar_label: JS/TS (exp)
+sidebar_label: CSS-in-JS/TS
 ---
 
 The following format is provided when compiling design tokens for advanced solutions, like
@@ -252,29 +252,22 @@ export default design.createTheme(
       muted: {
         // ...
       },
-      info: {
-        // ...
-      },
       danger: {
         // ...
       },
       warning: {
         // ...
       },
-      failure: {
+      negative: {
         // ...
       },
-      success: {
+      positive: {
         // ...
       },
     },
   },
 );
 ```
-
-## Mixins
-
-Coming soon...
 
 ## Usage
 

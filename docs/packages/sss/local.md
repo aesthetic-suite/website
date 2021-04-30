@@ -201,8 +201,8 @@ const localSheet: LocalStyleSheet = {
       },
 
       type: {
-        failure: {},
-        success: {},
+        negative: {},
+        positive: {},
         brandPrimary: {},
       },
     },

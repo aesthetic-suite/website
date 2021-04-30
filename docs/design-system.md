@@ -9,22 +9,23 @@ product.
 
 Design systems have grown in popularity over the years, resulting in different and or
 interchangeable terminology. With Aesthetic, we want to use specific terminology, so our design
-system is structured around the following 3 pillars and their offerings.
+system is structured around the following 4 pillars and their offerings, with each pillar building
+upon the previous.
 
 ```
-+----------------- Design System -------------------+
-| +-------------+ +-------------+ +---------------+ |
-| | Brand       | | Language    | | Themes        | |
-| +-------------+ +-------------+ +---------------+ |
-| | Vision      | | Borders     | | Colors        | |
-| | Principles  | | Elevation   | | Color schemes | |
-| | Guidelines  | | Iconography | | Palettes      | |
-| | Practices   | | Motion      | | States        | |
-| | Terminology | | Responsive  | | Contrast      | |
-| +-------------+ | Spacing     | | Accessibility | |
-|                 | Typography  | +---------------+ |
-|                 +-------------+                   |
-+---------------------------------------------------+
++---------------------------- Design System ------------------------------+
+| +-------------+   +-------------+   +---------------+   +-------------+ |
+| | Brand       |   | Language    |   | Themes        |   | Components  | |
+| +-------------+   +-------------+   +---------------+   +-------------+ |
+| | Vision      |   | Borders     |   | Colors        |   | Box         | |
+| | Principles  | → | Elevation   | → | Color schemes | → | Button      | |
+| | Guidelines  |   | Iconography |   | Palettes      |   | Icon        | |
+| | Practices   |   | Motion      |   | States        |   | Text        | |
+| | Terminology |   | Responsive  |   | Contrast      |   | Heading     | |
+| +-------------+   | Spacing     |   | Accessibility |   | ...         | |
+|                   | Typography  |   +---------------+   +-------------+ |
+|                   +-------------+                                       |
++-------------------------------------------------------------------------+
 ```
 
 > Jump to the [configuring a design system](./design-system/config.md) chapter for more information

@@ -117,13 +117,12 @@ themes:
 
     palettes:
       brand: purple
-      primary: purple
+      primary: blue
       secondary: pink
       tertiary: brown
       neutral: gray
       muted: gray
-      info: blue
       warning: yellow
       danger: red
-      failure: red
-      success: green
+      negative: red
+      positive: green

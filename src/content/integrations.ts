@@ -8,7 +8,7 @@ export const styleSheet = createComponentStyles((css) => ({
     '@variants': {
       palette: {
         primary: { backgroundColor: css.var('palette-primary-bg-base') },
-        success: { backgroundColor: css.var('palette-success-bg-base') },
+        positive: { backgroundColor: css.var('palette-positive-bg-base') },
         warning: { backgroundColor: css.var('palette-warning-bg-base') },
       },
       size: {
@@ -70,7 +70,7 @@ const Button = createdStyled<'button', ButtonVariants>('button', (css) =>
     '@variants': {
       palette: {
         primary: { backgroundColor: css.var('palette-primary-bg-base') },
-        success: { backgroundColor: css.var('palette-success-bg-base') },
+        positive: { backgroundColor: css.var('palette-positive-bg-base') },
         warning: { backgroundColor: css.var('palette-warning-bg-base') },
       },
       size: {

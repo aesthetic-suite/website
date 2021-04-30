@@ -254,17 +254,11 @@ export const brand: PaletteToken = {
 // export const tertiary: PaletteToken = {};
 // export const neutral: PaletteToken = {};
 // export const muted: PaletteToken = {};
-// export const info: PaletteToken = {};
 // export const warning: PaletteToken = {};
 // export const danger: PaletteToken = {};
-// export const failure: PaletteToken = {};
-// export const success: PaletteToken = {};
+// export const negative: PaletteToken = {};
+// export const positive: PaletteToken = {};
 ```
-
-## Mixins
-
-Mixins are not supported by these formats. If you would like to use mixins, use the
-[expanded JavaScript/TypeScript](./tsx.md) format instead.
 
 ## Usage
 

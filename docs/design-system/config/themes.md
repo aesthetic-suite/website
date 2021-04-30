@@ -64,11 +64,10 @@ background colors, grouped by states and interactions. The available palettes ar
 - `neutral` - Whites, grays, blacks, etc that make up background, border, shadow, and other layout
   related pieces.
 - `muted` - Disabled and empty like states.
-- `info` - State that denotes something as informational.
 - `warning` - State that warns the user of something minor.
 - `danger` - State that indicates a destructive, atomic, or irreversible action.
-- `failure` - State when something errors or fails.
-- `success` - State when something succeeds or passes.
+- `negative` - State when something negative occurs, like errors or failures.
+- `positive` - State when something positive occurs, like successful operations.
 
 Hopefully you have a better understanding of all the palettes, so let's dive into the configuration.
 Each palette contains the following settings, each of which requires a color + shade combination
@@ -208,8 +207,8 @@ Like the design language, themes also enforce the following constraints as the s
 relies on fixed settings.
 
 - 10 color shades (00, 10, 20, 30, 40 (default), 50, 60, 70, 80, 90)
-- 11 palettes (brand, primary, secondary, tertiary, neutral/layout, muted, info, success, warning,
-  danger, failure)
+- 10 palettes (brand, primary, secondary, tertiary, neutral/layout, muted, positive, warning,
+  danger, negative)
 - 5 palette states (base, hovered, selected, disabled, focused)
 - Light scheme OR dark scheme
 - High, low, OR normal contrast

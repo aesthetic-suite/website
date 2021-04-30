@@ -53,7 +53,7 @@ const Button = createStyled('button', {
     },
     palette: {
       brand: { backgroundColor: css.var('palette-brand-bg-base') },
-      success: { backgroundColor: css.var('palette-success-bg-base') },
+      positive: { backgroundColor: css.var('palette-positive-bg-base') },
       warning: { backgroundColor: css.var('palette-warning-bg-base') },
     },
   },
@@ -79,7 +79,7 @@ If using TypeScript, you'll need to type the variant props manually using the 2n
 ```tsx
 interface ButtonVariants {
   size?: 'sm' | 'df' | 'lg';
-  palette?: 'brand' | 'success' | 'warning';
+  palette?: 'brand' | 'positive' | 'warning';
 }
 
 const Button = createStyled<'button', ButtonVariants>('button', {

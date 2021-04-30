@@ -214,8 +214,8 @@ const styleSheet = createComponentStyles(() => ({
 ### Variants
 
 Variants are a staple feature of many components -- especially commonly used ones like buttons,
-alerts, and labels -- and encompasses everything from sizing (small, large) to palettes (success,
-failure, etc).
+alerts, and labels -- and encompasses everything from sizing (small, large) to palettes (positive,
+negative, etc).
 
 With that being said, the guiding principle behind variants is that _only 1_ may ever be active at a
 time. If you need to apply more than 1, then you should use the element-modifier syntax mentioned at
@@ -239,7 +239,7 @@ const styleSheet = createComponentStyles((css) => ({
 
       palette: {
         brand: { backgroundColor: css.var('palette-brand-bg-base') },
-        success: { backgroundColor: css.var('palette-success-bg-base') },
+        positive: { backgroundColor: css.var('palette-positive-bg-base') },
         warning: { backgroundColor: css.var('palette-warning-bg-base') },
       },
     },

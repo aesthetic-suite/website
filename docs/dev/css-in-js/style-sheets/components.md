@@ -400,28 +400,15 @@ integration and abstracted away from the consumer (see `useStyles()` in the Reac
 if you would like to render styles manually, you may do so with the `renderComponentStyles()`
 method.
 
-This method requires the style sheet instance as the 1st argument, an optional object of
-customizable options as the 2nd argument, and returns an object of class names mapped to their
-selector.
+This method requires the style sheet instance as the 1st argument, and returns an object of class
+names mapped to their selector.
 
 ```ts
 import { renderComponentStyles } from '@aesthetic/<integration>';
 import styleSheet from './some/styleSheet';
 
-const classNames = renderComponentStyles(styleSheet, {
-  direction: 'rtl',
-  vendor: true,
-});
+const result = renderComponentStyles(styleSheet);
 ```
-
-The following options are supported:
-
-- `contrast` (`low | high`) - Contrast level variant to activate.
-- `direction` (`ltr | rtl`) - Directionality of properties and their values.
-- `scheme` (`light | dark`) - Color scheme variant to activate.
-- `theme` (`string`) - Theme instance to pass to style sheets. Defaults to the active theme.
-- `unit` (`string`) - Default unit suffix. Defaults to `defaultUnit` option.
-- `vendor` (`boolean`) - Apply vendor prefixes (if configured). Defaults to `vendorPrefixer`.
 
 ## References
 

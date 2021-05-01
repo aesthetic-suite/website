@@ -203,3 +203,16 @@ const BlockButton = createStyled(Button, {
   width: '100%',
 });
 ```
+
+## Server-side
+
+### `renderToStyleElements`
+
+> renderToStyleElements(engine: Engine): React.ReactNode
+
+Renders [extracted styles](./ssr.md) into a collection of `style` elements. Elements must be
+rendered in the HTML document.
+
+```ts
+const elements = renderToStyleElements(engine);
+```

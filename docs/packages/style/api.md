@@ -203,20 +203,22 @@ const animationName = engine.renderKeyframes({
 }
 ```
 
-## Server-side
-
-Read the documentation on [server-side rendering](./ssr.md) to utilize this correctly.
+## ServerEngine
 
 ### `extractStyles`
 
-> extractStyles(app: React.ReactElement, engine: Engine): React.ReactElement
+> extractStyles<T\>(app: T): T
 
 Extracts critical CSS from the application being rendered (without layout HTML) by injecting the
 current server engine. CSS must then be [rendered to style tags](#rendertostylemarkup).
 
 ```tsx
-const app = extractStyles(<App />, engine);
+const app = engine.extractStyles(<App />);
 ```
+
+Read the documentation on [server-side rendering](./ssr.md) to utilize this correctly.
+
+## Server-side
 
 ### `renderToStyleMarkup`
 

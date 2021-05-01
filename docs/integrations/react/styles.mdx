@@ -26,16 +26,13 @@ export const styleSheet = createComponentStyles((css) => ({
     textAlign: 'center',
 
     '@variants': {
-      size: {
-        sm: { fontSize: css.var('text-sm-size') },
-        df: { fontSize: css.var('text-df-size') },
-        lg: { fontSize: css.var('text-lg-size') },
-      },
-      palette: {
-        brand: { backgroundColor: css.var('palette-brand-bg-base') },
-        positive: { backgroundColor: css.var('palette-positive-bg-base') },
-        warning: { backgroundColor: css.var('palette-warning-bg-base') },
-      },
+      'size:sm': { fontSize: css.var('text-sm-size') },
+      'size:df': { fontSize: css.var('text-df-size') },
+      'size:lg': { fontSize: css.var('text-lg-size') },
+
+      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
     },
   }),
   button_selected: {},

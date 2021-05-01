@@ -6,16 +6,13 @@ export const styleSheet = createComponentStyles((css) => ({
     padding: css.var('spacing-df'),
 
     '@variants': {
-      palette: {
-        primary: { backgroundColor: css.var('palette-primary-bg-base') },
-        positive: { backgroundColor: css.var('palette-positive-bg-base') },
-        warning: { backgroundColor: css.var('palette-warning-bg-base') },
-      },
-      size: {
-        sm: { fontSize: css.var('text-sm-size') },
-        df: { fontSize: css.var('text-df-size') },
-        lg: { fontSize: css.var('text-lg-size') },
-      },
+      'palette:primary': { backgroundColor: css.var('palette-primary-bg-base') },
+      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+
+      'size:sm': { fontSize: css.var('text-sm-size') },
+      'size:df': { fontSize: css.var('text-df-size') },
+      'size:lg': { fontSize: css.var('text-lg-size') },
     },
   }),
   button_selected: {},
@@ -68,16 +65,13 @@ const Button = createdStyled<'button', ButtonVariants>('button', (css) =>
     padding: css.var('spacing-df'),
 
     '@variants': {
-      palette: {
-        primary: { backgroundColor: css.var('palette-primary-bg-base') },
-        positive: { backgroundColor: css.var('palette-positive-bg-base') },
-        warning: { backgroundColor: css.var('palette-warning-bg-base') },
-      },
-      size: {
-        sm: { fontSize: css.var('text-sm-size') },
-        df: { fontSize: css.var('text-df-size') },
-        lg: { fontSize: css.var('text-lg-size') },
-      },
+      'palette:primary': { backgroundColor: css.var('palette-primary-bg-base') },
+      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+
+      'size:sm': { fontSize: css.var('text-sm-size') },
+      'size:df': { fontSize: css.var('text-df-size') },
+      'size:lg': { fontSize: css.var('text-lg-size') },
     },
   })
 );

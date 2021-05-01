@@ -185,8 +185,7 @@ Emits an `onVariable` event for each CSS variable.
 ### `@variants`
 
 Defines multiple variations for the rule in question. Each variation is a style object that maps to
-a specific variation type and value combination, defined by the object key and separated by a
-_single_ underscore.
+a specific variation type and value combination, separated by a colon (`type:enum`).
 
 ```ts
 const localSheet: LocalStyleSheet = {
@@ -194,17 +193,13 @@ const localSheet: LocalStyleSheet = {
     display: 'block',
 
     '@variants': {
-      size: {
-        small: { fontSize: 14 },
-        default: { fontSize: 16 },
-        large: { fontSize: 18 },
-      },
+      'size:small': { fontSize: 14 },
+      'size:default': { fontSize: 16 },
+      'size:large': { fontSize: 18 },
 
-      type: {
-        negative: {},
-        positive: {},
-        brandPrimary: {},
-      },
+      'type:negative': {},
+      'type:positive': {},
+      'type:brandPrimary': {},
     },
   },
 };

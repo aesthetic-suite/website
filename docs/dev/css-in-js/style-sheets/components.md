@@ -222,8 +222,8 @@ time. If you need to apply more than 1, then you should use the element-modifier
 the beginning of the chapter.
 
 To utilize variants, we define a `@variants` object on a per element basis that maps each variant
-using nested objects. Variant names are critically important as they must match what's passed to
-`cx()`.
+(`type:enum`) using nested objects. Variant names are critically important as they must match what's
+passed to `cx()`.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
@@ -231,17 +231,13 @@ const styleSheet = createComponentStyles((css) => ({
     // ...
 
     '@variants': {
-      size: {
-        sm: { fontSize: css.var('text-sm-size') },
-        df: { fontSize: css.var('text-df-size') },
-        lg: { fontSize: css.var('text-lg-size') },
-      },
+      'size:sm': { fontSize: css.var('text-sm-size') },
+      'size:df': { fontSize: css.var('text-df-size') },
+      'size:lg': { fontSize: css.var('text-lg-size') },
 
-      palette: {
-        brand: { backgroundColor: css.var('palette-brand-bg-base') },
-        positive: { backgroundColor: css.var('palette-positive-bg-base') },
-        warning: { backgroundColor: css.var('palette-warning-bg-base') },
-      },
+      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
     },
   },
 
@@ -249,8 +245,15 @@ const styleSheet = createComponentStyles((css) => ({
 }));
 ```
 
-How a variant gets activated is highly dependent on the integration you are using, but it basically
-boils down to the following class name generation. Pass an object of variants as the 1st argument!
+> Variant names must be formatted correctly! Each name combines a type to an enumerated value with a
+> `:`. Both the type and enum support alphanumeric characters, while the enum also supports `_` and
+> `-`. The type _must_ start with a letter.
+
+#### Applying variants
+
+How a variant gets applied is highly dependent on the integration you are using, but it basically
+boils down to the following class name generation. Pass an object of variants and their enumerations
+as the 1st argument!
 
 ```ts
 const className = cx({ size: 'sm', palette: 'brand' }, 'button');
@@ -266,11 +269,9 @@ on the element directly. This is necessary as it avoids style collisions and spe
 const styleSheet = createComponentStyles((css) => ({
   button: {
     '@variants': {
-      size: {
-        sm: { fontSize: 14 },
-        df: { fontSize: 16 },
-        lg: { fontSize: 18 },
-      },
+      'size:sm': { fontSize: 14 },
+      'size:df': { fontSize: 16 },
+      'size:lg': { fontSize: 18 },
     },
   },
 }));
@@ -281,27 +282,50 @@ const styleSheet = createComponentStyles((css) => ({
     fontSize: 16,
 
     '@variants': {
-      size: {
-        sm: { fontSize: 14 },
-        lg: { fontSize: 18 },
-      },
+      'size:sm': { fontSize: 14 },
+      'size:lg': { fontSize: 18 },
     },
   },
 }));
 ```
 
-## Adding variants
+### Compound variants
 
-While we support variants per [element](#variants), we also support variants on the style sheet.
-When defined at this level, any variants deemed active will be deeply merged into a single style
+When you need to set variant styles based on a combination of other variants, you can combine them
+using a `+` operator. This synax should be familiar as it's based on CSS.
+
+Using the example above, say we want to bold the text when the `size` is large, and the `palette` is
+brand, we would do the following:
+
+```ts
+const styleSheet = createComponentStyles((css) => ({
+  button: {
+    '@variants': {
+      'size:lg': { fontSize: css.var('text-lg-size') },
+
+      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+
+      'size:lg + palette:brand': { fontWeight: 'bold' },
+    },
+  },
+}));
+```
+
+> You can combine as many variants as you'd like! Just be sure the variant names are properly
+> combined with `+`.
+
+## Overriding styles
+
+While we support variants per [element](#variants), we also support overrides on the style sheet.
+When defined at this level, any override deemed active will be deeply merged into a single style
 sheet in the order of: base < color scheme < contrast level < theme.
 
-Style sheet variants will override any selector, element, element at-rule (even their variants), or
-nested style object from the base style sheet! This makes it very powerful and very robust.
+This feature will override any selector, element, element at-rule (even their variants), or nested
+style object from the base style sheet! This makes it very powerful and very robust.
 
 ### By color scheme
 
-Use the `addColorSchemeVariant()` method for variants depending on the "light" or "dark" color
+Use the `addColorSchemeOverride()` method for overrides depending on the "light" or "dark" color
 scheme of the currently active theme. This is perfect for making slight changes to a theme between
 the two modes.
 
@@ -312,13 +336,13 @@ const styleSheet = createComponentStyles(() => ({
     color: 'gray',
   },
 }))
-  .addColorSchemeVariant('light', () => ({
+  .addColorSchemeOverride('light', () => ({
     element: {
       backgroundColor: 'white',
       color: 'black',
     },
   }))
-  .addColorSchemeVariant('dark', () => ({
+  .addColorSchemeOverride('dark', () => ({
     element: {
       backgroundColor: 'black',
       color: 'white',
@@ -336,7 +360,7 @@ This is equivalent to the native `prefers-color-scheme` media query.
 
 ### By contrast level
 
-Use the `addContrastVariant()` method for variants depending on the "low" or "high" contrast level
+Use the `addContrastOverride()` method for overrides depending on the "low" or "high" contrast level
 of the currently active theme. This is perfect for providing accessible themes.
 
 ```ts
@@ -346,12 +370,12 @@ const styleSheet = createComponentStyles(() => ({
     color: 'orange',
   },
 }))
-  .addContrastVariant('low', () => ({
+  .addContrastOverride('low', () => ({
     element: {
       color: 'red',
     },
   }))
-  .addContrastVariant('high', () => ({
+  .addContrastOverride('high', () => ({
     element: {
       color: 'yellow',
     },
@@ -368,9 +392,9 @@ This is equivalent to the native `prefers-contrast` media query.
 
 ### By theme
 
-And finally, use the `addThemeVariant()` method for variants depending on the currently active theme
-itself. This provides granular styles on a theme-by-theme basis, perfect for style sheets that are
-provided by third-parties.
+And finally, use the `addThemeOverride()` method for overrides depending on the currently active
+theme itself. This provides granular styles on a theme-by-theme basis, perfect for style sheets that
+are provided by third-parties.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
@@ -379,12 +403,12 @@ const styleSheet = createComponentStyles(() => ({
     color: 'gray',
   },
 }))
-  .addThemeVariant('night', () => ({
+  .addThemeOverride('night', () => ({
     element: {
       color: 'blue',
     },
   }))
-  .addThemeVariant('twilight', () => ({
+  .addThemeOverride('twilight', () => ({
     element: {
       color: 'purple',
     },

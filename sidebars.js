@@ -101,7 +101,6 @@ module.exports = {
             'integrations/react/styled',
             'integrations/react/direction',
             'integrations/react/ssr',
-            'integrations/react/ui',
             'integrations/react/api',
           ],
         },

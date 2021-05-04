@@ -2,8 +2,8 @@
 title: Less
 ---
 
-The following format is provided when compiling design tokens to [Less](http://lesscss.org/) using
-`web-less`.
+The following web format is provided when compiling design tokens to [Less](http://lesscss.org/)
+using `web-less`.
 
 ## File structure
 

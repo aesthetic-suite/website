@@ -2,7 +2,7 @@
 title: SCSS
 ---
 
-The following format is provided when compiling design tokens to
+The following web format is provided when compiling design tokens to
 [SCSS](https://sass-lang.com/documentation/syntax) using `web-scss`.
 
 ## File structure

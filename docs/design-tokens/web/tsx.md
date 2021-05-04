@@ -3,7 +3,7 @@ title: JavaScript/TypeScript (expanded)
 sidebar_label: CSS-in-JS/TS
 ---
 
-The following format is provided when compiling design tokens for advanced solutions, like
+The following web format is provided when compiling design tokens for advanced solutions, like
 CSS-in-JS. It currently supports 2 different targets:
 
 - `web-tsx` for TypeScript.

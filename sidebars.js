@@ -45,6 +45,11 @@ module.exports = {
             'design-tokens/ios',
             {
               type: 'category',
+              label: 'Native',
+              items: ['design-tokens/native/ts', 'design-tokens/native/tsx'],
+            },
+            {
+              type: 'category',
               label: 'Web',
               items: [
                 'design-tokens/web/ts',

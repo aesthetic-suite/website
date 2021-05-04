@@ -2,8 +2,8 @@
 title: Sass
 ---
 
-The following format is provided when compiling design tokens to [Sass](https://sass-lang.com) using
-`web-sass`.
+The following web format is provided when compiling design tokens to [Sass](https://sass-lang.com)
+using `web-sass`.
 
 ## File structure
 

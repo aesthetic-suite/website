@@ -21,9 +21,14 @@ output of a design system configuration. Pass the `--format` option to choose on
   - _(Coming soon)_
 - **iOS**
   - _(Coming soon)_
+- **React Native**
+  - [native-ts](./native/ts.md) - TypeScript variables.
+  - [native-tsx](./native/tsx.md) - TypeScript for CSS-in-TS.
+  - [native-js](./native/ts.md) - JavaScript variables.
+  - [native-jsx](./native/tsx.md) - JavaScript for CSS-in-JS.
 - **Web**
   - [web-ts](./web/ts.md) - TypeScript variables.
-  - [web-tsx](./web/tsx.md) - TypeScript for CSS-in-JS.
+  - [web-tsx](./web/tsx.md) - TypeScript for CSS-in-TS.
   - [web-js](./web/ts.md) - JavaScript variables.
   - [web-jsx](./web/tsx.md) - JavaScript for CSS-in-JS.
   - [web-css](./web/css.md) - CSS variables.

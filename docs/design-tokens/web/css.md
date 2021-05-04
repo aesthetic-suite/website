@@ -2,7 +2,7 @@
 title: CSS
 ---
 
-The following format is provided when compiling design tokens to CSS using `web-css`. It utilizes
+The following web format is provided when compiling design tokens to CSS using `web-css`. It utilizes
 [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) for
 reusability. If you need to support legacy browsers, we suggest the
 [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill) library.

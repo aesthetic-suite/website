@@ -3,7 +3,7 @@ title: JavaScript/TypeScript
 sidebar_label: JS/TS
 ---
 
-The following format is provided when compiling design tokens to JavaScript using `web-js`, or
+The following web format is provided when compiling design tokens to JavaScript using `web-js`, or
 TypeScript using `web-ts`. It utilizes exported constant variables for reusability.
 
 For the remainder of this documentation, we'll use TypeScript as our format.

@@ -7,7 +7,9 @@ const pkgs = [
   'cli',
   'compiler',
   'core',
+  'core-react',
   'react',
+  'react-native',
   'sss',
   'style',
   'system',
@@ -35,7 +37,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'ALPHA',
+          label: 'BETA',
           position: 'left',
           items: pkgs.map((pkg) => ({
             label: `v${pkg.version} · ${pkg.name.split('/')[1]}`,

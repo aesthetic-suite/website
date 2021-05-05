@@ -1,0 +1,218 @@
+---
+title: Styling components
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+> Knowledge of [style sheets](../../dev/css-in-js/style-sheets.md) is required.
+
+Components are styled with the `useStyles()` hook (preferred) or the `withStyles()`
+higher-order-component. Both APIs require a
+[style sheet](../../dev/css-in-js/style-sheets/components.md) that is conditionally rendered to
+compose React Native style sheets.
+
+To continue with the example found in the style sheet documentation, let's design and style a button
+component. The button file would look something like the following.
+
+```tsx {5}
+import React from 'react';
+import { PressableProps } from 'react-native';
+import { createComponentStyles, CommonSize, PaletteType } from '@aesthetic/react-native';
+
+export const styleSheet = createComponentStyles((theme) => ({
+  button: {
+    border: 0,
+    margin: 0,
+    padding: 0,
+    flex: 1,
+    flexDirection: 'column',
+    flexWrap: 'nowrap',
+    verticalAlign: 'middle'
+    padding: theme.tokens.spacing.df,
+
+    '@variants': {
+      'size:sm': { fontSize: theme.tokens.text.sm.size },
+      'size:df': { fontSize: theme.tokens.text.df.size },
+      'size:lg': { fontSize: theme.tokens.text.lg.size },
+
+      'palette:brand': { backgroundColor: theme.tokens.palette.brand.bg.base },
+      'palette:positive': { backgroundColor: theme.tokens.palette.positive.bg.base },
+      'palette:warning': { backgroundColor: theme.tokens.palette.warning.bg.base },
+    },
+  },
+  button_selected: {},
+  button_disabled: {},
+  before: {},
+  after: {},
+  // ...
+}));
+
+export interface ButtonProps extends PressableProps {
+  afterIcon?: React.ReactNode;
+  beforeIcon?: React.ReactNode;
+  children: NonNullable<React.ReactNode>;
+  disabled?: boolean;
+  palette?: PaletteType;
+  selected?: boolean;
+  size?: CommonSize;
+}
+```
+
+<Tabs
+  groupId="api-type"
+  defaultValue="hook"
+  values={[
+    { label: 'Hook', value: 'hook' },
+    { label: 'HOC', value: 'hoc' },
+  ]}
+>
+  <TabItem value="hook">
+
+```tsx {14}
+import { Pressable, View } from 'react-native';
+import { useStyles } from '@aesthetic/react-native';
+
+export default function Button({
+  children,
+  beforeIcon,
+  afterIcon,
+  disabled,
+  selected,
+  palette,
+  size,
+  ...props
+}: ButtonProps) {
+  const sx = useStyles(styleSheet);
+
+  return (
+    <Pressable disabled={disabled} {...props}>
+      <View style={sx('button')}>
+        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+        <View>{children}</View>
+        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+      </View>
+    </Pressable>
+  );
+}
+```
+
+  </TabItem>
+  <TabItem value="hoc">
+
+```tsx {10}
+import { Pressable, View } from 'react-native';
+import { withStyles, WithStylesWrappedProps } from '@aesthetic/react-native';
+
+class Button extends React.Component<
+  ButtonProps &
+    WithStylesWrappedProps<'button' | 'button_disabled' | 'button_selected' | 'before' | 'after'>
+> {
+  render() {
+    const {
+      compose: sx,
+      children,
+      beforeIcon,
+      afterIcon,
+      disabled,
+      selected,
+      palette,
+      size,
+      ...props
+    } = this.props;
+
+    return (
+      <Pressable disabled={disabled} {...props}>
+        <View style={sx('button')}>
+          {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+          <View>{children}</View>
+          {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+        </View>
+      </Pressable>
+    );
+  }
+}
+
+export default withStyles(styleSheet)(Button);
+```
+
+  </TabItem>
+</Tabs>
+
+> If you're designing components for a library that'll be consumed externally, we suggest exporting
+> the style sheet so that consumers may customize variants.
+
+## Composing styles
+
+Both the hook and HOC APIs provide a style composer function that we aptly name `sx`. This function
+requires a list of selector names (keys from the style sheet object) in which to determine a list of
+applicable styles.
+
+```tsx {11,15,16,18}
+function Button({
+  children,
+  beforeIcon,
+  afterIcon,
+  disabled,
+  selected,
+  palette,
+  size,
+  ...props
+}: ButtonProps) {
+  const sx = useStyles(styleSheet);
+
+  return (
+    <Pressable disabled={disabled} {...props}>
+      <View style={sx('button', selected && 'button_selected', disabled && 'button_disabled')}>
+        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+        <View>{children}</View>
+        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+      </View>
+    </Pressable>
+  );
+}
+```
+
+As demonstrated above, the `button` selector will always be rendered. However, the `button_selected`
+and `button_disabled` selectors will only be rendered when the button is conditionally updated via
+the `selected` and `disabled` props respectively.
+
+We can take this a step further by supporting
+[variants](../../dev/css-in-js/style-sheets/components.md#variants). All that's required is to pass
+an object as the _1st argument_ to `sx()` with the name of every variant, and the variant to
+activate.
+
+```tsx {7,8,11,16-21}
+function Button({
+  children,
+  beforeIcon,
+  afterIcon,
+  disabled,
+  selected,
+  palette = 'primary',
+  size = 'df',
+  ...props
+}: ButtonProps) {
+  const sx = useStyles(styleSheet);
+
+  return (
+    <Pressable disabled={disabled} {...props}>
+      <View
+        style={sx(
+          { size, palette },
+          'button',
+          selected && 'button_selected',
+          disabled && 'button_disabled',
+        )}
+      >
+        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+        <View>{children}</View>
+        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+      </View>
+    </Pressable>
+  );
+}
+```
+
+> NOTE: The order of selectors passed to `sx()` determines the specificity, as we create an array of
+> `ViewStyle` (or `TextStyle`, `ImageStyle`) objects. Be aware of this when developing.

@@ -9,3 +9,7 @@ integrations.
 ## Web
 
 - [React](./integrations/react.md)
+
+## Other
+
+- [React Native](./integrations/react-native.md)

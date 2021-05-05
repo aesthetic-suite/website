@@ -9,13 +9,10 @@ themselves with design tokens compiled by a design system.
 
 - [Getting started](./react-native/setup.mdx)
 - [Using themes](./react-native/themes.mdx)
+- [Styling components](./react-native/styles.mdx)
+- [Styled components](./react-native/styled.md)
 - [Directionality](./react-native/direction.mdx)
 - [API](./react-native/api.md)
-
-Same as React:
-
-- [Styling components](./react/styles.mdx)
-- [Styled components](./react/styled.mdx)
 
 ## Features
 

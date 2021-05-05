@@ -10,8 +10,9 @@ a design system.
 - [Getting started](./react/setup.mdx)
 - [Using themes](./react/themes.mdx)
 - [Styling components](./react/styles.mdx)
-- [Styled components](./react/styled.mdx)
+- [Styled components](./react/styled.md)
 - [Directionality](./react/direction.mdx)
+- [Server-side rendering](./react/ssr.md)
 - [API](./react/api.md)
 
 ## Features

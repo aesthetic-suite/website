@@ -45,7 +45,6 @@ prop.
 - `name` (`string`) - Explicit name of a theme to provide.
 
 ```tsx
-import { View } from 'react-native';
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider>

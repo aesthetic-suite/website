@@ -116,8 +116,8 @@ module.exports = {
             'integrations/react-native',
             'integrations/react-native/setup',
             'integrations/react-native/themes',
-            // 'integrations/react-native/styles',
-            // 'integrations/react-native/styled',
+            'integrations/react-native/styles',
+            'integrations/react-native/styled',
             'integrations/react-native/direction',
             'integrations/react-native/api',
           ],
@@ -132,6 +132,11 @@ module.exports = {
           type: 'link',
           label: '@aesthetic/react',
           href: `${config.baseUrl}docs/integrations/react`,
+        },
+        {
+          type: 'link',
+          label: '@aesthetic/react-native',
+          href: `${config.baseUrl}docs/integrations/react-native`,
         },
         {
           type: 'category',

@@ -109,6 +109,19 @@ module.exports = {
             'integrations/react/api',
           ],
         },
+        {
+          type: 'category',
+          label: 'React Native',
+          items: [
+            'integrations/react-native',
+            'integrations/react-native/setup',
+            'integrations/react-native/themes',
+            // 'integrations/react-native/styles',
+            // 'integrations/react-native/styled',
+            'integrations/react-native/direction',
+            'integrations/react-native/api',
+          ],
+        },
       ],
     },
     {

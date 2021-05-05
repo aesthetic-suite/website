@@ -86,10 +86,10 @@ export default function Button({ children, beforeIcon, afterIcon }: ButtonProps)
 import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
 
 class Button extends React.Component<
-  ButtonProps & WithStylesWrappedProps<'button' | 'before' | 'after', string>
+  ButtonProps & WithStylesWrappedProps<'button' | 'before' | 'after'>
 > {
   render() {
-    const { cx, children, beforeIcon, afterIcon } = this.props;
+    const { compose: cx, children, beforeIcon, afterIcon } = this.props;
 
     return (
       <button type="button" className={cx('button')}>

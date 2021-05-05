@@ -14,7 +14,7 @@ Provides a direction to all children using context. Accepts the following option
   `direction`.
 
 ```tsx
-import { DirectionProvider } from '@aesthetic/react';
+import { DirectionProvider } from '@aesthetic/react-native';
 
 <DirectionProvider direction="rtl">
   <Component />
@@ -30,7 +30,7 @@ following optional props.
   determine the best theme.
 
 ```tsx
-import { ThemeProvider } from '@aesthetic/react';
+import { ThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider>
   <App />
@@ -45,7 +45,8 @@ prop.
 - `name` (`string`) - Explicit name of a theme to provide.
 
 ```tsx
-import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
+import { View } from 'react-native';
+import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider>
   <Component />
@@ -56,29 +57,9 @@ import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 </ThemeProvider>;
 ```
 
-> Renders a wrapping `div` with CSS variables under the hood.
+> Renders a wrapping `View` under the hood.
 
 ## Hooks
-
-### `useCss`
-
-> useCss(rule: Rule, options?: RenderOptions): Rule
-
-Renders a low-level rule object and returns a class name. If passing options, be sure to memoize to
-avoid unnecessary renders!
-
-```tsx
-import { useCss } from '@aesthetic/react';
-
-const styles = { display: 'block' };
-
-export default function Component() {
-  const options = useMemo(() => ({ deterministic: true }), []);
-  const className = useCss(styles, options);
-
-  return <div className={className} />;
-}
-```
 
 ### `useDirection`
 
@@ -87,12 +68,13 @@ export default function Component() {
 Returns the current direction, either `ltr` or `rtl`.
 
 ```tsx
-import { useDirection } from '@aesthetic/react';
+import { View } from 'react-native';
+import { useDirection } from '@aesthetic/react-native';
 
 export default function Component() {
   const direction = useDirection();
 
-  return <div />;
+  return <View />;
 }
 ```
 
@@ -100,32 +82,34 @@ export default function Component() {
 
 > useStyles(styleSheet: LocalSheet): StyleResultGenerator
 
-Requires a local style sheet and returns a function to use for class name generation.
+Requires a local style sheet and returns a function to use for style sheet generation.
 
 ```tsx
-import { useStyles } from '@aesthetic/react';
+import { View } from 'react-native';
+import { useStyles } from '@aesthetic/react-native';
 import styleSheet from './styles';
 
 export default function Component() {
-  const cx = useStyles(styleSheet);
+  const sx = useStyles(styleSheet);
 
-  return <div className={cx('element')} />;
+  return <View style={sx('element')} />;
 }
 ```
 
 ### `useTheme`
 
-> useTheme(): Theme<ElementStyles\>
+> useTheme(): Theme<NativeStyles\>
 
 Returns the current theme or throws an error.
 
 ```tsx
-import { useTheme } from '@aesthetic/react';
+import { View } from 'react-native';
+import { useTheme } from '@aesthetic/react-native';
 
 export default function Component() {
   const theme = useTheme();
 
-  return <div />;
+  return <View />;
 }
 ```
 
@@ -138,7 +122,7 @@ export default function Component() {
 Wraps a component to pass the current direction as a `direction` prop.
 
 ```tsx
-import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
+import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react-native';
 
 function Component({ direction }: WithDirectionWrappedProps) {
   return <div />;
@@ -151,15 +135,16 @@ export default withDirection()(Component);
 
 > withStyles(styleSheet: LocalSheet)(component: React.ComponentType): React.FunctionComponent
 
-Wraps a component with a local style sheet to pass a `compose` prop (renamed to `cx`) to use for
-class name generation.
+Wraps a component with a local style sheet to pass a `compose` prop (renamed to `sx`) to use for
+style sheet composition.
 
 ```tsx
-import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
+import { View, StyleProp } from 'react-native';
+import { withStyles, WithStylesWrappedProps } from '@aesthetic/react-native';
 import styleSheet from './styles';
 
-function Component({ compose: cx }: WithStylesWrappedProps<'element'>) {
-  return <div className={cx('element')} />;
+function Component({ compose: sx }: WithStylesWrappedProps<'element'>) {
+  return <View style={sx('element')} />;
 }
 
 export default withStyles(styleSheet)(Component);
@@ -172,10 +157,11 @@ export default withStyles(styleSheet)(Component);
 Wraps a component to pass the current theme as a `theme` prop.
 
 ```tsx
-import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
+import { View } from 'react-native';
+import { withTheme, WithThemeWrappedProps } from '@aesthetic/react-native';
 
 function Component({ theme }: WithThemeWrappedProps) {
-  return <div />;
+  return <View />;
 }
 
 export default withTheme()(Component);
@@ -185,35 +171,22 @@ export default withTheme()(Component);
 
 ### `createStyled`
 
-> createStyled(type: React.ElementType | React.ComponentType, styleSheet: ElementStyles |
-> LocalSheetFactory): StyledComponent
+> createStyled(type: React.ComponentType, styleSheet: NativeStyles | LocalSheetFactory):
+> StyledComponent
 
 Creates and returns a styled component using the provided style sheet.
 
 ```tsx
-import { createStyled } from '@aesthetic/react';
+import { View } from 'react-native';
+import { createStyled } from '@aesthetic/react-native';
 
-const Button = createStyled('button', (css) => ({
-  display: 'inline-flex',
+const Button = createStyled(View, (css) => ({
+  flex: 1,
   textAlign: 'center',
-  padding: css.var('spacing-md'),
+  padding: css.tokens.spacing.md,
 }));
 
 const BlockButton = createStyled(Button, {
-  display: 'flex',
   width: '100%',
 });
-```
-
-## Server-side
-
-### `renderToStyleElements`
-
-> renderToStyleElements(engine: Engine): React.ReactNode
-
-Renders [extracted styles](./ssr.md) into a collection of `style` elements. Elements must be
-rendered in the HTML document.
-
-```ts
-const elements = renderToStyleElements(engine);
 ```

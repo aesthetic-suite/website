@@ -1,0 +1,60 @@
+---
+title: Getting started
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Begin by installing Aesthetic, React, and React Native.
+
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
+
+```bash
+yarn add @aesthetic/react-native react react-native
+```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm install @aesthetic/react-native react react-native
+```
+
+  </TabItem>
+</Tabs>
+
+If you're using TypeScript, also install required types.
+
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
+
+```bash
+yarn add --dev @types/react @types/react-native
+```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm install --save-dev @types/react @types/react-native
+```
+
+  </TabItem>
+</Tabs>
+
+Once installed, we suggest [configuring Aesthetic](../../dev/css-in-js/configure.md) itself.

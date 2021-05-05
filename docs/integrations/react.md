@@ -10,6 +10,7 @@ a design system.
 - [Getting started](./react/setup.mdx)
 - [Using themes](./react/themes.mdx)
 - [Styling components](./react/styles.mdx)
+- [Styled components](./react/styled.mdx)
 - [Directionality](./react/direction.mdx)
 - [API](./react/api.md)
 
@@ -17,7 +18,7 @@ a design system.
 
 - Styled component, Hook, and HOC based APIs for styling, accessing themes, and handling
   directionality.
-- Global, document, and element level themes powered through context.
+- Global, document, and element level styles powered through context.
 - Nested themes that avoid polluting the global scope.
 - First-class directionality support (RTL, LTR).
 

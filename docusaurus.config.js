@@ -57,6 +57,12 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/integrations/react-native',
+          activeBasePath: 'docs/integrations/react-native',
+          label: 'React Native',
+          position: 'left',
+        },
+        {
           label: 'Packages',
           position: 'left',
           items: [
@@ -112,6 +118,10 @@ module.exports = {
             {
               label: 'React',
               to: '/docs/integrations/react',
+            },
+            {
+              label: 'React Native',
+              to: '/docs/integrations/react-native',
             },
           ],
         },

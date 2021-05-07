@@ -21,7 +21,7 @@ const pkgs = [
 module.exports = {
   title: 'Aesthetic',
   tagline:
-    'Aesthetic is an end-to-end design and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
+    'Aesthetic is an end-to-end design system and development framework for declaring consistent visual styles across platforms, languages, projects, and teams.',
   url: 'https://aestheticsuite.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',

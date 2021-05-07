@@ -1,15 +1,23 @@
 // eslint-disable-next-line no-use-before-define
 import React from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { TS_FORMAT, TSX_FORMAT, CSS_FORMAT, SCSS_FORMAT, LESS_FORMAT } from '../content/tokens';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import CodeBlock from '@theme/CodeBlock';
+import Layout from '@theme/Layout';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 import { REACT_HOOKS_EXAMPLE, REACT_STYLED_EXAMPLE } from '../content/integrations';
+import {
+  CSS_FORMAT,
+  LESS_FORMAT,
+  SCSS_FORMAT,
+  TS_FORMAT,
+  TSX_FORMAT,
+  YAML_FIXED_CONFIG,
+  YAML_SCALED_CONFIG,
+} from '../content/tokens';
 import styles from './styles.module.css';
 
 function Home() {
@@ -25,7 +33,6 @@ function Home() {
 
           <div className={styles.buttons}>
             <Link
-              // @ts-expect-error
               className={clsx('button button--secondary button--lg', styles.getStarted)}
               to={useBaseUrl('docs/')}
             >
@@ -46,31 +53,51 @@ function Home() {
         <section className={styles.section}>
           <div className="container">
             <div className="row">
-              <div className="col col--8">
+              <div className="col col--6">
                 <h2>Fluent design system</h2>
 
                 <p>
                   With everything from typography to elevation, spacing, motion, and more! Create
-                  and manage a thorough design system with a strict and centralized YAML
-                  configuration — easy for both designers and developers to maintain.
+                  and manage a robust design system through a strict and centralized YAML
+                  configuration. Easy for both designers and developers to maintain.
+                </p>
+
+                <p>
+                  Do you want to maintain a system with explicit parameters? Or do you want
+                  automatic parameters based on{' '}
+                  <a href="https://www.modularscale.com">modular scale</a>? Well Aesthetic supports
+                  both patterns, either separate or together!
                 </p>
 
                 <p className={styles.muted}>Figma support coming soon!</p>
-              </div>
 
-              <div className="col col--4" />
-            </div>
+                <br />
+                <br />
 
-            <div className={clsx('row', styles.sectionSpacer)}>
-              <div className="col col--4" />
-
-              <div className="col col--8 text--right">
                 <h2>Expressive themes</h2>
 
                 <p>
                   Whether for brand or accessibility purposes, compose your design system around
                   multiple themes that express unique colors, palettes, and interactive states.
                 </p>
+              </div>
+
+              <div className="col col--6 code-block--condensed">
+                <Tabs
+                  defaultValue="fixed"
+                  values={[
+                    { label: 'Fixed', value: 'fixed' },
+                    { label: 'Scaled', value: 'scaled' },
+                  ]}
+                >
+                  <TabItem value="fixed">
+                    <CodeBlock className="language-yaml">{YAML_FIXED_CONFIG}</CodeBlock>
+                  </TabItem>
+
+                  <TabItem value="scaled">
+                    <CodeBlock className="language-yaml">{YAML_SCALED_CONFIG}</CodeBlock>
+                  </TabItem>
+                </Tabs>
               </div>
             </div>
           </div>
@@ -79,23 +106,6 @@ function Home() {
         <section className={clsx(styles.section, styles.sectionAltColor)}>
           <div className="container">
             <div className="row">
-              <div className="col col--6">
-                <h2>Scalable design tokens</h2>
-
-                <p>
-                  Compile your design system configuration to consistent, reusable, and scalable
-                  design tokens for Android*, iOS*, and Web platforms, and popular technologies such
-                  as JavaScript, TypeScript, CSS-in-JS, CSS, SCSS, and many more.
-                </p>
-
-                <p>
-                  Design tokens are engineered for optimal developer ergonomics by providing type
-                  safety, autocompletion, and documentation.
-                </p>
-
-                <p className={styles.muted}>* Mobile platforms coming soon!</p>
-              </div>
-
               <div className="col col--6 code-block--condensed">
                 <Tabs
                   defaultValue="ts"
@@ -135,6 +145,23 @@ function Home() {
                   </TabItem>
                 </Tabs>
               </div>
+
+              <div className="col col--6">
+                <h2>Scalable design tokens</h2>
+
+                <p>
+                  Compile your design system configuration to consistent, reusable, and scalable
+                  design tokens for Android*, iOS*, React Native, and Web platforms, and popular
+                  technologies such as JavaScript, TypeScript, CSS-in-JS, CSS, SCSS, and many more.
+                </p>
+
+                <p>
+                  Design tokens are engineered for optimal developer ergonomics by providing type
+                  safety, autocompletion, and documentation.
+                </p>
+
+                <p className={styles.muted}>* Mobile platforms coming soon!</p>
+              </div>
             </div>
           </div>
         </section>
@@ -142,6 +169,33 @@ function Home() {
         <section className={styles.section}>
           <div className="container">
             <div className="row">
+              <div className="col col--6">
+                <h2>Powerful APIs</h2>
+
+                <p>
+                  Easily and succinctly style your components with our powerful battle-tested and{' '}
+                  <a href="https://github.com/aesthetic-suite/benchmarks/">high-performant</a> APIs.
+                  We handle the heavy lifting, you focus on features that matter.
+                </p>
+
+                <p>
+                  With our state of the art CSS-in-JS engine, composable APIs, streamlined syntax,
+                  and dynamic themes, Aesthetic provides the best developer experience on the
+                  market.
+                </p>
+
+                <ul>
+                  <li>Atomic CSS</li>
+                  <li>CSS variable driven themes</li>
+                  <li>Variants and compound variants</li>
+                  <li>Built-in directionality (LTR, RTL)</li>
+                  <li>Automatic vendor prefixing</li>
+                  <li>Server-side rendering</li>
+                  <li>Client-side hydration</li>
+                  <li>And much more...</li>
+                </ul>
+              </div>
+
               <div className="col col--6 code-block--condensed">
                 <Tabs
                   defaultValue="react-styled"
@@ -165,16 +219,6 @@ function Home() {
                     </div>
                   </TabItem>
                 </Tabs>
-              </div>
-
-              <div className="col col--6">
-                <h2>Powerful APIs</h2>
-
-                <p>
-                  Easily and succinctly style your components with our powerful battle-tested and
-                  high-performant APIs. We handle the heavy lifting, you focus on features that
-                  matter.
-                </p>
               </div>
             </div>
           </div>

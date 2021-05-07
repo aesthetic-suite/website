@@ -626,3 +626,244 @@ export const LESS_FORMAT = `@border-sm-radius: 0.11rem; // 1.50px
 @typography-font-system: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 @typography-root-line-height: 1.25;
 @typography-root-text-size: 14px;`;
+
+export const YAML_FIXED_CONFIG = `# TYPOGRAPHY
+typography:
+  # Font family for all body text and headings. Defaults to the platform "system" font.
+  # Can customize text, heading, monospace, and locale fonts individually by using a map.
+  font: system
+
+  # Default text sizes and line heights, with "small" and "large" sizes being automatically
+  # calculated using modular scale. The default text size is used as the "root font size".
+  # Can customize default, small, and large sizes individually by using a map.
+  text:
+    small:
+      size: 12.45
+      lineHeight: 1.25
+    default:
+      size: 14
+      lineHeight: 1.25
+    large:
+      size: 15.75
+      lineHeight: 1.25
+
+  # Level 6 heading size, line height, and letter spacing. Levels 5-1 are automatically
+  # calculated by incrementing upwards using module scale.
+  # Can customize each level individually by using a map.
+  heading:
+    level1:
+      size: 16
+      lineHeight: 1.5
+      letterSpacing: 0.25
+    level2:
+      size: 20
+      lineHeight: 1.69
+      letterSpacing: 0.33
+    level3:
+      size: 25
+      lineHeight: 1.9
+      letterSpacing: 0.44
+    level4:
+      size: 31.25
+      lineHeight: 2.14
+      letterSpacing: 0.59
+    level5:
+      size: 39
+      lineHeight: 2.4
+      letterSpacing: 0.79
+    level6:
+      size: 48.8
+      lineHeight: 2.7
+      letterSpacing: 1.05
+
+# RESPONSIVE
+responsive:
+  # A list of 5 breakpoint units to target for device sizes.
+  breakpoints:
+    xs: 640
+    sm: 960
+    md: 1280
+    lg: 1600
+    xl: 1920
+
+  # Scaling factor to modify the text and line height for each breakpoint.
+  textScale: minor-second
+  lineHeightScale: minor-second
+
+# SPACING
+spacing:
+  # The type of algorithm to use when calculating spacing and measurement tokens.
+  # Accepts "vertical-rhythm" or "unit".
+  type: vertical-rhythm
+
+  # The base unit size when type is "unit".
+  unit: 8
+
+  # Multipliers for each spacing size.
+  multipliers:
+    xs: 0.25
+    sm: 0.5
+    df: 1 # Default
+    md: 2
+    lg: 3
+    xl: 4
+
+# BORDERS
+# Scales from the inside (default) out (small, large). Configure for default.
+# Can customize small, default, and large sizes individually by using a map.
+borders:
+  small:
+    radius: 1.5
+    width: 0
+  default:
+    radius: 3
+    width: 1
+  large:
+    radius: 4.5
+    width: 2
+
+# SHADOWS
+# Scales from extra small to extra large. Configure for extra small.
+# Can customize all sizes individually by using a map.
+shadows:
+  xsmall:
+    x: 0
+    y: 2
+    blur: 2
+    spread: 0
+  small:
+    x: 0
+    y: 3.24
+    blur: 3.75
+    spread: 0
+  medium:
+    x: 0
+    y: 5.24
+    blur: 5.5
+    spread: 0
+  large:
+    x: 0
+    y: 8.47
+    blur: 7.25
+    spread: 0
+  xlarge:
+    x: 0
+    y: 13.71
+    blur: 9
+    spread: 0
+
+# COLORS
+# List of color names that each theme must implement.
+colors:
+  - blue
+  - brown
+  - gray
+  - green
+  - pink
+  - purple
+  - red
+  - yellow
+`;
+
+export const YAML_SCALED_CONFIG = `# TYPOGRAPHY
+typography:
+  # Font family for all body text and headings. Defaults to the platform "system" font.
+  # Can customize text, heading, monospace, and locale fonts individually by using a map.
+  font: system
+
+  # Default text sizes and line heights, with "small" and "large" sizes being automatically
+  # calculated using modular scale. The default text size is used as the "root font size".
+  # Can customize default, small, and large sizes individually by using a map.
+  text:
+    size: 14
+    sizeScale: major-second
+    lineHeight: 1.25
+    lineHeightScale: 0
+
+  # Level 6 heading size, line height, and letter spacing. Levels 5-1 are automatically
+  # calculated by incrementing upwards using module scale.
+  # Can customize each level individually by using a map.
+  heading:
+    size: 16
+    sizeScale: major-third
+    lineHeight: 1.5
+    lineHeightScale: major-second
+    letterSpacing: 0.25
+    letterSpacingScale: perfect-fourth
+
+# RESPONSIVE
+responsive:
+  # A list of 5 breakpoint units to target for device sizes.
+  breakpoints:
+    - 640
+    - 960
+    - 1280
+    - 1600
+    - 1920
+
+  # Scaling factor to modify the text and line height for each breakpoint.
+  textScale: minor-second
+  lineHeightScale: minor-second
+
+# SPACING
+spacing:
+  # The type of algorithm to use when calculating spacing and measurement tokens.
+  # Accepts "vertical-rhythm" or "unit".
+  type: vertical-rhythm
+
+  # The base unit size when type is "unit".
+  unit: 8
+
+  # Multipliers for each spacing size.
+  multipliers:
+    xs: 0.25
+    sm: 0.5
+    df: 1 # Default
+    md: 2
+    lg: 3
+    xl: 4
+
+# BORDERS
+# Scales from the inside (default) out (small, large). Configure for default.
+# Can customize small, default, and large sizes individually by using a map.
+borders:
+  # Controls the rounding of corners.
+  radius: 3
+  radiusScale: 1.5
+
+  # Controls the width or thickness of the border.
+  width: 1
+  widthScale: 2
+
+# SHADOWS
+# Scales from extra small to extra large. Configure for extra small.
+# Can customize all sizes individually by using a map.
+shadows:
+  # Offset the shadow on the X-axis (horizontally).
+  x: 0
+  xScale: 0
+
+  # Offset the shadow on the Y-axis (vertically).
+  y: 2
+  yScale: golden-ratio
+
+  # Controls blur and reduces sharpness, which causes it to be bigger and lighter.
+  blur: 2
+  blurScale: 1.75
+
+  # Controls spread, which causes it to expand, grow, and get thicker.
+  spread: 0
+  spreadScale: 0
+
+# COLORS
+# List of color names that each theme must implement.
+colors:
+  - blue
+  - brown
+  - gray
+  - green
+  - pink
+  - purple
+  - red
+  - yellow
+`;

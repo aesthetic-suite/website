@@ -55,10 +55,10 @@
     optimal "^4.2.0"
     prettier "^2.2.1"
 
-"@aesthetic/core-react@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@aesthetic/core-react/-/core-react-0.1.9.tgz#4f9a293c528903d1203f6a31d54663a17980c2d4"
-  integrity sha512-xDfl3CSVpFg8sFWzn8Eb3b3PPIVWCOvwmLUE0dzZ1F3r3AjkCSs/tRRQ+plluB9dJLu9UnUgA2HfpoY7PSG/FA==
+"@aesthetic/core-react@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core-react/-/core-react-0.1.10.tgz#9222d1fdecddbfeaac5fdb62ad165409bc740469"
+  integrity sha512-MZRBH0zFPpDJdsSA8c7tAyYPfFjc7iKqKmccpzt2pxZKXeW1p1RhnAEob7Y/ltrmf3aXj1FiGxTn02SlNRqY3g==
   dependencies:
     "@aesthetic/utils" "^0.7.0"
     direction "^1.0.4"
@@ -74,22 +74,22 @@
     "@aesthetic/types" "^0.5.0"
     "@aesthetic/utils" "^0.7.0"
 
-"@aesthetic/react-native@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@aesthetic/react-native/-/react-native-0.1.0.tgz#1ea1aeedace6c11992462d89b03a5af1274a6dbf"
-  integrity sha512-Vdmb5NMBt3sJ1dAwMCxzDHS7xOtyHpWLG1M40MPBJxXsEWZEgr8EClXScTPHKud+gZ6gY/VJhiB9NoeHcOoviw==
+"@aesthetic/react-native@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/react-native/-/react-native-0.1.1.tgz#cfa7247377f534124edfc3136b91b3ca9123bf20"
+  integrity sha512-C9QsGSxOKdPaCS9DsHtvA7o+fI27TiPemKBSV00//2dA2ZGlfLlSsh409T7nhvWDZ/fcg37RAeKKXK75EGSvCQ==
   dependencies:
     "@aesthetic/core" "^0.9.1"
-    "@aesthetic/core-react" "^0.1.9"
+    "@aesthetic/core-react" "^0.1.10"
     "@aesthetic/utils" "^0.7.0"
 
-"@aesthetic/react@^0.6.10":
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.6.10.tgz#6862a70b7daccd74127da6b04921c8989725d8f6"
-  integrity sha512-XvbSj7HYDJnHHv4Rk5UTNEUFRzS5a3Q+TQsRHL+Xq9+I6xfIfbRvLdM/ZhOP2+2OXxGQAWcKzs5oFjUg2PSf+A==
+"@aesthetic/react@^0.6.11":
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.6.11.tgz#cbdc31b03fa391e09379626a6836fda697bf7967"
+  integrity sha512-pF3FD5cmtrtYMd42RKQ8omH4MopFEjItQDedBZwXpJSsiOhoqyHNy0MPazkfHfsAISphd8iyaB36VOZD322NYw==
   dependencies:
     "@aesthetic/core" "^0.9.1"
-    "@aesthetic/core-react" "^0.1.9"
+    "@aesthetic/core-react" "^0.1.10"
     "@aesthetic/style" "^0.8.0"
     "@aesthetic/utils" "^0.7.0"
 

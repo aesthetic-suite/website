@@ -172,7 +172,6 @@ module.exports = {
     {
       type: 'category',
       label: 'Resources',
-      collapsed: false,
       items: [
         {
           type: 'link',

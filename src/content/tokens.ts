@@ -139,9 +139,8 @@ export const spacing: SpacingTokens = {
   xs: '0.31rem', // 4.38px
   sm: '0.63rem', // 8.75px
   df: '1.25rem', // 17.50px
-  md: '2.50rem', // 35px
-  lg: '3.75rem', // 52.50px
-  xl: '5rem', // 70px
+  lg: '2.50rem', // 35px
+  xl: '3.75rem', // 52.50px
   type: 'vertical-rhythm',
   unit: 17.5,
 };
@@ -291,9 +290,8 @@ export default new Design('example', {
     xs: '0.31rem', // 4.38px
     sm: '0.63rem', // 8.75px
     df: '1.25rem', // 17.50px
-    md: '2.50rem', // 35px
-    lg: '3.75rem', // 52.50px
-    xl: '5rem', // 70px
+    lg: '2.50rem', // 35px
+    xl: '3.75rem', // 52.50px
     type: 'vertical-rhythm',
     unit: 17.5,
   },
@@ -407,9 +405,8 @@ export const CSS_FORMAT = `:root {
   --spacing-xs: 0.31rem; /* 4.38px */
   --spacing-sm: 0.63rem; /* 8.75px */
   --spacing-df: 1.25rem; /* 17.50px */
-  --spacing-md: 2.5rem; /* 35px */
-  --spacing-lg: 3.75rem; /* 52.50px */
-  --spacing-xl: 5rem; /* 70px */
+  --spacing-lg: 2.5rem; /* 35px */
+  --spacing-xl: 3.75rem; /* 52.50px */
   --spacing-unit: 17.5;
 
   --text-sm-line-height: 1.25;
@@ -508,9 +505,8 @@ $shadow-xl-spread: 0rem !default; // 0px
 $spacing-xs: 0.31rem !default; // 4.38px
 $spacing-sm: 0.63rem !default; // 8.75px
 $spacing-df: 1.25rem !default; // 17.50px
-$spacing-md: 2.5rem !default; // 35px
-$spacing-lg: 3.75rem !default; // 52.50px
-$spacing-xl: 5rem !default; // 70px
+$spacing-lg: 2.5rem !default; // 35px
+$spacing-xl: 3.75rem !default; // 52.50px
 $spacing-unit: 17.5 !default;
 
 $text-sm-line-height: 1.25 !default;
@@ -608,9 +604,8 @@ export const LESS_FORMAT = `@border-sm-radius: 0.11rem; // 1.50px
 @spacing-xs: 0.31rem; // 4.38px
 @spacing-sm: 0.63rem; // 8.75px
 @spacing-df: 1.25rem; // 17.50px
-@spacing-md: 2.5rem; // 35px
-@spacing-lg: 3.75rem; // 52.50px
-@spacing-xl: 5rem; // 70px
+@spacing-lg: 2.5rem; // 35px
+@spacing-xl: 3.75rem; // 52.50px
 @spacing-unit: 17.5;
 
 @text-sm-line-height: 1.25;
@@ -704,9 +699,8 @@ spacing:
     xs: 0.25
     sm: 0.5
     df: 1 # Default
-    md: 2
-    lg: 3
-    xl: 4
+    lg: 2
+    xl: 3
 
 # BORDERS
 # Scales from the inside (default) out (small, large). Configure for default.
@@ -819,9 +813,8 @@ spacing:
     xs: 0.25
     sm: 0.5
     df: 1 # Default
-    md: 2
-    lg: 3
-    xl: 4
+    lg: 2
+    xl: 3
 
 # BORDERS
 # Scales from the inside (default) out (small, large). Configure for default.

@@ -216,3 +216,15 @@ function Button({
 
 > NOTE: The order of selectors passed to `sx()` determines the specificity, as we create an array of
 > `ViewStyle` (or `TextStyle`, `ImageStyle`) objects. Be aware of this when developing.
+
+### Custom style objects
+
+You can pass non-Aesthetic composed style objects to `sx()` by passing an array.
+
+```ts
+sx('button', [
+  {
+    width: 100,
+  },
+]);
+```

@@ -209,6 +209,14 @@ function Button({
 > NOTE: The order of selectors passed to `cx()` does not determine the specificity. The order they
 > are defined in the style sheet does! Be aware of this when developing.
 
+### Custom class names
+
+You can pass non-Aesthetic class names to `cx()` by passing an array.
+
+```ts
+cx('button', ['custom-class-name']);
+```
+
 ## Alternative styling
 
 Besides the `useStyles` hook, there is a special `useCss` hook, which is a low-level alternative for

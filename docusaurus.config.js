@@ -29,6 +29,7 @@ module.exports = {
   organizationName: 'aesthetic-suite',
   projectName: 'website',
   themeConfig: {
+    algolia: { apiKey: 'e69c3e49d282a965851e8e885091e26b', indexName: 'aestheticsuite' },
     navbar: {
       title: 'Aesthetic',
       logo: {

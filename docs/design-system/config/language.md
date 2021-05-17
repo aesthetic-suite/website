@@ -105,9 +105,8 @@ spacing:
     xs: 0.25
     sm: 0.5
     df: 1 # Default
-    md: 2
-    lg: 3
-    xl: 4
+    lg: 2
+    xl: 3
 ```
 
 In basic terms, the multiplier will be used and calculated against the spacing type. For example, an
@@ -153,6 +152,18 @@ typography:
       ja_JP: 'YuGothic, "Meiryo UI", Meiryo, Osaka, Tahoma, Arial, sans-serif'
       # Thai
       th_TH: '"Leelawadee UI Regular", "Kmer UI", Tahoma, Arial, sans-serif'
+```
+
+#### System font
+
+If you would like to use the system font in either the text or heading, insert `<system>`, which
+will be replaced with the platform native system font. This is the default of neither font is
+provided.
+
+```yaml title="language.yaml"
+typography:
+  font:
+    text: 'Roboto, <system>'
 ```
 
 ### Text

@@ -6,10 +6,10 @@ An alternative to [styling components](./styles.mdx) manually is to use the `cre
 which creates a reusable component at the lowest level -- per element. This approach was made
 popular by the [styled-components](https://styled-components.com) library.
 
-The `createStyled()` function requires the name of an HTML element to render underneath the hood.
-Using the example below, it would render a `<button />`. It also requires a partial
-[style sheet](../../dev/css-in-js/style-sheets/components.md) (either an object or function), in
-which a single element is styled, instead of multiple elements.
+The `createStyled()` (or `styled` alias) function requires the name of an HTML element to render
+underneath the hood. Using the example below, it would render a `<button />`. It also requires a
+partial [style sheet](../../dev/css-in-js/style-sheets/components.mdx) (either an object or
+function), in which a single element is styled, instead of multiple elements.
 
 ```tsx
 import React from 'react';
@@ -40,7 +40,7 @@ automatically supported and are typed correctly if using TypeScript.
 Styled components can support any number of customizable variations out of the box.
 
 ```tsx
-const Button = createStyled('button', {
+const Button = styled('button', {
   display: 'inline-flex',
   padding: css.var('spacing-df'),
   textAlign: 'center',
@@ -79,7 +79,7 @@ interface ButtonVariants {
   palette?: 'brand' | 'positive' | 'warning';
 }
 
-const Button = createStyled<'button', ButtonVariants>('button', {
+const Button = styled<'button', ButtonVariants>('button', {
   // ...
 });
 ```
@@ -90,18 +90,18 @@ Styled components can also extend and compose around other styled components. Wh
 approach, all styles and their variants are inherited.
 
 ```tsx
-const Button = createStyled('button', (css) => ({
+const Button = styled('button', (css) => ({
   display: 'inline-flex',
   textAlign: 'center',
   padding: css.var('spacing-df'),
 }));
 
-const BlockButton = createStyled(Button, {
+const BlockButton = styled(Button, {
   display: 'flex',
   width: '100%',
 });
 
-const PillBlockButton = createStyled(BlockButton, {
+const PillBlockButton = styled(BlockButton, {
   borderRadius: '50%',
 });
 ```

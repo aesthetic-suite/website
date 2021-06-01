@@ -205,6 +205,22 @@ const BlockButton = createStyled(Button, {
 });
 ```
 
+### `style`
+
+An alias for [createElementStyles](../../dev/css-in-js/style-sheets/components).
+
+### `styles`
+
+An alias for [createComponentStyles](../../dev/css-in-js/style-sheets/components).
+
+### `styled`
+
+An alias for [createStyled](#createStyled).
+
+### `themeStyle`
+
+An alias for [createThemeStyles](../../dev/css-in-js/style-sheets/themes).
+
 ## Server-side
 
 ### `renderToStyleElements`

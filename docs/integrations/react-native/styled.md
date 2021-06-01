@@ -7,7 +7,7 @@ which creates a reusable component at the lowest level. This approach was made p
 [styled-components](https://styled-components.com) library.
 
 The `createStyled()` function requires a standard `View`, `Text`, etc, and a partial
-[style sheet](../../dev/css-in-js/style-sheets/components.md) (either an object or function), in
+[style sheet](../../dev/css-in-js/style-sheets/components.mdx) (either an object or function), in
 which a single element is styled, instead of multiple elements.
 
 ```tsx

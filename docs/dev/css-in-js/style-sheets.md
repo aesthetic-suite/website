@@ -6,13 +6,13 @@ sidebar_label: Overview
 Styles within Aesthetic are managed through style sheets and are divided into the following 2
 categories.
 
-- [Component style sheets](./style-sheets/components.md). Isolates styles to components and their
-  elements.
+- [Element and component style sheets](./style-sheets/components.mdx). Isolates styles to components
+  and their elements.
 - [Theme style sheets](./style-sheets/themes.md). Provides styles and at-rules for the document.
 
-Style sheets are created with either the `createComponentStyles()` or `createThemeStyles()` methods
-respectively. Both methods require a function that returns a _style object_ (also known as a factory
-function).
+Style sheets are created with either the `createElementStyles()`, `createComponentStyles()`, or
+`createThemeStyles()` methods respectively. All methods require a function that returns a _style
+object_ (also known as a factory function).
 
 ```ts
 import { createComponentStyles } from '@aesthetic/<integration>';

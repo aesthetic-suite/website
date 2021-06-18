@@ -5,25 +5,28 @@ title: Using themes
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Knowledge of [themes](../../dev/css-in-js/themes.md) is required.
+> Knowledge of [themes](../dev/css-in-js/themes.md) is required.
 
 To provide the active theme to all React components, we'll need to render a `ThemeProvider` at the
 root of your application. By default, the active theme will automatically be detected based on a
 user's preference, like preferred color scheme, contrast levels, and more!
 
-```tsx title="index.ts" {3,8-10}
+```tsx title="index.ts" {3,9-11}
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@aesthetic/react';
+import { AppRegistry } from 'react-native';
+import { ThemeProvider } from '@aesthetic/react-native';
 import './setup';
 import App from './App';
 
-ReactDOM.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>,
-  document.getElementById('app'),
+function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
 );
+
+AppRegistry.registerComponent('Root', () => Root);
 ```
 
 > Only 1 `ThemeProvider` may be rendered in an application.
@@ -38,7 +41,7 @@ This approach is a bit cumbersome, as it requires re-rendering the provider near
 application, which requires some form of state at that layer.
 
 ```tsx
-import { ThemeProvider } from '@aesthetic/react';
+import { ThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider name="twilight">
   <App />
@@ -47,22 +50,22 @@ import { ThemeProvider } from '@aesthetic/react';
 
 ## Contextual themeing
 
-A root `ThemeProvider` provides design tokens to the entire application by declaring `:root` level
-CSS variables and applying a `<body />` class name. Because of this architectural decision, themes
-and styles can be dynamically changed with ease.
+A root `ThemeProvider` provides design tokens to the entire application through React context, with
+the active theme being automatically detected based on the device and environment (unless `name` is
+explicitly passed).
 
-Because we utilize CSS variables, we implicitly support nested themes by taking advantage of
-element-level CSS variable cascading. To integrate nested themes, use the `ContextualThemeProvider`
-with an explicit theme name.
+To theme a specific section of the React tree, a `ContextualThemeProvider` can be rendered with an
+explicit theme name.
 
 ```tsx
-import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
+import { View } from 'react-native';
+import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider name="day">
-  <div>Inherits styles from the day theme.</div>
+  <View>Inherits styles from the day theme.</View>
 
   <ContextualThemeProvider name="night">
-    <div>Inherits styles from the night theme.</div>
+    <View>Inherits styles from the night theme.</View>
   </ContextualThemeProvider>
 </ThemeProvider>;
 ```
@@ -85,7 +88,7 @@ To manually access the provided `Theme` object, either from the root or contextu
   <TabItem value="hook">
 
 ```tsx {4,6}
-import { useTheme } from '@aesthetic/react';
+import { useTheme } from '@aesthetic/react-native';
 
 export default function Component() {
   const theme = useTheme();
@@ -102,7 +105,7 @@ export default function Component() {
   <TabItem value="hoc">
 
 ```tsx {3,4,11}
-import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
+import { withTheme, WithThemeWrappedProps } from '@aesthetic/react-native';
 
 function Component({ theme }: WithThemeWrappedProps) {
   if (theme.contrast === 'high') {

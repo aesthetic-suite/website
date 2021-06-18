@@ -8,8 +8,8 @@ popular by the [styled-components](https://styled-components.com) library.
 
 The `createStyled()` (or `styled` alias) function requires the name of an HTML element to render
 underneath the hood. Using the example below, it would render a `<button />`. It also requires a
-partial [style sheet](../../dev/css-in-js/style-sheets/components.mdx) (either an object or
-function), in which a single element is styled, instead of multiple elements.
+partial [style sheet](../dev/css-in-js/style-sheets/components.mdx) (either an object or function),
+in which a single element is styled, instead of multiple elements.
 
 ```tsx
 import React from 'react';

@@ -8,8 +8,8 @@ integrations.
 
 ## Web
 
-- [React](./integrations/react.md)
+- [React](./react.md)
 
 ## Other
 
-- [React Native](./integrations/react-native.md)
+- [React Native](./react-native.md)

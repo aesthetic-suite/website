@@ -5,14 +5,14 @@ title: Directionality
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Knowledge of [directionality](../../dev/css-in-js/direction.md) is required.
+> Knowledge of [directionality](../dev/css-in-js/direction.md) is required.
 
 A `DirectionProvider` is available for controlling the direction of a target React component tree.
-While not necessary to render at the root, since the default direction is inferred from the
-document's `dir` attribute, it can be used to explicitly enforce a direction, like so.
+While not necessary to render at the root, since the default direction is inferred from the device,
+it can be used to explicitly enforce a direction, like so.
 
 ```tsx
-import { DirectionProvider } from '@aesthetic/react';
+import { DirectionProvider } from '@aesthetic/react-native';
 import Component from './Component';
 
 <DirectionProvider direction="rtl">
@@ -28,7 +28,7 @@ depending on what's being entered in an input field.
 
 ```tsx
 import React, { useState } from 'react';
-import { DirectionProvider } from '@aesthetic/react';
+import { DirectionProvider } from '@aesthetic/react-native';
 import MessageThread from './MessageThread';
 import MessageInput from './MessageInput';
 
@@ -67,7 +67,7 @@ To manually access the current direction, either from the document or a provider
   <TabItem value="hook">
 
 ```tsx {4,6}
-import { useDirection } from '@aesthetic/react';
+import { useDirection } from '@aesthetic/react-native';
 
 export default function Component() {
   const direction = useDirection();
@@ -84,7 +84,7 @@ export default function Component() {
   <TabItem value="hoc">
 
 ```tsx {3,4,11}
-import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
+import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react-native';
 
 function Component({ direction }: WithDirectionWrappedProps) {
   if (direction === 'ltr') {

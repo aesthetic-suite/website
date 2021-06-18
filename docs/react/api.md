@@ -74,7 +74,7 @@ const styles = { display: 'block' };
 
 export default function Component() {
   const options = useMemo(() => ({ deterministic: true }), []);
-  const className = useCss(styles, options);
+  const { className, variants } = useCss(styles, options);
 
   return <div className={className} />;
 }
@@ -207,11 +207,11 @@ const BlockButton = createStyled(Button, {
 
 ### `style`
 
-An alias for [createElementStyles](../../dev/css-in-js/style-sheets/components).
+An alias for [createElementStyles](../dev/css-in-js/style-sheets/components).
 
 ### `styles`
 
-An alias for [createComponentStyles](../../dev/css-in-js/style-sheets/components).
+An alias for [createComponentStyles](../dev/css-in-js/style-sheets/components).
 
 ### `styled`
 
@@ -219,7 +219,7 @@ An alias for [createStyled](#createStyled).
 
 ### `themeStyle`
 
-An alias for [createThemeStyles](../../dev/css-in-js/style-sheets/themes).
+An alias for [createThemeStyles](../dev/css-in-js/style-sheets/themes).
 
 ## Server-side
 

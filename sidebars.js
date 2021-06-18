@@ -97,12 +97,12 @@ module.exports = {
         {
           type: 'link',
           label: '@aesthetic/react',
-          href: `${config.baseUrl}docs/integrations/react`,
+          href: `${config.baseUrl}docs/react`,
         },
         {
           type: 'link',
           label: '@aesthetic/react-native',
-          href: `${config.baseUrl}docs/integrations/react-native`,
+          href: `${config.baseUrl}docs/react-native`,
         },
         {
           type: 'category',
@@ -148,23 +148,23 @@ module.exports = {
   ],
 
   react: [
-    'integrations/react',
-    'integrations/react/setup',
-    'integrations/react/themes',
-    'integrations/react/styles',
-    'integrations/react/styled',
-    'integrations/react/direction',
-    'integrations/react/ssr',
-    'integrations/react/api',
+    'react',
+    'react/setup',
+    'react/themes',
+    'react/styles',
+    'react/styled',
+    'react/direction',
+    'react/ssr',
+    'react/api',
   ],
 
   reactNative: [
-    'integrations/react-native',
-    'integrations/react-native/setup',
-    'integrations/react-native/themes',
-    'integrations/react-native/styles',
-    'integrations/react-native/styled',
-    'integrations/react-native/direction',
-    'integrations/react-native/api',
+    'react-native',
+    'react-native/setup',
+    'react-native/themes',
+    'react-native/styles',
+    'react-native/styled',
+    'react-native/direction',
+    'react-native/api',
   ],
 };

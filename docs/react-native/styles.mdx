@@ -5,11 +5,11 @@ title: Styling components
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Knowledge of [style sheets](../../dev/css-in-js/style-sheets.md) is required.
+> Knowledge of [component style sheets](../dev/css-in-js/style-sheets/components.mdx) is required.
 
 Components are styled with the `useStyles()` hook (preferred) or the `withStyles()`
 higher-order-component. Both APIs require a
-[style sheet](../../dev/css-in-js/style-sheets/components.mdx) that is conditionally rendered to
+[style sheet](../dev/css-in-js/style-sheets/components.mdx) that is conditionally rendered to
 compose React Native style sheets.
 
 To continue with the example found in the style sheet documentation, let's design and style a button
@@ -178,9 +178,8 @@ and `button_disabled` selectors will only be rendered when the button is conditi
 the `selected` and `disabled` props respectively.
 
 We can take this a step further by supporting
-[variants](../../dev/css-in-js/style-sheets/components.mdx#variants). All that's required is to pass
-an object as the _1st argument_ to `sx()` with the name of every variant, and the variant to
-activate.
+[variants](../dev/css-in-js/style-sheets/components.mdx#variants). All that's required is to pass an
+object as the _1st argument_ to `sx()` with the name of every variant, and the variant to activate.
 
 ```tsx {7,8,11,16-21}
 function Button({

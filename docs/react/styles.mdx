@@ -5,12 +5,12 @@ title: Styling components
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Knowledge of [style sheets](../../dev/css-in-js/style-sheets.md) is required.
+> Knowledge of [component style sheets](../dev/css-in-js/style-sheets/components.mdx) is required.
 
 Components are styled with the `useStyles()` hook (preferred) or the `withStyles()`
 higher-order-component. Both APIs require a
-[style sheet](../../dev/css-in-js/style-sheets/components.mdx) that is conditionally rendered to CSS
-to generate atomic class names.
+[style sheet](../dev/css-in-js/style-sheets/components.mdx) that is conditionally rendered to CSS to
+generate atomic class names.
 
 To continue with the example found in the style sheet documentation, let's design and style a button
 component. The button file would look something like the following.
@@ -169,9 +169,8 @@ and `button_disabled` selectors will only be rendered when the button is conditi
 the `selected` and `disabled` props respectively.
 
 We can take this a step further by supporting
-[variants](../../dev/css-in-js/style-sheets/components.mdx#variants). All that's required is to pass
-an object as the _1st argument_ to `cx()` with the name of every variant, and the variant to
-activate.
+[variants](../dev/css-in-js/style-sheets/components.mdx#variants). All that's required is to pass an
+object as the _1st argument_ to `cx()` with the name of every variant, and the variant to activate.
 
 ```tsx {7,8,11,17-22}
 function Button({
@@ -220,7 +219,7 @@ cx('button', ['custom-class-name']);
 ## Alternative styling
 
 Besides the `useStyles` hook, there is a special `useCss` hook, which is a low-level alternative for
-rendering a basic [rule object](../../packages/style/concepts.md#styles) and returning a class name.
+rendering a basic [rule object](../packages/style/concepts.md#styles) and returning a class name.
 
 ```tsx
 import React, { useMemo } from 'react';
@@ -249,9 +248,9 @@ function Button({ children }: ButtonProps) {
 ```
 
 Be aware that this hook _**does not**_ use the
-[component style sheet](../../dev/css-in-js/style-sheets/components.mdx) format and instead uses
-plain [style objects](../../packages/style/concepts.md#styles)! Because of this, the following
-features are no longer available:
+[component style sheet](../dev/css-in-js/style-sheets/components.mdx) format and instead uses plain
+[style objects](../packages/style/concepts.md#styles)! Because of this, the following features are
+no longer available:
 
 - Theme object and utility functions
 - Structured style blocks

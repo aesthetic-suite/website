@@ -51,14 +51,14 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/integrations/react',
-          activeBasePath: 'docs/integrations/react',
+          to: 'docs/react',
+          activeBasePath: 'docs/react',
           label: 'React',
           position: 'left',
         },
         {
-          to: 'docs/integrations/react-native',
-          activeBasePath: 'docs/integrations/react-native',
+          to: 'docs/react-native',
+          activeBasePath: 'docs/react-native',
           label: 'React Native',
           position: 'left',
         },
@@ -113,11 +113,11 @@ module.exports = {
           items: [
             {
               label: 'React',
-              to: '/docs/integrations/react',
+              to: '/docs/react',
             },
             {
               label: 'React Native',
-              to: '/docs/integrations/react-native',
+              to: '/docs/react-native',
             },
           ],
         },

@@ -3,7 +3,7 @@ title: Theme style sheets
 sidebar_label: For themes
 ---
 
-While [component style sheets](./components.md) are used to style elements in isolation, a theme
+While [component style sheets](./components.mdx) are used to style elements in isolation, a theme
 style sheet is used to style the document (using a container), while also providing global at-rules
 like font faces or keyframes.
 

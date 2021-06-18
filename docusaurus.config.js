@@ -10,7 +10,6 @@ const pkgs = [
   'core-react',
   'react',
   'react-native',
-  'sss',
   'style',
   'system',
   'types',
@@ -74,10 +73,6 @@ module.exports = {
             {
               label: 'CSS-in-JS engine',
               to: '/docs/packages/style',
-            },
-            {
-              label: 'Structured style sheets',
-              to: '/docs/packages/sss',
             },
           ],
         },

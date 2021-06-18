@@ -92,40 +92,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Integrations',
-      collapsed: false,
-      items: [
-        {
-          type: 'category',
-          label: 'React',
-          items: [
-            'integrations/react',
-            'integrations/react/setup',
-            'integrations/react/themes',
-            'integrations/react/styles',
-            'integrations/react/styled',
-            'integrations/react/direction',
-            'integrations/react/ssr',
-            'integrations/react/api',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'React Native',
-          items: [
-            'integrations/react-native',
-            'integrations/react-native/setup',
-            'integrations/react-native/themes',
-            'integrations/react-native/styles',
-            'integrations/react-native/styled',
-            'integrations/react-native/direction',
-            'integrations/react-native/api',
-          ],
-        },
-      ],
-    },
-    {
-      type: 'category',
       label: 'Packages',
       items: [
         {
@@ -179,5 +145,26 @@ module.exports = {
         },
       ],
     },
+  ],
+
+  react: [
+    'integrations/react',
+    'integrations/react/setup',
+    'integrations/react/themes',
+    'integrations/react/styles',
+    'integrations/react/styled',
+    'integrations/react/direction',
+    'integrations/react/ssr',
+    'integrations/react/api',
+  ],
+
+  reactNative: [
+    'integrations/react-native',
+    'integrations/react-native/setup',
+    'integrations/react-native/themes',
+    'integrations/react-native/styles',
+    'integrations/react-native/styled',
+    'integrations/react-native/direction',
+    'integrations/react-native/api',
   ],
 };

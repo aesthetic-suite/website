@@ -46,7 +46,7 @@ Aesthetic assumes and requires all styles to be
 
 ```ts
 // Left-to-right
-const className = engine.renderRule({
+engine.renderRule({
   marginLeft: '10px',
   paddingRight: 0,
   textAlign: 'left',
@@ -71,14 +71,14 @@ using the `direction` option.
 
 ```ts
 // Right-to-left
-const className = engine.renderRule(
+engine.renderRule(
   {
     marginLeft: '10px',
     paddingRight: 0,
     textAlign: 'left',
   },
   {
-    direction: 'rtl,
+    direction: 'rtl',
   },
 ); // -> d e f
 ```
@@ -107,7 +107,7 @@ to read and write, and as such, Aesthetic supports this pattern. By default, all
 are automatically suffixed with `px`, unless the property in question requires no unit.
 
 ```ts
-const className = engine.renderRule({
+engine.renderRule({
   marginLeft: 10,
   lineHeight: 1.25,
 }); // -> a b
@@ -127,7 +127,7 @@ string.
 
 ```ts
 // All units as "rem"
-const className = engine.renderRule(
+engine.renderRule(
   {
     marginLeft: 10,
     paddingBottom: 15,
@@ -157,7 +157,7 @@ prefixes.
 
 ```ts
 // Without vendor prefixing
-const className = engine.renderRule({
+engine.renderRule({
   appearance: 'none',
   minWidth: 'fit-content',
 }); // -> a b
@@ -178,7 +178,7 @@ the `vendor` option.
 
 ```ts
 // With vendor prefixing
-const className = engine.renderRule(
+engine.renderRule(
   {
     appearance: 'none',
     minWidth: 'fit-content',

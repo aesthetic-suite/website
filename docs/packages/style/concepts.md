@@ -57,8 +57,10 @@ const rule: Rule = {
   },
 
   // Advanced pseudo
-  ':not(:disabled)': {
-    color: 'black',
+  '@selectors': {
+    ':not(:disabled)': {
+      color: 'black',
+    },
   },
 
   // Element
@@ -86,8 +88,10 @@ const rule: Rule = {
   },
 
   // Advanced attribute
-  '[href~="special"]': {
-    color: 'red',
+  '@selectors': {
+    '[href~="special"]': {
+      color: 'red',
+    },
   },
 };
 ```
@@ -96,7 +100,7 @@ const rule: Rule = {
 
 And finally, all
 [combinator selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors), excluding
-descendent, are supported. Nested rules must start with `>`, `~`, `+`, or `|`.
+descendent, are supported in `@selectors`. Nested rules must start with `>`, `~`, `+`, or `|`.
 
 ```ts
 import { Rule } from '@aesthetic/style';
@@ -104,29 +108,31 @@ import { Rule } from '@aesthetic/style';
 const rule: Rule = {
   margin: 0,
 
-  // Child
-  '> li': {
-    listStyle: 'none',
-  },
+  '@selectors': {
+    // Child
+    '> li': {
+      listStyle: 'none',
+    },
 
-  // Sibling
-  '~ ul': {
-    marginTop: 10,
-  },
+    // Sibling
+    '~ ul': {
+      marginTop: 10,
+    },
 
-  // Adjacent
-  '+ p': {
-    margin: 0,
-  },
+    // Adjacent
+    '+ p': {
+      margin: 0,
+    },
 
-  // Column
-  '|| td': {
-    textAlign: 'center',
+    // Column
+    '|| td': {
+      textAlign: 'center',
+    },
   },
 };
 ```
 
-#### Media queries
+### Media queries
 
 [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 are useful when you want to render styles based on device viewport. They are represented by the
@@ -138,20 +144,22 @@ import { Rule } from '@aesthetic/style';
 const rule: Rule = {
   display: 'block',
 
-  '@media (max-width: 720px)': {
-    display: 'inline-block',
-  },
+  '@media': {
+    '(max-width: 720px)': {
+      display: 'inline-block',
+    },
 
-  '@media print': {
-    border: 'none',
-    background: 'transparent',
+    print: {
+      border: 'none',
+      background: 'transparent',
+    },
   },
 };
 ```
 
 > Media queries can nest itself and other selectors.
 
-#### Feature queries
+### Feature queries
 
 [Feature queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Conditional_Rules/Using_Feature_Queries)
 are useful when you want to render styles based on features that are currently supported by the
@@ -163,15 +171,17 @@ import { Rule } from '@aesthetic/style';
 const rule: Rule = {
   display: 'block',
 
-  '@supports (display: flex)': {
-    display: 'flex',
+  '@supports': {
+    '(display: flex)': {
+      display: 'flex',
+    },
   },
 };
 ```
 
 > Feature queries can nest itself and other selectors.
 
-#### Variables
+### Variables
 
 Variables, also known as
 [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties),
@@ -179,15 +189,18 @@ are a feature that allows for specific values to be reused throughout the CSS do
 variables defined within a rule are scoped to the element in which the class is applied to, not the
 document root.
 
-Variables can be defined with standard kebab-case format and leading `--`. Furthermore, values _are
+Variables can be defined in `@variables`, with or without the leading `--`. Furthermore, values _are
 not_ processed like properties are, so any suffixes (like `px`) will need to be explicitly defined.
 
 ```ts
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  '--font-size': '16px',
   fontSize: 'var(--font-size)',
+
+  '@variables': {
+    '--font-size': '16px',
+  },
 };
 ```
 

@@ -73,14 +73,18 @@ const className = engine.renderDeclaration('display', 'block', { selector: ':hov
 > Engine#renderRule(properties: Rule, options?: RenderOptions): ClassName
 
 Renders a collection of property-value pairs, known as a CSS rule (or ruleset), and returns a CSS
-class name for each declaration. A collection of declarations is known as a _style object_.
+class name for each declaration. A collection of declarations is known as a _style object_. It
+returns an object with a `result` (the class name), and `variants` (array of class names).
 
 ```ts
 const className = engine.renderRule({
   display: 'block',
   textAlign: 'center',
   background: 'transparent',
-}); // -> a b c
+});
+
+className.result; // -> a b c
+className.variants; // []
 ```
 
 ```css
@@ -107,10 +111,12 @@ const className = engine.renderRule({
     background: 'black',
   },
 
-  '@media (max-width: 300px)': {
-    display: 'inline-block',
+  '@media': {
+    '(max-width: 300px)': {
+      display: 'inline-block',
+    },
   },
-}); // -> a b c d
+});
 ```
 
 ### `renderRuleGrouped`
@@ -127,7 +133,10 @@ const className = engine.renderRuleGrouped({
   display: 'block',
   textAlign: 'center',
   background: 'transparent',
-}); // -> a
+});
+
+className.result; // -> a
+className.variants; // []
 ```
 
 ```css
@@ -171,7 +180,7 @@ Renders a CSS file path as an `@import` at-rule. Only accepts the URL. Use the `
 to apply media queries.
 
 ```ts
-engine.renderImport('./path/to/file.css');
+engine.renderImport({ path: './path/to/file.css', url: true });
 ```
 
 ```css

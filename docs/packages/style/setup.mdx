@@ -48,8 +48,7 @@ const engine = createClientEngine();
 ```
 
 You can then render CSS declarations and rules to generate atomic class names (1 class name per
-declaration). Rendered styles are batched and inserted every animation frame, in an effort to reduce
-repaints and layout tearing.
+declaration).
 
 ```ts
 const className = engine.renderRule({
@@ -63,11 +62,9 @@ const className = engine.renderRule({
   ':hover': {
     borderColor: '#fff',
   },
+});
 
-  '@media (max-width: 600px)': {
-    display: 'block',
-  },
-}); // -> a b c d e f g h
+className.result; // -> a b c d e f g h
 ```
 
 That's about it, basic right? If you're looking for more advanced techniques, patterns, and usage,

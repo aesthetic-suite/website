@@ -140,17 +140,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: '@aesthetic/sss',
-          items: [
-            'packages/sss',
-            'packages/sss/spec',
-            'packages/sss/local',
-            'packages/sss/global',
-            'packages/sss/api',
-          ],
-        },
-        {
-          type: 'category',
           label: '@aesthetic/style',
           items: [
             'packages/style',

@@ -99,6 +99,17 @@ block (since styles are isolated). Style sheets support as many selectors as nee
 
 ## Defining styles
 
+The foundation of all styles are properties, where each key-value pair maps to a
+[CSS declaration](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax#CSS_declarations), and
+abides the following:
+
+- Property names are camel cased versions of their CSS equivalent property.
+- Vendor prefixed properties are _not_ supported. Use the `vendorPrefixer` setting to enable this
+  automatically.
+- Unit values that default to the `defaultUnit` (typically `px`) setting can be written as literal
+  numbers.
+- Values that require quotes in the CSS output must manually handle the quotes within the string.
+
 ### Selectors
 
 There are 2 types of selectors, the first being _basic selectors_, which includes pseudo elements,
@@ -241,8 +252,10 @@ const styleSheet = createElementStyles({
 
 ### Media and feature queries
 
-Media and feature queries can be defined within a style object using `@media` and `@supports`
-respectively. Both types require an object that maps query expressions to nested style objects.
+Media and feature queries can be defined within a style object using
+[media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) and
+[supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) respectively. Both types
+require an object that maps query expressions to nested style objects.
 
 <Tabs
   groupId="style-sheet"
@@ -350,7 +363,7 @@ Fonts are special as they need to be defined on the document instead of an eleme
 done with a [theme style sheet](./themes.md). However, we provide some convenience through the
 `fontFamily` property, which can accept one or many _font face objects_.
 
-Unlike normal CSS font faces, a _font face object_ requires a `srcPath` property, with a list of
+Unlike normal CSS font faces, a _font face object_ supports a `srcPath` property, with a list of
 file paths, instead of a `src` property.
 
 <Tabs
@@ -373,6 +386,22 @@ const styleSheet = createComponentStyles(() => ({
       fontWeight: 'normal',
       srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
     },
+
+    // Multiple font faces
+    fontFamily: [
+      {
+        fontFamily: 'Open Sans',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+      },
+      {
+        fontFamily: 'Open Sans',
+        fontStyle: 'normal',
+        fontWeight: 800,
+        srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
+      },
+    ],
   },
 }));
 ```
@@ -389,6 +418,22 @@ const styleSheet = createElementStyles(() => ({
     fontWeight: 'normal',
     srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
   },
+
+  // Multiple font faces
+  fontFamily: [
+    {
+      fontFamily: 'Open Sans',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+    },
+    {
+      fontFamily: 'Open Sans',
+      fontStyle: 'normal',
+      fontWeight: 800,
+      srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
+    },
+  ],
 }));
 ```
 
@@ -421,6 +466,18 @@ const styleSheet = createComponentStyles(() => ({
     },
     animationDuration: '3s',
     animationTimingFunction: 'ease-in',
+
+    // Multiple animations
+    animationName: [
+      {
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+      },
+      {
+        '0%': { bottom: 0 },
+        '100%': { bottom: '100%' },
+      },
+    ],
   },
 }));
 ```
@@ -437,52 +494,18 @@ const styleSheet = createComponentStyles({
   },
   animationDuration: '3s',
   animationTimingFunction: 'ease-in',
-});
-```
 
-  </TabItem>
-</Tabs>
-
-### Fallbacks
-
-A rarely used but necessary feature for progressive enhancement and supporting legacy browsers.
-Fallbacks allow you to define one or many different values for a single property through the
-`@fallbacks` object.
-
-<Tabs
-  groupId="style-sheet"
-  defaultValue="component"
-  values={[
-    { label: 'Component', value: 'component' },
-    { label: 'Elements', value: 'element' },
-  ]}
->
-  <TabItem value="component">
-
-```ts
-const styleSheet = createComponentStyles(() => ({
-  element: {
-    // ...
-    display: 'inline-flex',
-
-    '@fallbacks': {
-      display: ['inline', 'inline-block'],
+  // Multiple animations
+  animationName: [
+    {
+      from: { opacity: 0 },
+      to: { opacity: 1 },
     },
-  },
-}));
-```
-
-  </TabItem>
-  <TabItem value="element">
-
-```ts
-const styleSheet = createElementStyles({
-  // ...
-  display: 'inline-flex',
-
-  '@fallbacks': {
-    display: ['inline', 'inline-block'],
-  },
+    {
+      '0%': { bottom: 0 },
+      '100%': { bottom: '100%' },
+    },
+  ],
 });
 ```
 
@@ -711,6 +734,125 @@ const styleSheet = createElementStyles((css) => ({
 > You can combine as many variants as you'd like! Just be sure the variant names are properly
 > combined with `+`.
 
+### Variables
+
+Defines element level CSS variables, by mapping variable names to their value. Names can be in camel
+case or variable kebab case (prefixed with `--`). Useful for overriding root and theme CSS variables
+on a per element basis.
+
+<Tabs
+  groupId="style-sheet"
+  defaultValue="component"
+  values={[
+    { label: 'Component', value: 'component' },
+    { label: 'Elements', value: 'element' },
+  ]}
+>
+  <TabItem value="component">
+
+```ts
+const styleSheet = createComponentStyles((css) => ({
+  element: {
+    '@variables': {
+      customSize: '1.5rem',
+      '--custom-size': '1.5rem',
+    },
+  },
+}));
+```
+
+  </TabItem>
+  <TabItem value="element">
+
+```ts
+const styleSheet = createElementStyles((css) => ({
+  '@variables': {
+    customSize: '1.5rem',
+    '--custom-size': '1.5rem',
+  },
+}));
+```
+
+  </TabItem>
+</Tabs>
+
+> Variable values are not transformed in any way, so they must be explicit. For example, unitless
+> values are not supported for values that require a unit suffix.
+
+### Expanded properties
+
+CSS has a concept known as
+[shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties), where
+multiple properties and their values can be declared with a single property. For example,
+`border-width`, `border-style`, and `border-color` can be combined in `border`.
+
+However, in CSS-in-JS, shorthand properties cause issues when defined alongside their longhand
+properties, so Aesthetic offers an expanded form for a handful of shorthand properties (cue irony)
+through the [@aesthetic/addon-properties](https://www.npmjs.com/package/@aesthetic/addon-properties)
+package. The current shorthand properties that support an expanded form are: `animation`,
+`background`, `border`, `borderBottom`, `borderLeft`, `borderRight`, `borderTop`, `columnRule`,
+`flex`, `font`, `listStyle`, `margin`, `offset`, `outline`, `padding`, `textDecoration`, and
+`transition`;
+
+To utilize the expanded form, define an object where each property within maps to an equivalent
+longhand property. Using the border example above, the object would look like the following:
+
+<Tabs
+  groupId="style-sheet"
+  defaultValue="component"
+  values={[
+    { label: 'Component', value: 'component' },
+    { label: 'Elements', value: 'element' },
+  ]}
+>
+  <TabItem value="component">
+
+```ts
+const styleSheet = createComponentStyles((css) => ({
+  element: {
+    // Shorthand
+    border: '1px dashed red',
+
+    // Longhand
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderColor: 'red',
+
+    // Expanded
+    border: {
+      width: 1,
+      style: 'dashed',
+      color: 'red',
+    },
+  },
+}));
+```
+
+  </TabItem>
+  <TabItem value="element">
+
+```ts
+const styleSheet = createElementStyles((css) => ({
+  // Shorthand
+  border: '1px dashed red',
+
+  // Longhand
+  borderWidth: 1,
+  borderStyle: 'dashed',
+  borderColor: 'red',
+
+  // Expanded
+  border: {
+    width: 1,
+    style: 'dashed',
+    color: 'red',
+  },
+}));
+```
+
+  </TabItem>
+</Tabs>
+
 ## Overriding styles
 
 While we support variants per [element](#variants), we also support overrides on the style sheet.
@@ -830,18 +972,3 @@ import styleSheet from './some/styleSheet';
 
 const result = renderComponentStyles(styleSheet);
 ```
-
-## References
-
-The structure of style objects is based on types provided by the
-[@aesthetic/sss](../../../packages/sss.md) and [@aesthetic/style](../../../packages/style.md)
-packages.
-
-- [Local style sheets](../../../packages/sss/local.md)
-- [Global style sheets](../../../packages/sss/global.md)
-- [Styles](../../../packages/style/concepts.md#styles)
-- [Selectors](../../../packages/style/concepts.md#rules)
-- [Media queries](../../../packages/style/concepts.md#media-queries)
-- [Feature queries](../../../packages/style/concepts.md#feature-queries)
-- [Font faces](../../../packages/style/concepts.md#font-faces)
-- [Keyframes](../../../packages/style/concepts.md#keyframes)

@@ -68,7 +68,7 @@ const styleSheet = createThemeStyles((css) => ({
 
 Defines a [font face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) that can be
 referenced with the `fontFamily` property. The at-rule requires an object, with the font family name
-as the key, and the font face(s) as the value. Each font face requires a `srcPaths` array.
+as the key, and the font face(s) as the value. Each font face supports a `srcPaths` array.
 
 To support multiple font variations, like bold and italics, pass an array of font faces.
 
@@ -167,10 +167,18 @@ const styleSheet = createThemeStyles(() => ({
 If the `url` property is not defined, or is `false`, the import path will not be wrapped with
 `url()`.
 
-## References
+### Variables
 
-The structure of this style sheet is based on types provided by the
-[@aesthetic/sss](../../../packages/sss.md) package.
+Defines and formats custom
+[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to be
+used at the `:root`. These are _additional_ variables along side the ones provided by Aesthetic's
+design system.
 
-- [Local style sheets](../../../packages/sss/local.md)
-- [Global style sheets](../../../packages/sss/global.md)
+```ts
+const styleSheet = createThemeStyles(() => ({
+  '@variables': {
+    backgroundColor: 'black', // --background-color
+    fontSize: '16px', // --font-size
+  },
+});
+```

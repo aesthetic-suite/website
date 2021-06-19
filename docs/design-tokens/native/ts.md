@@ -14,18 +14,18 @@ the following differences:
 
 ```ts
 export const border: BorderTokens = {
-  sm: {
-    radius: 1.5,
-    width: 0,
-  },
-  df: {
-    radius: 3,
-    width: 1,
-  },
-  lg: {
-    radius: 4.5,
-    width: 2,
-  },
+	sm: {
+		radius: 1.5,
+		width: 0,
+	},
+	df: {
+		radius: 3,
+		width: 1,
+	},
+	lg: {
+		radius: 4.5,
+		width: 2,
+	},
 };
 ```
 

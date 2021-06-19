@@ -11,7 +11,7 @@ component is imported or rendered.
 import { configure } from '@aesthetic/<integration>';
 
 configure({
-  defaultUnit: 'px',
+	defaultUnit: 'px',
 });
 ```
 

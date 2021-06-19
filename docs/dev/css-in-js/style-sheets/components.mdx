@@ -27,32 +27,32 @@ elements and components, we would have a style sheet that looks something like t
 import { createComponentStyles } from '@aesthetic/<integration>';
 
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    border: 0,
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontSize: 'inherit',
-    margin: 0,
-    padding: css.unit(1),
-    textAlign: 'center',
-    textDecoration: 'none',
-    userSelect: 'auto',
-    verticalAlign: 'middle',
-  },
-  button_selected: {
-    /* ... */
-  },
-  button_disabled: {
-    /* ... */
-  },
-  before: {
-    /* ... */
-  },
-  after: {
-    /* ... */
-  },
+	button: {
+		appearance: 'none',
+		backgroundColor: 'transparent',
+		border: 0,
+		cursor: 'pointer',
+		display: 'inline-flex',
+		fontSize: 'inherit',
+		margin: 0,
+		padding: css.unit(1),
+		textAlign: 'center',
+		textDecoration: 'none',
+		userSelect: 'auto',
+		verticalAlign: 'middle',
+	},
+	button_selected: {
+		/* ... */
+	},
+	button_disabled: {
+		/* ... */
+	},
+	before: {
+		/* ... */
+	},
+	after: {
+		/* ... */
+	},
 }));
 ```
 
@@ -63,26 +63,26 @@ const styleSheet = createComponentStyles((css) => ({
 import { createElementStyles } from '@aesthetic/<integration>';
 
 const styleSheet = createElementStyles((css) => ({
-  appearance: 'none',
-  backgroundColor: 'transparent',
-  border: 0,
-  cursor: 'pointer',
-  display: 'inline-flex',
-  fontSize: 'inherit',
-  margin: 0,
-  padding: css.unit(1),
-  textAlign: 'center',
-  textDecoration: 'none',
-  userSelect: 'auto',
-  verticalAlign: 'middle',
+	appearance: 'none',
+	backgroundColor: 'transparent',
+	border: 0,
+	cursor: 'pointer',
+	display: 'inline-flex',
+	fontSize: 'inherit',
+	margin: 0,
+	padding: css.unit(1),
+	textAlign: 'center',
+	textDecoration: 'none',
+	userSelect: 'auto',
+	verticalAlign: 'middle',
 }));
 
 const beforeStyleSheet = createElementStyles({
-  /* ... */
+	/* ... */
 });
 
 const afterStyleSheet = createElementStyles({
-  /* ... */
+	/* ... */
 });
 ```
 
@@ -128,21 +128,21 @@ can be defined as nested style objects directly on the element's style object.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    backgroundColor: css.var('palette-brand-bg-base'),
-    // ...
+	button: {
+		backgroundColor: css.var('palette-brand-bg-base'),
+		// ...
 
-    ':hover': {
-      backgroundColor: css.var('palette-brand-bg-hovered'),
-    },
+		':hover': {
+			backgroundColor: css.var('palette-brand-bg-hovered'),
+		},
 
-    '[disabled]': {
-      backgroundColor: css.var('palette-brand-bg-disabled'),
-      opacity: 0.75,
-    },
-  },
+		'[disabled]': {
+			backgroundColor: css.var('palette-brand-bg-disabled'),
+			opacity: 0.75,
+		},
+	},
 
-  // ...
+	// ...
 }));
 ```
 
@@ -151,17 +151,17 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  backgroundColor: css.var('palette-brand-bg-base'),
-  // ...
+	backgroundColor: css.var('palette-brand-bg-base'),
+	// ...
 
-  ':hover': {
-    backgroundColor: css.var('palette-brand-bg-hovered'),
-  },
+	':hover': {
+		backgroundColor: css.var('palette-brand-bg-hovered'),
+	},
 
-  '[disabled]': {
-    backgroundColor: css.var('palette-brand-bg-disabled'),
-    opacity: 0.75,
-  },
+	'[disabled]': {
+		backgroundColor: css.var('palette-brand-bg-disabled'),
+		opacity: 0.75,
+	},
 }));
 ```
 
@@ -188,31 +188,31 @@ with TypeScript.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    // ...
+	element: {
+		// ...
 
-    '@selectors': {
-      // Combinators must start with >, ~, or +
-      '> li': {
-        listStyle: 'none',
-      },
+		'@selectors': {
+			// Combinators must start with >, ~, or +
+			'> li': {
+				listStyle: 'none',
+			},
 
-      // Attributes must start with [ and end with ]
-      '[href*="foo"]': {
-        color: 'red',
-      },
+			// Attributes must start with [ and end with ]
+			'[href*="foo"]': {
+				color: 'red',
+			},
 
-      // Pseudos must start with : or ::
-      ':not(:nth-child(9))': {
-        display: 'hidden',
-      },
+			// Pseudos must start with : or ::
+			':not(:nth-child(9))': {
+				display: 'hidden',
+			},
 
-      // Multiple selectors can be separated with a comma
-      ':disabled, [disabled]': {
-        opacity: 0.75,
-      },
-    },
-  },
+			// Multiple selectors can be separated with a comma
+			':disabled, [disabled]': {
+				opacity: 0.75,
+			},
+		},
+	},
 }));
 ```
 
@@ -221,29 +221,29 @@ const styleSheet = createComponentStyles(() => ({
 
 ```ts
 const styleSheet = createElementStyles({
-  // ...
+	// ...
 
-  '@selectors': {
-    // Combinators must start with >, ~, or +
-    '> li': {
-      listStyle: 'none',
-    },
+	'@selectors': {
+		// Combinators must start with >, ~, or +
+		'> li': {
+			listStyle: 'none',
+		},
 
-    // Attributes must start with [ and end with ]
-    '[href*="foo"]': {
-      color: 'red',
-    },
+		// Attributes must start with [ and end with ]
+		'[href*="foo"]': {
+			color: 'red',
+		},
 
-    // Pseudos must start with : or ::
-    ':not(:nth-child(9))': {
-      display: 'hidden',
-    },
+		// Pseudos must start with : or ::
+		':not(:nth-child(9))': {
+			display: 'hidden',
+		},
 
-    // Multiple selectors can be separated with a comma
-    ':disabled, [disabled]': {
-      opacity: 0.75,
-    },
-  },
+		// Multiple selectors can be separated with a comma
+		':disabled, [disabled]': {
+			opacity: 0.75,
+		},
+	},
 });
 ```
 
@@ -269,24 +269,24 @@ require an object that maps query expressions to nested style objects.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  button: {
-    display: 'inline-block',
-    // ...
+	button: {
+		display: 'inline-block',
+		// ...
 
-    '@media': {
-      '(max-width: 600px)': {
-        width: '100%',
-      },
-    },
+		'@media': {
+			'(max-width: 600px)': {
+				width: '100%',
+			},
+		},
 
-    '@supports': {
-      '(display: inline-flex)': {
-        display: 'inline-flex',
-      },
-    },
-  },
+		'@supports': {
+			'(display: inline-flex)': {
+				display: 'inline-flex',
+			},
+		},
+	},
 
-  // ...
+	// ...
 }));
 ```
 
@@ -295,20 +295,20 @@ const styleSheet = createComponentStyles(() => ({
 
 ```ts
 const styleSheet = createElementStyles({
-  display: 'inline-block',
-  // ...
+	display: 'inline-block',
+	// ...
 
-  '@media': {
-    '(max-width: 600px)': {
-      width: '100%',
-    },
-  },
+	'@media': {
+		'(max-width: 600px)': {
+			width: '100%',
+		},
+	},
 
-  '@supports': {
-    '(display: inline-flex)': {
-      display: 'inline-flex',
-    },
-  },
+	'@supports': {
+		'(display: inline-flex)': {
+			display: 'inline-flex',
+		},
+	},
 });
 ```
 
@@ -331,13 +331,13 @@ You can utilize the design system token's for consistent media query breakpoints
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  element: {
-    '@media': {
-      [css.tokens.breakpoint.lg.query]: {
-        width: '100%',
-      },
-    },
-  },
+	element: {
+		'@media': {
+			[css.tokens.breakpoint.lg.query]: {
+				width: '100%',
+			},
+		},
+	},
 }));
 ```
 
@@ -346,11 +346,11 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  '@media': {
-    [css.tokens.breakpoint.lg.query]: {
-      width: '100%',
-    },
-  },
+	'@media': {
+		[css.tokens.breakpoint.lg.query]: {
+			width: '100%',
+		},
+	},
 }));
 ```
 
@@ -378,31 +378,31 @@ file paths, instead of a `src` property.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    // ...
-    fontFamily: {
-      fontFamily: 'Open Sans',
-      fontStyle: 'normal',
-      fontWeight: 'normal',
-      srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-    },
+	element: {
+		// ...
+		fontFamily: {
+			fontFamily: 'Open Sans',
+			fontStyle: 'normal',
+			fontWeight: 'normal',
+			srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+		},
 
-    // Multiple font faces
-    fontFamily: [
-      {
-        fontFamily: 'Open Sans',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-      },
-      {
-        fontFamily: 'Open Sans',
-        fontStyle: 'normal',
-        fontWeight: 800,
-        srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
-      },
-    ],
-  },
+		// Multiple font faces
+		fontFamily: [
+			{
+				fontFamily: 'Open Sans',
+				fontStyle: 'normal',
+				fontWeight: 'normal',
+				srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+			},
+			{
+				fontFamily: 'Open Sans',
+				fontStyle: 'normal',
+				fontWeight: 800,
+				srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
+			},
+		],
+	},
 }));
 ```
 
@@ -411,29 +411,29 @@ const styleSheet = createComponentStyles(() => ({
 
 ```ts
 const styleSheet = createElementStyles(() => ({
-  // ...
-  fontFamily: {
-    fontFamily: 'Open Sans',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-  },
+	// ...
+	fontFamily: {
+		fontFamily: 'Open Sans',
+		fontStyle: 'normal',
+		fontWeight: 'normal',
+		srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+	},
 
-  // Multiple font faces
-  fontFamily: [
-    {
-      fontFamily: 'Open Sans',
-      fontStyle: 'normal',
-      fontWeight: 'normal',
-      srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-    },
-    {
-      fontFamily: 'Open Sans',
-      fontStyle: 'normal',
-      fontWeight: 800,
-      srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
-    },
-  ],
+	// Multiple font faces
+	fontFamily: [
+		{
+			fontFamily: 'Open Sans',
+			fontStyle: 'normal',
+			fontWeight: 'normal',
+			srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+		},
+		{
+			fontFamily: 'Open Sans',
+			fontStyle: 'normal',
+			fontWeight: 800,
+			srcPaths: ['fonts/OpenSans-Bold.woff2', 'fonts/OpenSans-Bold.ttf'],
+		},
+	],
 }));
 ```
 
@@ -458,27 +458,27 @@ Animations have the same semantics as fonts and should be defined on a document 
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    // ...
-    animationName: {
-      from: { transform: 'scaleX(0)' },
-      to: { transform: 'scaleX(1)' },
-    },
-    animationDuration: '3s',
-    animationTimingFunction: 'ease-in',
+	element: {
+		// ...
+		animationName: {
+			from: { transform: 'scaleX(0)' },
+			to: { transform: 'scaleX(1)' },
+		},
+		animationDuration: '3s',
+		animationTimingFunction: 'ease-in',
 
-    // Multiple animations
-    animationName: [
-      {
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
-      {
-        '0%': { bottom: 0 },
-        '100%': { bottom: '100%' },
-      },
-    ],
-  },
+		// Multiple animations
+		animationName: [
+			{
+				from: { opacity: 0 },
+				to: { opacity: 1 },
+			},
+			{
+				'0%': { bottom: 0 },
+				'100%': { bottom: '100%' },
+			},
+		],
+	},
 }));
 ```
 
@@ -487,25 +487,25 @@ const styleSheet = createComponentStyles(() => ({
 
 ```ts
 const styleSheet = createComponentStyles({
-  // ...
-  animationName: {
-    from: { transform: 'scaleX(0)' },
-    to: { transform: 'scaleX(1)' },
-  },
-  animationDuration: '3s',
-  animationTimingFunction: 'ease-in',
+	// ...
+	animationName: {
+		from: { transform: 'scaleX(0)' },
+		to: { transform: 'scaleX(1)' },
+	},
+	animationDuration: '3s',
+	animationTimingFunction: 'ease-in',
 
-  // Multiple animations
-  animationName: [
-    {
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
-    {
-      '0%': { bottom: 0 },
-      '100%': { bottom: '100%' },
-    },
-  ],
+	// Multiple animations
+	animationName: [
+		{
+			from: { opacity: 0 },
+			to: { opacity: 1 },
+		},
+		{
+			'0%': { bottom: 0 },
+			'100%': { bottom: '100%' },
+		},
+	],
 });
 ```
 
@@ -538,21 +538,21 @@ passed to `cx()`.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    // ...
+	button: {
+		// ...
 
-    '@variants': {
-      'size:sm': { fontSize: css.var('text-sm-size') },
-      'size:df': { fontSize: css.var('text-df-size') },
-      'size:lg': { fontSize: css.var('text-lg-size') },
+		'@variants': {
+			'size:sm': { fontSize: css.var('text-sm-size') },
+			'size:df': { fontSize: css.var('text-df-size') },
+			'size:lg': { fontSize: css.var('text-lg-size') },
 
-      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
-      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
-      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
-    },
-  },
+			'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+			'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+			'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+		},
+	},
 
-  // ...
+	// ...
 }));
 ```
 
@@ -561,17 +561,17 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  // ...
+	// ...
 
-  '@variants': {
-    'size:sm': { fontSize: css.var('text-sm-size') },
-    'size:df': { fontSize: css.var('text-df-size') },
-    'size:lg': { fontSize: css.var('text-lg-size') },
+	'@variants': {
+		'size:sm': { fontSize: css.var('text-sm-size') },
+		'size:df': { fontSize: css.var('text-df-size') },
+		'size:lg': { fontSize: css.var('text-lg-size') },
 
-    'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
-    'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
-    'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
-  },
+		'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+		'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+		'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+	},
 }));
 ```
 
@@ -632,25 +632,25 @@ on the element directly. This is necessary as it avoids style collisions and spe
 ```ts
 // Correct
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    '@variants': {
-      'size:sm': { fontSize: 14 },
-      'size:df': { fontSize: 16 },
-      'size:lg': { fontSize: 18 },
-    },
-  },
+	button: {
+		'@variants': {
+			'size:sm': { fontSize: 14 },
+			'size:df': { fontSize: 16 },
+			'size:lg': { fontSize: 18 },
+		},
+	},
 }));
 
 // Incorrect
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    fontSize: 16,
+	button: {
+		fontSize: 16,
 
-    '@variants': {
-      'size:sm': { fontSize: 14 },
-      'size:lg': { fontSize: 18 },
-    },
-  },
+		'@variants': {
+			'size:sm': { fontSize: 14 },
+			'size:lg': { fontSize: 18 },
+		},
+	},
 }));
 ```
 
@@ -660,21 +660,21 @@ const styleSheet = createComponentStyles((css) => ({
 ```ts
 // Correct
 const styleSheet = createElementStyles((css) => ({
-  '@variants': {
-    'size:sm': { fontSize: 14 },
-    'size:df': { fontSize: 16 },
-    'size:lg': { fontSize: 18 },
-  },
+	'@variants': {
+		'size:sm': { fontSize: 14 },
+		'size:df': { fontSize: 16 },
+		'size:lg': { fontSize: 18 },
+	},
 }));
 
 // Incorrect
 const styleSheet = createElementStyles((css) => ({
-  fontSize: 16,
+	fontSize: 16,
 
-  '@variants': {
-    'size:sm': { fontSize: 14 },
-    'size:lg': { fontSize: 18 },
-  },
+	'@variants': {
+		'size:sm': { fontSize: 14 },
+		'size:lg': { fontSize: 18 },
+	},
 }));
 ```
 
@@ -701,15 +701,15 @@ brand, we would do the following:
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    '@variants': {
-      'size:lg': { fontSize: css.var('text-lg-size') },
+	button: {
+		'@variants': {
+			'size:lg': { fontSize: css.var('text-lg-size') },
 
-      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+			'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
 
-      'size:lg + palette:brand': { fontWeight: 'bold' },
-    },
-  },
+			'size:lg + palette:brand': { fontWeight: 'bold' },
+		},
+	},
 }));
 ```
 
@@ -718,13 +718,13 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  '@variants': {
-    'size:lg': { fontSize: css.var('text-lg-size') },
+	'@variants': {
+		'size:lg': { fontSize: css.var('text-lg-size') },
 
-    'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+		'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
 
-    'size:lg + palette:brand': { fontWeight: 'bold' },
-  },
+		'size:lg + palette:brand': { fontWeight: 'bold' },
+	},
 }));
 ```
 
@@ -752,12 +752,12 @@ on a per element basis.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  element: {
-    '@variables': {
-      customSize: '1.5rem',
-      '--custom-size': '1.5rem',
-    },
-  },
+	element: {
+		'@variables': {
+			customSize: '1.5rem',
+			'--custom-size': '1.5rem',
+		},
+	},
 }));
 ```
 
@@ -766,10 +766,10 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  '@variables': {
-    customSize: '1.5rem',
-    '--custom-size': '1.5rem',
-  },
+	'@variables': {
+		customSize: '1.5rem',
+		'--custom-size': '1.5rem',
+	},
 }));
 ```
 
@@ -809,22 +809,22 @@ longhand property. Using the border example above, the object would look like th
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  element: {
-    // Shorthand
-    border: '1px dashed red',
+	element: {
+		// Shorthand
+		border: '1px dashed red',
 
-    // Longhand
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    borderColor: 'red',
+		// Longhand
+		borderWidth: 1,
+		borderStyle: 'dashed',
+		borderColor: 'red',
 
-    // Expanded
-    border: {
-      width: 1,
-      style: 'dashed',
-      color: 'red',
-    },
-  },
+		// Expanded
+		border: {
+			width: 1,
+			style: 'dashed',
+			color: 'red',
+		},
+	},
 }));
 ```
 
@@ -833,20 +833,20 @@ const styleSheet = createComponentStyles((css) => ({
 
 ```ts
 const styleSheet = createElementStyles((css) => ({
-  // Shorthand
-  border: '1px dashed red',
+	// Shorthand
+	border: '1px dashed red',
 
-  // Longhand
-  borderWidth: 1,
-  borderStyle: 'dashed',
-  borderColor: 'red',
+	// Longhand
+	borderWidth: 1,
+	borderStyle: 'dashed',
+	borderColor: 'red',
 
-  // Expanded
-  border: {
-    width: 1,
-    style: 'dashed',
-    color: 'red',
-  },
+	// Expanded
+	border: {
+		width: 1,
+		style: 'dashed',
+		color: 'red',
+	},
 }));
 ```
 
@@ -870,23 +870,23 @@ the two modes.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    display: 'block',
-    color: 'gray',
-  },
+	element: {
+		display: 'block',
+		color: 'gray',
+	},
 }))
-  .addColorSchemeOverride('light', () => ({
-    element: {
-      backgroundColor: 'white',
-      color: 'black',
-    },
-  }))
-  .addColorSchemeOverride('dark', () => ({
-    element: {
-      backgroundColor: 'black',
-      color: 'white',
-    },
-  }));
+	.addColorSchemeOverride('light', () => ({
+		element: {
+			backgroundColor: 'white',
+			color: 'black',
+		},
+	}))
+	.addColorSchemeOverride('dark', () => ({
+		element: {
+			backgroundColor: 'black',
+			color: 'white',
+		},
+	}));
 ```
 
 This is equivalent to the native `prefers-color-scheme` media query.
@@ -904,21 +904,21 @@ of the currently active theme. This is perfect for providing accessible themes.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    display: 'block',
-    color: 'orange',
-  },
+	element: {
+		display: 'block',
+		color: 'orange',
+	},
 }))
-  .addContrastOverride('low', () => ({
-    element: {
-      color: 'red',
-    },
-  }))
-  .addContrastOverride('high', () => ({
-    element: {
-      color: 'yellow',
-    },
-  }));
+	.addContrastOverride('low', () => ({
+		element: {
+			color: 'red',
+		},
+	}))
+	.addContrastOverride('high', () => ({
+		element: {
+			color: 'yellow',
+		},
+	}));
 ```
 
 This is equivalent to the native `prefers-contrast` media query.
@@ -937,21 +937,21 @@ are provided by third-parties.
 
 ```ts
 const styleSheet = createComponentStyles(() => ({
-  element: {
-    display: 'block',
-    color: 'gray',
-  },
+	element: {
+		display: 'block',
+		color: 'gray',
+	},
 }))
-  .addThemeOverride('night', () => ({
-    element: {
-      color: 'blue',
-    },
-  }))
-  .addThemeOverride('twilight', () => ({
-    element: {
-      color: 'purple',
-    },
-  }));
+	.addThemeOverride('night', () => ({
+		element: {
+			color: 'blue',
+		},
+	}))
+	.addThemeOverride('twilight', () => ({
+		element: {
+			color: 'purple',
+		},
+	}));
 ```
 
 > Theme names must match the names passed to `registerTheme()` or `registerDefaultTheme()`.

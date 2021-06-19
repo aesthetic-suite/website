@@ -20,36 +20,36 @@ import React from 'react';
 import { styles, CommonSize, PaletteType } from '@aesthetic/react';
 
 export const styleSheet = styles((css) => ({
-  button: css.mixin('reset-button', {
-    display: 'inline-flex',
-    padding: css.var('spacing-df'),
-    textAlign: 'center',
+	button: css.mixin('reset-button', {
+		display: 'inline-flex',
+		padding: css.var('spacing-df'),
+		textAlign: 'center',
 
-    '@variants': {
-      'size:sm': { fontSize: css.var('text-sm-size') },
-      'size:df': { fontSize: css.var('text-df-size') },
-      'size:lg': { fontSize: css.var('text-lg-size') },
+		'@variants': {
+			'size:sm': { fontSize: css.var('text-sm-size') },
+			'size:df': { fontSize: css.var('text-df-size') },
+			'size:lg': { fontSize: css.var('text-lg-size') },
 
-      'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
-      'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
-      'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
-    },
-  }),
-  button_disabled: {},
-  button_selected: {},
-  before: {},
-  after: {},
-  // ...
+			'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+			'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+			'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+		},
+	}),
+	button_disabled: {},
+	button_selected: {},
+	before: {},
+	after: {},
+	// ...
 }));
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  afterIcon?: React.ReactNode;
-  beforeIcon?: React.ReactNode;
-  children: NonNullable<React.ReactNode>;
-  disabled?: boolean;
-  palette?: PaletteType;
-  selected?: boolean;
-  size?: CommonSize;
+	afterIcon?: React.ReactNode;
+	beforeIcon?: React.ReactNode;
+	children: NonNullable<React.ReactNode>;
+	disabled?: boolean;
+	palette?: PaletteType;
+	selected?: boolean;
+	size?: CommonSize;
 }
 ```
 
@@ -67,24 +67,24 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 import { useStyles } from '@aesthetic/react';
 
 export default function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette,
-  size,
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette,
+	size,
+	...props
 }: ButtonProps) {
-  const cx = useStyles(styleSheet);
+	const cx = useStyles(styleSheet);
 
-  return (
-    <button type="button" {...props} className={cx('button')} disabled={disabled}>
-      {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
-      {children}
-      {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
-    </button>
-  );
+	return (
+		<button type="button" {...props} className={cx('button')} disabled={disabled}>
+			{beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
+			{children}
+			{afterIcon && <span className={cx('after')}>{afterIcon}</span>}
+		</button>
+	);
 }
 ```
 
@@ -95,30 +95,30 @@ export default function Button({
 import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
 
 class Button extends React.Component<
-  ButtonProps &
-    WithStylesWrappedProps<'button' | 'button_disabled' | 'button_selected' | 'before' | 'after'>
+	ButtonProps &
+		WithStylesWrappedProps<'button' | 'button_disabled' | 'button_selected' | 'before' | 'after'>
 > {
-  render() {
-    const {
-      compose: cx,
-      children,
-      beforeIcon,
-      afterIcon,
-      disabled,
-      selected,
-      palette,
-      size,
-      ...props
-    } = this.props;
+	render() {
+		const {
+			compose: cx,
+			children,
+			beforeIcon,
+			afterIcon,
+			disabled,
+			selected,
+			palette,
+			size,
+			...props
+		} = this.props;
 
-    return (
-      <button type="button" {...props} className={cx('button')} disabled={disabled}>
-        {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
-        {children}
-        {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
-      </button>
-    );
-  }
+		return (
+			<button type="button" {...props} className={cx('button')} disabled={disabled}>
+				{beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
+				{children}
+				{afterIcon && <span className={cx('after')}>{afterIcon}</span>}
+			</button>
+		);
+	}
 }
 
 export default withStyles(styleSheet)(Button);
@@ -138,29 +138,29 @@ and apply a class name with, for example.
 
 ```tsx {11,17,20,22}
 function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette,
-  size,
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette,
+	size,
+	...props
 }: ButtonProps) {
-  const cx = useStyles(styleSheet);
+	const cx = useStyles(styleSheet);
 
-  return (
-    <button
-      type="button"
-      {...props}
-      className={cx('button', selected && 'button_selected', disabled && 'button_disabled')}
-      disabled={disabled}
-    >
-      {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
-      {children}
-      {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
-    </button>
-  );
+	return (
+		<button
+			type="button"
+			{...props}
+			className={cx('button', selected && 'button_selected', disabled && 'button_disabled')}
+			disabled={disabled}
+		>
+			{beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
+			{children}
+			{afterIcon && <span className={cx('after')}>{afterIcon}</span>}
+		</button>
+	);
 }
 ```
 
@@ -174,34 +174,34 @@ object as the _1st argument_ to `cx()` with the name of every variant, and the v
 
 ```tsx {7,8,11,17-22}
 function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette = 'primary',
-  size = 'df',
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette = 'primary',
+	size = 'df',
+	...props
 }: ButtonProps) {
-  const cx = useStyles(styleSheet);
+	const cx = useStyles(styleSheet);
 
-  return (
-    <button
-      type="button"
-      {...props}
-      className={cx(
-        { size, palette },
-        'button',
-        selected && 'button_selected',
-        disabled && 'button_disabled',
-      )}
-      disabled={disabled}
-    >
-      {beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
-      {children}
-      {afterIcon && <span className={cx('after')}>{afterIcon}</span>}
-    </button>
-  );
+	return (
+		<button
+			type="button"
+			{...props}
+			className={cx(
+				{ size, palette },
+				'button',
+				selected && 'button_selected',
+				disabled && 'button_disabled',
+			)}
+			disabled={disabled}
+		>
+			{beforeIcon && <span className={cx('before')}>{beforeIcon}</span>}
+			{children}
+			{afterIcon && <span className={cx('after')}>{afterIcon}</span>}
+		</button>
+	);
 }
 ```
 
@@ -226,24 +226,24 @@ import React, { useMemo } from 'react';
 import { useCss } from '@aesthetic/react';
 
 function Button({ children }: ButtonProps) {
-  // Memoize the styles to avoid unnecessary renders
-  const styles = useMemo(
-    () => ({
-      display: 'inline-flex',
-      padding: 8,
-      textAlign: 'center',
-    }),
-    [],
-  );
+	// Memoize the styles to avoid unnecessary renders
+	const styles = useMemo(
+		() => ({
+			display: 'inline-flex',
+			padding: 8,
+			textAlign: 'center',
+		}),
+		[],
+	);
 
-  // Immediately render and return a class name
-  const className = useCss(styles);
+	// Immediately render and return a class name
+	const className = useCss(styles);
 
-  return (
-    <button type="button" className={className}>
-      {children}
-    </button>
-  );
+	return (
+		<button type="button" className={className}>
+			{children}
+		</button>
+	);
 }
 ```
 

@@ -16,9 +16,9 @@ import { View } from 'react-native';
 import { createStyled } from '@aesthetic/react-native';
 
 const Box = createStyled(View, (theme) => ({
-  flex: 1,
-  justifyContent: 'space-between',
-  padding: theme.tokens.spacing.df,
+	flex: 1,
+	justifyContent: 'space-between',
+	padding: theme.tokens.spacing.df,
 }));
 
 export default Box;
@@ -29,7 +29,7 @@ automatically supported and are typed correctly if using TypeScript.
 
 ```tsx
 <Box renderToHardwareTextureAndroid accessibilityLabel="Descriptive label">
-  Content
+	Content
 </Box>
 ```
 
@@ -65,7 +65,7 @@ its types.
 
 ```tsx
 <Box palette="brand" size="lg">
-  Large branded box
+	Large branded box
 </Box>
 ```
 
@@ -73,12 +73,12 @@ If using TypeScript, you'll need to type the variant props manually using the 2n
 
 ```tsx
 interface BoxVariants {
-  size?: 'sm' | 'df' | 'lg';
-  palette?: 'brand' | 'positive' | 'warning';
+	size?: 'sm' | 'df' | 'lg';
+	palette?: 'brand' | 'positive' | 'warning';
 }
 
 const Box = createStyled<typeof View, BoxVariants>(View, {
-  // ...
+	// ...
 });
 ```
 
@@ -89,16 +89,16 @@ approach, all styles and their variants are inherited.
 
 ```tsx
 const Button = createStyled(View, (theme) => ({
-  flex: 1,
-  alignItems: 'center',
-  padding: theme.tokens.spacing.df,
+	flex: 1,
+	alignItems: 'center',
+	padding: theme.tokens.spacing.df,
 }));
 
 const BlockButton = createStyled(Button, {
-  width: '100%',
+	width: '100%',
 });
 
 const PillBlockButton = createStyled(BlockButton, {
-  borderRadius: 100,
+	borderRadius: 100,
 });
 ```

@@ -74,26 +74,26 @@ import { Pressable, View } from 'react-native';
 import { useStyles } from '@aesthetic/react-native';
 
 export default function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette,
-  size,
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette,
+	size,
+	...props
 }: ButtonProps) {
-  const sx = useStyles(styleSheet);
+	const sx = useStyles(styleSheet);
 
-  return (
-    <Pressable disabled={disabled} {...props}>
-      <View style={sx('button')}>
-        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
-        <View>{children}</View>
-        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
-      </View>
-    </Pressable>
-  );
+	return (
+		<Pressable disabled={disabled} {...props}>
+			<View style={sx('button')}>
+				{beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+				<View>{children}</View>
+				{afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+			</View>
+		</Pressable>
+	);
 }
 ```
 
@@ -105,32 +105,32 @@ import { Pressable, View } from 'react-native';
 import { withStyles, WithStylesWrappedProps } from '@aesthetic/react-native';
 
 class Button extends React.Component<
-  ButtonProps &
-    WithStylesWrappedProps<'button' | 'button_disabled' | 'button_selected' | 'before' | 'after'>
+	ButtonProps &
+		WithStylesWrappedProps<'button' | 'button_disabled' | 'button_selected' | 'before' | 'after'>
 > {
-  render() {
-    const {
-      compose: sx,
-      children,
-      beforeIcon,
-      afterIcon,
-      disabled,
-      selected,
-      palette,
-      size,
-      ...props
-    } = this.props;
+	render() {
+		const {
+			compose: sx,
+			children,
+			beforeIcon,
+			afterIcon,
+			disabled,
+			selected,
+			palette,
+			size,
+			...props
+		} = this.props;
 
-    return (
-      <Pressable disabled={disabled} {...props}>
-        <View style={sx('button')}>
-          {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
-          <View>{children}</View>
-          {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
-        </View>
-      </Pressable>
-    );
-  }
+		return (
+			<Pressable disabled={disabled} {...props}>
+				<View style={sx('button')}>
+					{beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+					<View>{children}</View>
+					{afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+				</View>
+			</Pressable>
+		);
+	}
 }
 
 export default withStyles(styleSheet)(Button);
@@ -150,26 +150,26 @@ applicable styles.
 
 ```tsx {11,15,16,18}
 function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette,
-  size,
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette,
+	size,
+	...props
 }: ButtonProps) {
-  const sx = useStyles(styleSheet);
+	const sx = useStyles(styleSheet);
 
-  return (
-    <Pressable disabled={disabled} {...props}>
-      <View style={sx('button', selected && 'button_selected', disabled && 'button_disabled')}>
-        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
-        <View>{children}</View>
-        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
-      </View>
-    </Pressable>
-  );
+	return (
+		<Pressable disabled={disabled} {...props}>
+			<View style={sx('button', selected && 'button_selected', disabled && 'button_disabled')}>
+				{beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+				<View>{children}</View>
+				{afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+			</View>
+		</Pressable>
+	);
 }
 ```
 
@@ -183,33 +183,33 @@ object as the _1st argument_ to `sx()` with the name of every variant, and the v
 
 ```tsx {7,8,11,16-21}
 function Button({
-  children,
-  beforeIcon,
-  afterIcon,
-  disabled,
-  selected,
-  palette = 'primary',
-  size = 'df',
-  ...props
+	children,
+	beforeIcon,
+	afterIcon,
+	disabled,
+	selected,
+	palette = 'primary',
+	size = 'df',
+	...props
 }: ButtonProps) {
-  const sx = useStyles(styleSheet);
+	const sx = useStyles(styleSheet);
 
-  return (
-    <Pressable disabled={disabled} {...props}>
-      <View
-        style={sx(
-          { size, palette },
-          'button',
-          selected && 'button_selected',
-          disabled && 'button_disabled',
-        )}
-      >
-        {beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
-        <View>{children}</View>
-        {afterIcon && <View style={sx('after')}>{afterIcon}</View>}
-      </View>
-    </Pressable>
-  );
+	return (
+		<Pressable disabled={disabled} {...props}>
+			<View
+				style={sx(
+					{ size, palette },
+					'button',
+					selected && 'button_selected',
+					disabled && 'button_disabled',
+				)}
+			>
+				{beforeIcon && <View style={sx('before')}>{beforeIcon}</View>}
+				<View>{children}</View>
+				{afterIcon && <View style={sx('after')}>{afterIcon}</View>}
+			</View>
+		</Pressable>
+	);
 }
 ```
 
@@ -222,8 +222,8 @@ You can pass non-Aesthetic composed style objects to `sx()` by passing an array.
 
 ```ts
 sx('button', [
-  {
-    width: 100,
-  },
+	{
+		width: 100,
+	},
 ]);
 ```

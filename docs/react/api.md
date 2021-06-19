@@ -17,7 +17,7 @@ Provides a direction to all children using context. Accepts the following option
 import { DirectionProvider } from '@aesthetic/react';
 
 <DirectionProvider direction="rtl">
-  <Component />
+	<Component />
 </DirectionProvider>;
 ```
 
@@ -33,7 +33,7 @@ following optional props.
 import { ThemeProvider } from '@aesthetic/react';
 
 <ThemeProvider>
-  <App />
+	<App />
 </ThemeProvider>;
 ```
 
@@ -48,11 +48,11 @@ prop.
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react';
 
 <ThemeProvider>
-  <Component />
+	<Component />
 
-  <ContextualThemeProvider name="night">
-    <Component />
-  </ContextualThemeProvider>
+	<ContextualThemeProvider name="night">
+		<Component />
+	</ContextualThemeProvider>
 </ThemeProvider>;
 ```
 
@@ -73,10 +73,10 @@ import { useCss } from '@aesthetic/react';
 const styles = { display: 'block' };
 
 export default function Component() {
-  const options = useMemo(() => ({ deterministic: true }), []);
-  const { className, variants } = useCss(styles, options);
+	const options = useMemo(() => ({ deterministic: true }), []);
+	const { className, variants } = useCss(styles, options);
 
-  return <div className={className} />;
+	return <div className={className} />;
 }
 ```
 
@@ -90,9 +90,9 @@ Returns the current direction, either `ltr` or `rtl`.
 import { useDirection } from '@aesthetic/react';
 
 export default function Component() {
-  const direction = useDirection();
+	const direction = useDirection();
 
-  return <div />;
+	return <div />;
 }
 ```
 
@@ -107,9 +107,9 @@ import { useStyles } from '@aesthetic/react';
 import styleSheet from './styles';
 
 export default function Component() {
-  const cx = useStyles(styleSheet);
+	const cx = useStyles(styleSheet);
 
-  return <div className={cx('element')} />;
+	return <div className={cx('element')} />;
 }
 ```
 
@@ -123,9 +123,9 @@ Returns the current theme or throws an error.
 import { useTheme } from '@aesthetic/react';
 
 export default function Component() {
-  const theme = useTheme();
+	const theme = useTheme();
 
-  return <div />;
+	return <div />;
 }
 ```
 
@@ -141,7 +141,7 @@ Wraps a component to pass the current direction as a `direction` prop.
 import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
 
 function Component({ direction }: WithDirectionWrappedProps) {
-  return <div />;
+	return <div />;
 }
 
 export default withDirection()(Component);
@@ -159,7 +159,7 @@ import { withStyles, WithStylesWrappedProps } from '@aesthetic/react';
 import styleSheet from './styles';
 
 function Component({ compose: cx }: WithStylesWrappedProps<'element'>) {
-  return <div className={cx('element')} />;
+	return <div className={cx('element')} />;
 }
 
 export default withStyles(styleSheet)(Component);
@@ -175,7 +175,7 @@ Wraps a component to pass the current theme as a `theme` prop.
 import { withTheme, WithThemeWrappedProps } from '@aesthetic/react';
 
 function Component({ theme }: WithThemeWrappedProps) {
-  return <div />;
+	return <div />;
 }
 
 export default withTheme()(Component);
@@ -194,14 +194,14 @@ Creates and returns a styled component using the provided style sheet.
 import { createStyled } from '@aesthetic/react';
 
 const Button = createStyled('button', (css) => ({
-  display: 'inline-flex',
-  textAlign: 'center',
-  padding: css.var('spacing-md'),
+	display: 'inline-flex',
+	textAlign: 'center',
+	padding: css.var('spacing-md'),
 }));
 
 const BlockButton = createStyled(Button, {
-  display: 'flex',
-  width: '100%',
+	display: 'flex',
+	width: '100%',
 });
 ```
 

@@ -178,7 +178,7 @@ be imported, as the design system file is pre-imported within each theme.
 @import (once, reference) 'styles/<target>/themes/day.less';
 
 .button {
-  font-size: @text-df-size;
+	font-size: @text-df-size;
 }
 ```
 
@@ -188,18 +188,18 @@ We can utilize the compiled Less variables for reusability.
 
 ```less
 .button {
-  display: inline-block;
-  text-align: center;
-  font-size: @text-df-size;
-  line-height: @text-df-line-height;
-  padding: @spacing-sm @spacing-df;
-  color: @palette-brand-fg-base;
-  background-color: @palette-brand-bg-base;
+	display: inline-block;
+	text-align: center;
+	font-size: @text-df-size;
+	line-height: @text-df-line-height;
+	padding: @spacing-sm @spacing-df;
+	color: @palette-brand-fg-base;
+	background-color: @palette-brand-bg-base;
 
-  &:hover {
-    color: @palette-brand-fg-hovered;
-    background-color: @palette-brand-bg-hovered;
-  }
+	&:hover {
+		color: @palette-brand-fg-hovered;
+		background-color: @palette-brand-bg-hovered;
+	}
 }
 ```
 

@@ -179,7 +179,7 @@ Begin by importing the theme into scope using a namespace.
 @use "styles/<target>/themes/day" as token;
 
 .button {
-  font-size: token.$text-df-size;
+	font-size: token.$text-df-size;
 }
 ```
 
@@ -190,7 +190,7 @@ the global scope, use `*`.
 @use "styles/<target>/themes/day" as *;
 
 .button {
-  font-size: $text-df-size;
+	font-size: $text-df-size;
 }
 ```
 
@@ -210,18 +210,18 @@ We can utilize the compiled SCSS variables for reusability.
 
 ```scss
 .button {
-  display: inline-block;
-  text-align: center;
-  font-size: $text-df-size;
-  line-height: $text-df-line-height;
-  padding: $spacing-sm $spacing-df;
-  color: $palette-brand-fg-base;
-  background-color: $palette-brand-bg-base;
+	display: inline-block;
+	text-align: center;
+	font-size: $text-df-size;
+	line-height: $text-df-line-height;
+	padding: $spacing-sm $spacing-df;
+	color: $palette-brand-fg-base;
+	background-color: $palette-brand-bg-base;
 
-  &:hover {
-    color: $palette-brand-fg-hovered;
-    background-color: $palette-brand-bg-hovered;
-  }
+	&:hover {
+		color: $palette-brand-fg-hovered;
+		background-color: $palette-brand-bg-hovered;
+	}
 }
 ```
 

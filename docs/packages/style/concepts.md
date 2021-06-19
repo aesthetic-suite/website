@@ -25,12 +25,12 @@ selectors, and are known as _rule objects_.
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  color: 'white',
-  display: 'block',
-  textAlign: 'left',
-  fontSize: 16,
-  padding: 0,
-  margin: 0,
+	color: 'white',
+	display: 'block',
+	textAlign: 'left',
+	fontSize: 16,
+	padding: 0,
+	margin: 0,
 };
 ```
 
@@ -49,24 +49,24 @@ For pseudos to be recognized, they must start with `:` or `::`.
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  color: 'white',
+	color: 'white',
 
-  // Basic pseudo
-  ':disabled': {
-    color: 'gray',
-  },
+	// Basic pseudo
+	':disabled': {
+		color: 'gray',
+	},
 
-  // Advanced pseudo
-  '@selectors': {
-    ':not(:disabled)': {
-      color: 'black',
-    },
-  },
+	// Advanced pseudo
+	'@selectors': {
+		':not(:disabled)': {
+			color: 'black',
+		},
+	},
 
-  // Element
-  '::before': {
-    content: '" "',
-  },
+	// Element
+	'::before': {
+		content: '" "',
+	},
 };
 ```
 
@@ -80,19 +80,19 @@ are an important feature and are defined in a similar fashion, but must start wi
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  color: 'white',
+	color: 'white',
 
-  // Basic attribute
-  '[disabled]': {
-    color: 'gray',
-  },
+	// Basic attribute
+	'[disabled]': {
+		color: 'gray',
+	},
 
-  // Advanced attribute
-  '@selectors': {
-    '[href~="special"]': {
-      color: 'red',
-    },
-  },
+	// Advanced attribute
+	'@selectors': {
+		'[href~="special"]': {
+			color: 'red',
+		},
+	},
 };
 ```
 
@@ -106,29 +106,29 @@ descendent, are supported in `@selectors`. Nested rules must start with `>`, `~`
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  margin: 0,
+	margin: 0,
 
-  '@selectors': {
-    // Child
-    '> li': {
-      listStyle: 'none',
-    },
+	'@selectors': {
+		// Child
+		'> li': {
+			listStyle: 'none',
+		},
 
-    // Sibling
-    '~ ul': {
-      marginTop: 10,
-    },
+		// Sibling
+		'~ ul': {
+			marginTop: 10,
+		},
 
-    // Adjacent
-    '+ p': {
-      margin: 0,
-    },
+		// Adjacent
+		'+ p': {
+			margin: 0,
+		},
 
-    // Column
-    '|| td': {
-      textAlign: 'center',
-    },
-  },
+		// Column
+		'|| td': {
+			textAlign: 'center',
+		},
+	},
 };
 ```
 
@@ -142,18 +142,18 @@ are useful when you want to render styles based on device viewport. They are rep
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  display: 'block',
+	display: 'block',
 
-  '@media': {
-    '(max-width: 720px)': {
-      display: 'inline-block',
-    },
+	'@media': {
+		'(max-width: 720px)': {
+			display: 'inline-block',
+		},
 
-    print: {
-      border: 'none',
-      background: 'transparent',
-    },
-  },
+		print: {
+			border: 'none',
+			background: 'transparent',
+		},
+	},
 };
 ```
 
@@ -169,13 +169,13 @@ browser. They are represented by the `@supports` at-rule and can be defined usin
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  display: 'block',
+	display: 'block',
 
-  '@supports': {
-    '(display: flex)': {
-      display: 'flex',
-    },
-  },
+	'@supports': {
+		'(display: flex)': {
+			display: 'flex',
+		},
+	},
 };
 ```
 
@@ -196,11 +196,11 @@ not_ processed like properties are, so any suffixes (like `px`) will need to be 
 import { Rule } from '@aesthetic/style';
 
 const rule: Rule = {
-  fontSize: 'var(--font-size)',
+	fontSize: 'var(--font-size)',
 
-  '@variables': {
-    '--font-size': '16px',
-  },
+	'@variables': {
+		'--font-size': '16px',
+	},
 };
 ```
 
@@ -217,10 +217,10 @@ property, which points to a source font file (relative or absolute to the docume
 import { FontFace } from '@aesthetic/style';
 
 const fontFace: FontFace = {
-  fontFamily: '"Open Sans"',
-  fontStyle: 'normal',
-  fontWeight: 800,
-  src: 'url("fonts/OpenSans-Bold.woff2")',
+	fontFamily: '"Open Sans"',
+	fontStyle: 'normal',
+	fontWeight: 800,
+	src: 'url("fonts/OpenSans-Bold.woff2")',
 };
 ```
 
@@ -250,9 +250,9 @@ percentage.
 import { Keyframes } from '@aesthetic/style';
 
 const keyframes: Keyframes = {
-  from: { marginTop: 50 },
-  '50%': { marginTop: 150 },
-  to: { marginTop: 100 },
+	from: { marginTop: 50 },
+	'50%': { marginTop: 150 },
+	to: { marginTop: 100 },
 };
 ```
 
@@ -272,12 +272,12 @@ contexts.
 ```ts
 // Invalid
 const rule: Rule = {
-  content: 'Hello',
+	content: 'Hello',
 };
 
 // Valid
 const rule: Rule = {
-  content: '"Hello"',
+	content: '"Hello"',
 };
 ```
 
@@ -291,8 +291,8 @@ specificity order? Take the following for example.
 
 ```ts
 const rule: Rule = {
-  border: '1px solid black',
-  borderColor: 'white',
+	border: '1px solid black',
+	borderColor: 'white',
 };
 ```
 
@@ -308,9 +308,9 @@ maintainability.
 
 ```ts
 const rule: Rule = {
-  borderWidth: 1,
-  borderStyle: 'solid',
-  borderColor: 'white',
+	borderWidth: 1,
+	borderStyle: 'solid',
+	borderColor: 'white',
 };
 ```
 

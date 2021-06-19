@@ -17,7 +17,7 @@ Provides a direction to all children using context. Accepts the following option
 import { DirectionProvider } from '@aesthetic/react-native';
 
 <DirectionProvider direction="rtl">
-  <Component />
+	<Component />
 </DirectionProvider>;
 ```
 
@@ -33,7 +33,7 @@ following optional props.
 import { ThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider>
-  <App />
+	<App />
 </ThemeProvider>;
 ```
 
@@ -48,11 +48,11 @@ prop.
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider>
-  <Component />
+	<Component />
 
-  <ContextualThemeProvider name="night">
-    <Component />
-  </ContextualThemeProvider>
+	<ContextualThemeProvider name="night">
+		<Component />
+	</ContextualThemeProvider>
 </ThemeProvider>;
 ```
 
@@ -71,9 +71,9 @@ import { View } from 'react-native';
 import { useDirection } from '@aesthetic/react-native';
 
 export default function Component() {
-  const direction = useDirection();
+	const direction = useDirection();
 
-  return <View />;
+	return <View />;
 }
 ```
 
@@ -89,9 +89,9 @@ import { useStyles } from '@aesthetic/react-native';
 import styleSheet from './styles';
 
 export default function Component() {
-  const sx = useStyles(styleSheet);
+	const sx = useStyles(styleSheet);
 
-  return <View style={sx('element')} />;
+	return <View style={sx('element')} />;
 }
 ```
 
@@ -106,9 +106,9 @@ import { View } from 'react-native';
 import { useTheme } from '@aesthetic/react-native';
 
 export default function Component() {
-  const theme = useTheme();
+	const theme = useTheme();
 
-  return <View />;
+	return <View />;
 }
 ```
 
@@ -124,7 +124,7 @@ Wraps a component to pass the current direction as a `direction` prop.
 import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react-native';
 
 function Component({ direction }: WithDirectionWrappedProps) {
-  return <div />;
+	return <div />;
 }
 
 export default withDirection()(Component);
@@ -143,7 +143,7 @@ import { withStyles, WithStylesWrappedProps } from '@aesthetic/react-native';
 import styleSheet from './styles';
 
 function Component({ compose: sx }: WithStylesWrappedProps<'element'>) {
-  return <View style={sx('element')} />;
+	return <View style={sx('element')} />;
 }
 
 export default withStyles(styleSheet)(Component);
@@ -160,7 +160,7 @@ import { View } from 'react-native';
 import { withTheme, WithThemeWrappedProps } from '@aesthetic/react-native';
 
 function Component({ theme }: WithThemeWrappedProps) {
-  return <View />;
+	return <View />;
 }
 
 export default withTheme()(Component);
@@ -180,13 +180,13 @@ import { View } from 'react-native';
 import { createStyled } from '@aesthetic/react-native';
 
 const Button = createStyled(View, (css) => ({
-  flex: 1,
-  textAlign: 'center',
-  padding: css.tokens.spacing.md,
+	flex: 1,
+	textAlign: 'center',
+	padding: css.tokens.spacing.md,
 }));
 
 const BlockButton = createStyled(Button, {
-  width: '100%',
+	width: '100%',
 });
 ```
 

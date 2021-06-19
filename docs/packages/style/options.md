@@ -47,21 +47,21 @@ Aesthetic assumes and requires all styles to be
 ```ts
 // Left-to-right
 engine.renderRule({
-  marginLeft: '10px',
-  paddingRight: 0,
-  textAlign: 'left',
+	marginLeft: '10px',
+	paddingRight: 0,
+	textAlign: 'left',
 }); // -> a b c
 ```
 
 ```css
 .a {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 .b {
-  padding-right: 0;
+	padding-right: 0;
 }
 .c {
-  text-align: left;
+	text-align: left;
 }
 ```
 
@@ -72,26 +72,26 @@ using the `direction` option.
 ```ts
 // Right-to-left
 engine.renderRule(
-  {
-    marginLeft: '10px',
-    paddingRight: 0,
-    textAlign: 'left',
-  },
-  {
-    direction: 'rtl',
-  },
+	{
+		marginLeft: '10px',
+		paddingRight: 0,
+		textAlign: 'left',
+	},
+	{
+		direction: 'rtl',
+	},
 ); // -> d e f
 ```
 
 ```css
 .d {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 .e {
-  padding-left: 0;
+	padding-left: 0;
 }
 .f {
-  text-align: right;
+	text-align: right;
 }
 ```
 
@@ -108,17 +108,17 @@ are automatically suffixed with `px`, unless the property in question requires n
 
 ```ts
 engine.renderRule({
-  marginLeft: 10,
-  lineHeight: 1.25,
+	marginLeft: 10,
+	lineHeight: 1.25,
 }); // -> a b
 ```
 
 ```css
 .a {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 .b {
-  line-height: 1.25;
+	line-height: 1.25;
 }
 ```
 
@@ -128,22 +128,22 @@ string.
 ```ts
 // All units as "rem"
 engine.renderRule(
-  {
-    marginLeft: 10,
-    paddingBottom: 15,
-  },
-  {
-    unit: 'rem',
-  },
+	{
+		marginLeft: 10,
+		paddingBottom: 15,
+	},
+	{
+		unit: 'rem',
+	},
 ); // -> a b
 ```
 
 ```css
 .a {
-  margin-left: 10rem;
+	margin-left: 10rem;
 }
 .b {
-  padding-bottom: 15rem;
+	padding-bottom: 15rem;
 }
 ```
 
@@ -158,17 +158,17 @@ prefixes.
 ```ts
 // Without vendor prefixing
 engine.renderRule({
-  appearance: 'none',
-  minWidth: 'fit-content',
+	appearance: 'none',
+	minWidth: 'fit-content',
 }); // -> a b
 ```
 
 ```css
 .a {
-  appearance: none;
+	appearance: none;
 }
 .b {
-  min-width: fit-content;
+	min-width: fit-content;
 }
 ```
 
@@ -179,24 +179,24 @@ the `vendor` option.
 ```ts
 // With vendor prefixing
 engine.renderRule(
-  {
-    appearance: 'none',
-    minWidth: 'fit-content',
-  },
-  { vendor: true },
+	{
+		appearance: 'none',
+		minWidth: 'fit-content',
+	},
+	{ vendor: true },
 ); // -> a b
 ```
 
 ```css
 .a {
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
 }
 .b {
-  min-width: -webkit-fit-content;
-  min-width: fit-content;
+	min-width: -webkit-fit-content;
+	min-width: fit-content;
 }
 ```
 

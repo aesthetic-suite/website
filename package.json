@@ -5,7 +5,7 @@
   "description": "Documentation website for all of Aesthetic.",
   "scripts": {
     "ds:compile": "aesthetic compile aesthetic ./src/css/system --format web-css",
-    "prepare": "beemo create-config --silent",
+    "prepare": "beemo create-config",
     "lint": "beemo eslint ./src",
     "format": "beemo prettier",
     "type": "beemo typescript --noEmit",
@@ -20,11 +20,8 @@
     "url": "git+https://github.com/aesthetic-suite/website.git"
   },
   "license": "MIT",
-  "module": "./esm/index.js",
-  "types": "./lib/index.d.ts",
-  "sideEffects": false,
   "engines": {
-    "node": ">=10.10.0"
+    "node": ">=12.17.0"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.1",
@@ -46,7 +43,7 @@
     "@aesthetic/system": "^0.9.4",
     "@aesthetic/types": "^0.6.3",
     "@aesthetic/utils": "^0.8.3",
-    "@milesj/build-tools": "^2.17.1",
+    "@beemo/dev": "^0.2.3",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8"
   },
@@ -61,23 +58,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "beemo": {
-    "module": "@milesj/build-tools",
-    "drivers": [
-      "eslint",
-      "prettier",
-      "typescript"
-    ],
-    "settings": {
-      "react": true
-    },
-    "eslint": {
-      "rules": {
-        "import/no-unresolved": "off",
-        "react/jsx-no-literals": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off"
-      }
-    }
   }
 }

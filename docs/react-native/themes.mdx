@@ -44,7 +44,7 @@ application, which requires some form of state at that layer.
 import { ThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider name="twilight">
-  <App />
+	<App />
 </ThemeProvider>;
 ```
 
@@ -62,11 +62,11 @@ import { View } from 'react-native';
 import { ThemeProvider, ContextualThemeProvider } from '@aesthetic/react-native';
 
 <ThemeProvider name="day">
-  <View>Inherits styles from the day theme.</View>
+	<View>Inherits styles from the day theme.</View>
 
-  <ContextualThemeProvider name="night">
-    <View>Inherits styles from the night theme.</View>
-  </ContextualThemeProvider>
+	<ContextualThemeProvider name="night">
+		<View>Inherits styles from the night theme.</View>
+	</ContextualThemeProvider>
 </ThemeProvider>;
 ```
 
@@ -91,13 +91,13 @@ To manually access the provided `Theme` object, either from the root or contextu
 import { useTheme } from '@aesthetic/react-native';
 
 export default function Component() {
-  const theme = useTheme();
+	const theme = useTheme();
 
-  if (theme.scheme === 'dark') {
-    // Do something
-  }
+	if (theme.scheme === 'dark') {
+		// Do something
+	}
 
-  return <div />;
+	return <div />;
 }
 ```
 
@@ -108,11 +108,11 @@ export default function Component() {
 import { withTheme, WithThemeWrappedProps } from '@aesthetic/react-native';
 
 function Component({ theme }: WithThemeWrappedProps) {
-  if (theme.contrast === 'high') {
-    // Do something
-  }
+	if (theme.contrast === 'high') {
+		// Do something
+	}
 
-  return <div />;
+	return <div />;
 }
 
 export default withTheme()(Component);

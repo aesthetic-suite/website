@@ -23,20 +23,20 @@ import App from './path/to/client/App';
 const server = express();
 
 server.get('/', (req, res) => {
-  // Instantiate an engine for the server
-  const engine = createServerEngine();
+	// Instantiate an engine for the server
+	const engine = createServerEngine();
 
-  // Render the application and extract critical CSS with the engine
-  const content = ReactDOMServer.renderToString(engine.extractStyles(<App />));
+	// Render the application and extract critical CSS with the engine
+	const content = ReactDOMServer.renderToString(engine.extractStyles(<App />));
 
-  // Convert the extracted styles to HTML `style` tags
-  const styles = renderToStyleMarkup(engine);
+	// Convert the extracted styles to HTML `style` tags
+	const styles = renderToStyleMarkup(engine);
 
-  // Render using your preferred template engine
-  res.render('layout', {
-    content,
-    styles,
-  });
+	// Render using your preferred template engine
+	res.render('layout', {
+		content,
+		styles,
+	});
 });
 
 server.listen(8080);
@@ -48,14 +48,14 @@ layout HTML file _without_ being escaped. Something like the following.
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>{{title}}</title>
-    {{styles}}
-  </head>
-  <body>
-    <div id="root">{{content}}</div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>{{title}}</title>
+		{{styles}}
+	</head>
+	<body>
+		<div id="root">{{content}}</div>
+	</body>
 </html>
 ```
 
@@ -66,17 +66,17 @@ rendered 2nd with `renderToStaticMarkup()`.
 
 ```tsx
 server.get('/', (req, res) => {
-  // Instantiate an engine for the server
-  const engine = createServerEngine();
+	// Instantiate an engine for the server
+	const engine = createServerEngine();
 
-  // Render the application and extract critical CSS with the engine
-  const content = ReactDOMServer.renderToString(engine.extractStyles(<App />));
+	// Render the application and extract critical CSS with the engine
+	const content = ReactDOMServer.renderToString(engine.extractStyles(<App />));
 
-  // Convert the extracted styles to HTML `style` tags
-  const styles = renderToStyleMarkup(engine);
+	// Convert the extracted styles to HTML `style` tags
+	const styles = renderToStyleMarkup(engine);
 
-  // Render using a layout HTML component
-  res.send(ReactDOMServer.renderToStaticMarkup(<Layout content={content} styles={styles} />));
+	// Render using a layout HTML component
+	res.send(ReactDOMServer.renderToStaticMarkup(<Layout content={content} styles={styles} />));
 });
 ```
 
@@ -97,18 +97,18 @@ const engine = createServerEngine();
 engine.extractStyles();
 
 export default class Document extends NextDocument {
-  static async getInitialProps(ctx: DocumentContext) {
-    const props = await NextDocument.getInitialProps(ctx);
+	static async getInitialProps(ctx: DocumentContext) {
+		const props = await NextDocument.getInitialProps(ctx);
 
-    // Convert the extracted styles to React `style` elements
-    props.styles = (
-      <>
-        {props.styles}
-        {renderToStyleElements(engine)}
-      </>
-    );
+		// Convert the extracted styles to React `style` elements
+		props.styles = (
+			<>
+				{props.styles}
+				{renderToStyleElements(engine)}
+			</>
+		);
 
-    return props;
-  }
+		return props;
+	}
 }
 ```

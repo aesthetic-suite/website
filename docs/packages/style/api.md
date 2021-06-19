@@ -32,8 +32,8 @@ standard variable format (leading `--`).
 
 ```ts
 engine.setRootVariables({
-  '--font-color': 'black',
-  backgroundColor: 'white',
+	'--font-color': 'black',
+	backgroundColor: 'white',
 });
 ```
 
@@ -51,7 +51,7 @@ const className = engine.renderDeclaration('display', 'block'); // -> a
 
 ```css
 .a {
-  display: block;
+	display: block;
 }
 ```
 
@@ -64,7 +64,7 @@ const className = engine.renderDeclaration('display', 'block', { selector: ':hov
 
 ```css
 .b:hover {
-  display: block;
+	display: block;
 }
 ```
 
@@ -78,9 +78,9 @@ returns an object with a `result` (the class name), and `variants` (array of cla
 
 ```ts
 const className = engine.renderRule({
-  display: 'block',
-  textAlign: 'center',
-  background: 'transparent',
+	display: 'block',
+	textAlign: 'center',
+	background: 'transparent',
 });
 
 className.result; // -> a b c
@@ -89,13 +89,13 @@ className.variants; // []
 
 ```css
 .a {
-  display: block;
+	display: block;
 }
 .b {
-  text-align: center;
+	text-align: center;
 }
 .c {
-  background: transparent;
+	background: transparent;
 }
 ```
 
@@ -104,18 +104,18 @@ elements, attributes, combinators, and other selectors, by declaring nested _sty
 
 ```ts
 const className = engine.renderRule({
-  display: 'block',
-  background: 'gray',
+	display: 'block',
+	background: 'gray',
 
-  ':hover': {
-    background: 'black',
-  },
+	':hover': {
+		background: 'black',
+	},
 
-  '@media': {
-    '(max-width: 300px)': {
-      display: 'inline-block',
-    },
-  },
+	'@media': {
+		'(max-width: 300px)': {
+			display: 'inline-block',
+		},
+	},
 });
 ```
 
@@ -130,9 +130,9 @@ example, themes.
 
 ```ts
 const className = engine.renderRuleGrouped({
-  display: 'block',
-  textAlign: 'center',
-  background: 'transparent',
+	display: 'block',
+	textAlign: 'center',
+	background: 'transparent',
 });
 
 className.result; // -> a
@@ -141,9 +141,9 @@ className.variants; // []
 
 ```css
 .a {
-  display: block;
-  text-align: center;
-  background: transparent;
+	display: block;
+	text-align: center;
+	background: transparent;
 }
 ```
 
@@ -159,16 +159,16 @@ Renders a _font face object_ as a `@font-face` at-rule and returns the font fami
 
 ```ts
 const fontFamily = engine.renderFontFace({
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: 800,
-  src: 'url("fonts/Roboto.woff2")',
+	fontFamily: 'Roboto',
+	fontStyle: 'normal',
+	fontWeight: 800,
+	src: 'url("fonts/Roboto.woff2")',
 }); // -> Roboto
 ```
 
 ```css
 @font-face {
-  /* ... */
+	/* ... */
 }
 ```
 
@@ -197,18 +197,18 @@ unique collision-free one will be generated.
 
 ```ts
 const animationName = engine.renderKeyframes({
-  from: {
-    transform: 'translateX(0%)',
-  },
-  to: {
-    transform: 'translateX(100%)',
-  },
+	from: {
+		transform: 'translateX(0%)',
+	},
+	to: {
+		transform: 'translateX(100%)',
+	},
 }); // -> kf18jh28d
 ```
 
 ```css
 @keyframes kf18jh28d {
-  /* ... */
+	/* ... */
 }
 ```
 

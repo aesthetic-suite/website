@@ -18,20 +18,20 @@ object_ (also known as a factory function).
 import { createComponentStyles } from '@aesthetic/<integration>';
 
 const styleSheet = createComponentStyles(() => ({
-  button: {
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    border: 0,
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontSize: 'inherit',
-    margin: 0,
-    padding: '6px 8px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    userSelect: 'auto',
-    verticalAlign: 'middle',
-  },
+	button: {
+		appearance: 'none',
+		backgroundColor: 'transparent',
+		border: 0,
+		cursor: 'pointer',
+		display: 'inline-flex',
+		fontSize: 'inherit',
+		margin: 0,
+		padding: '6px 8px',
+		textAlign: 'center',
+		textDecoration: 'none',
+		userSelect: 'auto',
+		verticalAlign: 'middle',
+	},
 }));
 ```
 
@@ -57,23 +57,23 @@ properties.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    border: 0,
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontSize: 'inherit',
-    margin: 0,
-    padding: {
-      topBottom: css.var('spacing-df'), // Default padding
-      leftRight: css.var('spacing-md'), // Medium padding
-    },
-    textAlign: 'center',
-    textDecoration: 'none',
-    userSelect: 'auto',
-    verticalAlign: 'middle',
-  },
+	button: {
+		appearance: 'none',
+		backgroundColor: 'transparent',
+		border: 0,
+		cursor: 'pointer',
+		display: 'inline-flex',
+		fontSize: 'inherit',
+		margin: 0,
+		padding: {
+			topBottom: css.var('spacing-df'), // Default padding
+			leftRight: css.var('spacing-md'), // Medium padding
+		},
+		textAlign: 'center',
+		textDecoration: 'none',
+		userSelect: 'auto',
+		verticalAlign: 'middle',
+	},
 }));
 ```
 
@@ -93,13 +93,13 @@ define them manually!
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: css.mixin('reset-button', {
-    padding: {
-      topBottom: css.var('spacing-df'),
-      leftRight: css.var('spacing-md'),
-    },
-    textAlign: 'center',
-  }),
+	button: css.mixin('reset-button', {
+		padding: {
+			topBottom: css.var('spacing-df'),
+			leftRight: css.var('spacing-md'),
+		},
+		textAlign: 'center',
+	}),
 }));
 ```
 
@@ -116,15 +116,15 @@ Let's say our root text size is 16px and our spacing unit is 8px, we would gener
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  button: {
-    // All edges
-    padding: css.unit(1), // .5rem
-    // Top/bottom, left/right
-    padding: css.unit(1, 2), // .5rem 1rem
-    // Top, right, bottom, left
-    padding: css.unit(1, 2, 3, 4), // .5rem 1rem 1.5 2rem
-    // ...
-  },
+	button: {
+		// All edges
+		padding: css.unit(1), // .5rem
+		// Top/bottom, left/right
+		padding: css.unit(1, 2), // .5rem 1rem
+		// Top, right, bottom, left
+		padding: css.unit(1, 2, 3, 4), // .5rem 1rem 1.5 2rem
+		// ...
+	},
 }));
 ```
 

@@ -16,11 +16,11 @@ import React from 'react';
 import { createStyled } from '@aesthetic/react';
 
 const Button = createStyled('button', (css) =>
-  css.mixin('reset-button', {
-    display: 'inline-flex',
-    padding: css.var('spacing-df'),
-    textAlign: 'center',
-  }),
+	css.mixin('reset-button', {
+		display: 'inline-flex',
+		padding: css.var('spacing-df'),
+		textAlign: 'center',
+	}),
 );
 
 export default Button;
@@ -31,7 +31,7 @@ automatically supported and are typed correctly if using TypeScript.
 
 ```tsx
 <Button type="submit" disabled={disabled} onClick={onClick}>
-  Save
+	Save
 </Button>
 ```
 
@@ -41,24 +41,24 @@ Styled components can support any number of customizable variations out of the b
 
 ```tsx
 const Button = styled('button', {
-  display: 'inline-flex',
-  padding: css.var('spacing-df'),
-  textAlign: 'center',
+	display: 'inline-flex',
+	padding: css.var('spacing-df'),
+	textAlign: 'center',
 
-  '@variants': {
-    'size:sm': { fontSize: css.var('text-sm-size') },
-    'size:df': { fontSize: css.var('text-df-size') },
-    'size:lg': { fontSize: css.var('text-lg-size') },
+	'@variants': {
+		'size:sm': { fontSize: css.var('text-sm-size') },
+		'size:df': { fontSize: css.var('text-df-size') },
+		'size:lg': { fontSize: css.var('text-lg-size') },
 
-    'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
-    'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
-    'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
-  },
+		'palette:brand': { backgroundColor: css.var('palette-brand-bg-base') },
+		'palette:positive': { backgroundColor: css.var('palette-positive-bg-base') },
+		'palette:warning': { backgroundColor: css.var('palette-warning-bg-base') },
+	},
 });
 
 // Set default props to define default variants
 Button.defaultProps = {
-  palette: 'brand',
+	palette: 'brand',
 };
 ```
 
@@ -67,7 +67,7 @@ its types.
 
 ```tsx
 <Button palette="brand" size="lg">
-  Large branded button
+	Large branded button
 </Button>
 ```
 
@@ -75,12 +75,12 @@ If using TypeScript, you'll need to type the variant props manually using the 2n
 
 ```tsx
 interface ButtonVariants {
-  size?: 'sm' | 'df' | 'lg';
-  palette?: 'brand' | 'positive' | 'warning';
+	size?: 'sm' | 'df' | 'lg';
+	palette?: 'brand' | 'positive' | 'warning';
 }
 
 const Button = styled<'button', ButtonVariants>('button', {
-  // ...
+	// ...
 });
 ```
 
@@ -91,17 +91,17 @@ approach, all styles and their variants are inherited.
 
 ```tsx
 const Button = styled('button', (css) => ({
-  display: 'inline-flex',
-  textAlign: 'center',
-  padding: css.var('spacing-df'),
+	display: 'inline-flex',
+	textAlign: 'center',
+	padding: css.var('spacing-df'),
 }));
 
 const BlockButton = styled(Button, {
-  display: 'flex',
-  width: '100%',
+	display: 'flex',
+	width: '100%',
 });
 
 const PillBlockButton = styled(BlockButton, {
-  borderRadius: '50%',
+	borderRadius: '50%',
 });
 ```

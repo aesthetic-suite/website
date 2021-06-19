@@ -17,13 +17,13 @@ import dayTheme from './system/themes/day';
 import nightTheme from './system/themes/night';
 
 const styleSheet = createThemeStyles(() => ({
-  '@font-face': {
-    'Open Sans': {
-      fontStyle: 'normal',
-      fontWeight: 'normal',
-      srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-    },
-  },
+	'@font-face': {
+		'Open Sans': {
+			fontStyle: 'normal',
+			fontWeight: 'normal',
+			srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+		},
+	},
 }));
 
 registerTheme('day', dayTheme, styleSheet);
@@ -47,17 +47,17 @@ typography_.
 
 ```ts
 const styleSheet = createThemeStyles((css) => ({
-  '@root': css.mixin('root', {
-    backgroundColor: css.var('palette-neutral-bg-base'),
-    color: css.var('palette-neutral-fg-base'),
-    height: '100%',
+	'@root': css.mixin('root', {
+		backgroundColor: css.var('palette-neutral-bg-base'),
+		color: css.var('palette-neutral-fg-base'),
+		height: '100%',
 
-    '@selectors': {
-      a: {
-        color: css.var('palette-brand-fg-base'),
-      },
-    },
-  }),
+		'@selectors': {
+			a: {
+				color: css.var('palette-brand-fg-base'),
+			},
+		},
+	}),
 }));
 ```
 
@@ -74,16 +74,16 @@ To support multiple font variations, like bold and italics, pass an array of fon
 
 ```ts
 const styleSheet = createThemeStyles(() => ({
-  '@font-face': {
-    'Open Sans': {
-      fontStyle: 'normal',
-      fontWeight: 'normal',
-      srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
-    },
-    Roboto: {
-      // ....
-    },
-  },
+	'@font-face': {
+		'Open Sans': {
+			fontStyle: 'normal',
+			fontWeight: 'normal',
+			srcPaths: ['fonts/OpenSans.woff2', 'fonts/OpenSans.ttf'],
+		},
+		Roboto: {
+			// ....
+		},
+	},
 }));
 ```
 
@@ -92,12 +92,12 @@ referencing their name, like so.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  element: {
-    // Explicitly
-    fontFamily: '"Open Sans", Roboto, sans-serif',
-    // Configured in the design system (preferred)
-    fontFamily: css.var('typography-font-text'),
-  },
+	element: {
+		// Explicitly
+		fontFamily: '"Open Sans", Roboto, sans-serif',
+		// Configured in the design system (preferred)
+		fontFamily: css.var('typography-font-text'),
+	},
 }));
 ```
 
@@ -112,20 +112,20 @@ percentage based sequences.
 
 ```ts
 const styleSheet = createThemeStyles(() => ({
-  '@keyframes': {
-    // Range
-    fade: {
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
+	'@keyframes': {
+		// Range
+		fade: {
+			from: { opacity: 0 },
+			to: { opacity: 1 },
+		},
 
-    // Percentage
-    slide: {
-      '0%': { left: '0%' },
-      '50%': { left: '75%' },
-      '100%': { left: '100%' },
-    },
-  },
+		// Percentage
+		slide: {
+			'0%': { left: '0%' },
+			'50%': { left: '75%' },
+			'100%': { left: '100%' },
+		},
+	},
 }));
 ```
 
@@ -134,9 +134,9 @@ referencing their name, like so.
 
 ```ts
 const styleSheet = createComponentStyles((css) => ({
-  element: {
-    animationName: 'fade 200ms, slide 3s',
-  },
+	element: {
+		animationName: 'fade 200ms, slide 3s',
+	},
 }));
 ```
 
@@ -150,17 +150,17 @@ quotes), or an object of `path` (required), `query`, and `url`.
 
 ```ts
 const styleSheet = createThemeStyles(() => ({
-  '@import': [
-    // String
-    'url("css/reset.css") screen',
+	'@import': [
+		// String
+		'url("css/reset.css") screen',
 
-    // Object
-    {
-      path: 'css/reset.css',
-      media: 'screen',
-      url: true,
-    },
-  ],
+		// Object
+		{
+			path: 'css/reset.css',
+			media: 'screen',
+			url: true,
+		},
+	],
 }));
 ```
 

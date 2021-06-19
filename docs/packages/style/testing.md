@@ -13,7 +13,7 @@ different tests will bleed into each other.
 import { purgeStyles } from '@aesthetic/style/test';
 
 afterEach(() => {
-  purgeStyles();
+	purgeStyles();
 });
 ```
 
@@ -25,8 +25,8 @@ or `standard`) to determine which `<style />` element to read CSS from.
 import { getRenderedStyles } from '@aesthetic/style/test';
 
 it('renders a component', () => {
-  render(<Example />);
+	render(<Example />);
 
-  expect(getRenderedStyles('standard')).toMatchSnapshot();
+	expect(getRenderedStyles('standard')).toMatchSnapshot();
 });
 ```

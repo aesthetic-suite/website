@@ -16,7 +16,7 @@ import { DirectionProvider } from '@aesthetic/react';
 import Component from './Component';
 
 <DirectionProvider direction="rtl">
-  <Component />
+	<Component />
 </DirectionProvider>;
 ```
 
@@ -33,18 +33,18 @@ import MessageThread from './MessageThread';
 import MessageInput from './MessageInput';
 
 export default function MessageContainer() {
-  const [value, setValue] = useState('');
+	const [value, setValue] = useState('');
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+	const handleChange = (event) => {
+		setValue(event.target.value);
+	};
 
-  return (
-    <DirectionProvider value={value}>
-      <MessageThread />
-      <MessageInput value={value} onChange={handleChange} />
-    </DirectionProvider>
-  );
+	return (
+		<DirectionProvider value={value}>
+			<MessageThread />
+			<MessageInput value={value} onChange={handleChange} />
+		</DirectionProvider>
+	);
 }
 ```
 
@@ -70,13 +70,13 @@ To manually access the current direction, either from the document or a provider
 import { useDirection } from '@aesthetic/react';
 
 export default function Component() {
-  const direction = useDirection();
+	const direction = useDirection();
 
-  if (direction === 'rtl') {
-    // Do something
-  }
+	if (direction === 'rtl') {
+		// Do something
+	}
 
-  return <div />;
+	return <div />;
 }
 ```
 
@@ -87,11 +87,11 @@ export default function Component() {
 import { withDirection, WithDirectionWrappedProps } from '@aesthetic/react';
 
 function Component({ direction }: WithDirectionWrappedProps) {
-  if (direction === 'ltr') {
-    // Do something
-  }
+	if (direction === 'ltr') {
+		// Do something
+	}
 
-  return <div />;
+	return <div />;
 }
 
 export default withDirection()(Component);

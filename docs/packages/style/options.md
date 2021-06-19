@@ -149,35 +149,11 @@ engine.renderRule(
 
 ## Vendor prefixes
 
-Aesthetic implements a custom runtime for
-[vendor prefixing](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) properties,
-values, and value functions, as we need full control of the implementation and browser targets.
-Currently, features and browsers that are _not dead_ and have _>= 1% market share_ will apply vendor
-prefixes.
+If the engine was configured with a `vendorPrefixer` option, a rendered rule will include vendor
+prefixes if the `vendor` option is true. View the [@aesthetic/addon-style](../addon-vendor.md)
+package for more information.
 
 ```ts
-// Without vendor prefixing
-engine.renderRule({
-	appearance: 'none',
-	minWidth: 'fit-content',
-}); // -> a b
-```
-
-```css
-.a {
-	appearance: none;
-}
-.b {
-	min-width: fit-content;
-}
-```
-
-Prefixes can be enabled when [rendering](./api.md) by configuring the
-[@aesthetic/addon-vendor](https://www.npmjs.com/package/@aesthetic/addon-vendor) package and using
-the `vendor` option.
-
-```ts
-// With vendor prefixing
 engine.renderRule(
 	{
 		appearance: 'none',
@@ -199,23 +175,6 @@ engine.renderRule(
 	min-width: fit-content;
 }
 ```
-
-> What if prefixes are missing for a feature I would expect them to, like CSS flexbox? In most
-> cases, the feature in question is actually fully supported by our browser targets, so vendor
-> prefixes are not necessary! When in doubt, verify on
-> [caniuse.com](https://caniuse.com/#search=flexbox).
-
-### Minimum browser support
-
-- Chrome v77
-- Chrome for Android v78
-- Edge v18
-- Firefox v70
-- Internet Explorer v11
-- Safari v13
-- Safari for iOS v12.4
-- Samsung Internet v10.1
-- UC Browser for Android v12.12
 
 ## Specificity rankings
 

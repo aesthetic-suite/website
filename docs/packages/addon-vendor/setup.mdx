@@ -1,0 +1,73 @@
+---
+title: Setup
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Install with NPM or Yarn.
+
+<Tabs
+  groupId="package-manager"
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn' },
+    { label: 'NPM', value: 'npm' },
+  ]}
+>
+  <TabItem value="yarn">
+
+```bash
+yarn add @aesthetic/addon-vendor
+```
+
+  </TabItem>
+  <TabItem value="npm">
+
+```bash
+npm install @aesthetic/addon-vendor
+```
+
+  </TabItem>
+</Tabs>
+
+## Integration
+
+There are 2 ways to configure the addon. The first is through an integration (like React) that
+relies on the `@aesthetic/core` package internally. The vendor prefixer can be defined with the
+`configure()` method.
+
+```ts
+import vendorPrefixer from '@aesthetic/addon-vendor';
+import { configure } from '@aesthetic/<integration>';
+
+configure({
+	vendorPrefixer,
+});
+```
+
+The second way is through the [CSS-in-JS engine](../style.md) directly (if not using an
+integration). The vendor prefixer is set during instantiation of `createClientEngine()` or
+`createServerEngine()`.
+
+```ts
+import vendorPrefixer from '@aesthetic/addon-vendor';
+import { createClientEngine } from '@aesthetic/style';
+
+const engine = createClientEngine({
+	vendorPrefixer,
+});
+```
+
+## Usage
+
+If using an integration, vendor prefixing will be _automatically_ applied to all rendered style
+sheets if the `vendorPrefixer` setting is configured. No additional work is required here.
+
+However, if using the engine directly, the `vendorPrefixer` setting must be configured, and the
+`vendor` option must be true when calling a render method. If this option is not passed, or is
+false, prefixes will not be applied.
+
+```ts
+engine.renderRule(styles, { vendor: true });
+```

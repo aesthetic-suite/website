@@ -48,6 +48,19 @@ themes:
         90: '#0D47A1' # Darkest
 ```
 
+Colors also support single shades, for those scenarios where you only need a single hexcode, like
+white and black. These types are colors _cannot_ be used as a palette, but _can_ be referenced in
+palette states.
+
+```yaml title="themes.yaml"
+themes:
+  default:
+    scheme: light
+    colors:
+      white: '#fff'
+      black: '#000'
+```
+
 ## Palettes and states
 
 Palettes are the defining feature of Aesthetic, as they enable true interoperability and backwards
@@ -86,7 +99,7 @@ themes:
     scheme: light
     colors:
       blue: # 00-90 ...
-      white: # 00-90 ...
+      white: # ...
     palettes:
       primary:
         color: blue
@@ -94,15 +107,15 @@ themes:
         bg:
           base: blue.40
           focused: blue.50
-          hovered: blue.60
-          selected: blue.50
-          disabled: blue.30
+          hovered: blue.50
+          selected: blue.60
+          disabled: blue.20
         fg:
-          base: white.50
-          focused: white.60
-          hovered: white.70
-          selected: white.60
-          disabled: white.40
+          base: white
+          focused: white
+          hovered: white
+          selected: white
+          disabled: blue.10
       secondary:
         color: # ...
         text: # ...
@@ -112,17 +125,17 @@ themes:
         # ...
 ```
 
-In the example above, we mentioned 5 different states. In order of priority and specificity, they
-are:
+In the example above, we mentioned 5 different states. In order of priority and specificity (based
+on [LVHA](https://css-tricks.com/remember-selectors-with-love-and-hate/)), they are:
 
 - `base` - The base palette color. Defaults to shade `40`.
 - `focused` - State when a target is focused through user interaction. Defaults to shade `50`.
   _(optional)_
-- `hovered` - State when a target is being hovered. Defaults to shade `60`. _(optional)_
-- `selected` - State when a target is selected, active, expanded, etc. Defaults to shade `50`.
+- `hovered` - State when a target is being hovered. Defaults to shade `50`. _(optional)_
+- `selected` - State when a target is selected, active, expanded, etc. Defaults to shade `60`.
   _(optional)_
 - `disabled` - State when a target is disabled. Should override all previous states. Defaults to
-  shade `30`. _(optional)_
+  shade `20`. _(optional)_
 
 All of the states are optional, and will default to the shade references above. If you prefer to
 always use the defaults, a shorthand configuration is available, where the setting value can simply

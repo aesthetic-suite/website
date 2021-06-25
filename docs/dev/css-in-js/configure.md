@@ -32,6 +32,8 @@ information on them.
 - `directionConverter` - (`DirectionConverter`) - Function that converts a property or value to
   their opposite direction. Supported by
   [@aesthetic/addon-direction](https://www.npmjs.com/package/@aesthetic/addon-direction).
+- `rootVariables` (`boolean`) - Apply CSS variables derived from the current theme to the body
+  `:root`. Defaults to `false`.
 - `vendorPrefixer` (`VendorPrefixer`) - Apply vendor prefixes to properties and values that require
   it. We prefix features for browsers with >= 1% market share. Supported by
   [@aesthetic/addon-vendor](../../packages/addon-vendor).

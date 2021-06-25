@@ -2,52 +2,52 @@
 # yarn lockfile v1
 
 
-"@aesthetic/addon-direction@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-direction/-/addon-direction-0.4.3.tgz#85ed5db77cc74f39087c176ec6903c1aa80b809b"
-  integrity sha512-5s2vg1gjto3aJCZnDmG4Utap6ay+H8nn2Ze85g3eusb2S0j+uKVgwgKPV6yKlp/C0X31VPH2FNWZek4qjMNCmg==
+"@aesthetic/addon-direction@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-direction/-/addon-direction-0.4.5.tgz#f7a55534fc246794888f27809e260377f90fade6"
+  integrity sha512-Ip7FOidwryMswgG1NFk9m/coidbs6a3EQCdcLw/+V3VXCUVbTq5BqucAoZ/H15exNfouLYWZhFLIPYqLqIvS4g==
   dependencies:
-    "@aesthetic/types" "^0.6.3"
+    "@aesthetic/types" "^0.6.5"
     rtl-css-js "^1.14.1"
 
-"@aesthetic/addon-properties@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-properties/-/addon-properties-0.3.4.tgz#8b71a8e2a68b6c3ebea009e8e4eb2c8942a29a76"
-  integrity sha512-0ZEBBywqJGyTsUCFyCyIaNfS7715NHvhj989nbxFFfPCbB+taCJinf9igObZf6iFsM4fT1myJUSBwLz9KB4d1A==
+"@aesthetic/addon-properties@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-properties/-/addon-properties-0.3.6.tgz#d51e97c7c99e168e1cac2072474ed174df96c3eb"
+  integrity sha512-jgp50mMR0EGMjBIbcLtBm4CEPUPzGjhQ/bscvgyXFYFE/J9htexj9ZelL4c2Cb9X49h6grg3a9X4DQ7XfZaWpQ==
   dependencies:
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
     csstype "^3.0.8"
 
-"@aesthetic/addon-vendor@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/addon-vendor/-/addon-vendor-0.3.4.tgz#83c382de2cc026874615d1a4a899d9316e10c61e"
-  integrity sha512-nTIdYnuYpTt4S3iYiZ8vcyZYIiO4vbA5RhnTClTEQF20x5+DNkuV0OkZWDfSYsKuteM7ldZ7hBes6gi3OoiG4Q==
+"@aesthetic/addon-vendor@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@aesthetic/addon-vendor/-/addon-vendor-0.3.6.tgz#641e7551b32716a255993505e4846a684f6060d2"
+  integrity sha512-IDgOmQ8onWtNHMsobzq2EEUZBs0DG4XAFNQ8YPJQ/ro3p5733zLu9yOZn1O6cC29hgiWu83bzOHN/Pp4Ek72FA==
   dependencies:
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
 
-"@aesthetic/cli@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/cli/-/cli-0.8.4.tgz#fe9bdf601f11c1e1d91f454dbaeea6dc2402f2d0"
-  integrity sha512-klziWujx+D5MU+JCXzIFIxsyI0sfpgwe69CANRCexrpvNLcWNktuQMCEKx3zyiPohSmEv2j1lp922LTsRLs7PA==
+"@aesthetic/cli@^0.8.7":
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/@aesthetic/cli/-/cli-0.8.7.tgz#50854085938fb6b4392469eae6281b995e815a1f"
+  integrity sha512-sMYraKYMqEx461yD0im4z03eIy9NgBLlt4pWUGhBZZG/KPsy1ZWwLClsdPWS+RC+f0POSiXnIIXADgkp0jkNCw==
   dependencies:
-    "@aesthetic/compiler" "^0.8.4"
-    "@aesthetic/core" "^0.10.4"
+    "@aesthetic/compiler" "^0.8.7"
+    "@aesthetic/core" "^0.10.6"
     "@boost/cli" "^2.10.4"
     "@boost/common" "^2.7.2"
     fs-extra "^10.0.0"
     ink "^3.0.8"
     react "^16.13.1"
 
-"@aesthetic/compiler@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/compiler/-/compiler-0.8.4.tgz#513fdcb5772627a61421fbdd1b231805433d2161"
-  integrity sha512-P12e776Se5slwjfuY0yVyAQfYQPZ1iiGFxvQbRZu5RpgCX30gMpk1M/jxrsV1A0Mu2BUak+kEBagJjBSvlLeyA==
+"@aesthetic/compiler@^0.8.7":
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/@aesthetic/compiler/-/compiler-0.8.7.tgz#312f79fa62a6d5b9da72c1606887bfb93c434783"
+  integrity sha512-fpA8cBXhjbKhN9GmIOXHx9grW1eoaV0rezEd7AaCRdDi7eBxBkwSGNbQ67rbsPxUvEttfUZQjDnpUNzVN4I+TA==
   dependencies:
-    "@aesthetic/system" "^0.9.4"
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/system" "^0.9.6"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
     "@boost/common" "^2.7.2"
     ejs "^3.1.6"
     fs-extra "^10.0.0"
@@ -55,71 +55,71 @@
     optimal "^4.2.0"
     prettier "^2.2.1"
 
-"@aesthetic/core-react@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@aesthetic/core-react/-/core-react-0.2.0.tgz#9e1cb11329d802d458e49c94f4f4912b2afe7d9f"
-  integrity sha512-i0bd5j+kqtz8v5QEw5Ri2hp29xrQEuV1Lrxy4GwTmTg//ywvxdYo+5MhYCfYV6S5oHGQMCzs1aBi5aZfLLCiBw==
+"@aesthetic/core-react@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core-react/-/core-react-0.2.1.tgz#1e0daca2dd67f0c8ceb85d0cc79bd4df75985c44"
+  integrity sha512-RPhMbncduSsqMWkoGEUmdoUpjJy6plKtY3UIz8wHE5OmQIByFgLlFTSmwcibiq5l7038bP8vGYvvfSZMR8+F1g==
   dependencies:
-    "@aesthetic/utils" "^0.8.2"
+    "@aesthetic/utils" "^0.8.4"
     direction "^1.0.4"
     hoist-non-react-statics "^3.3.2"
 
-"@aesthetic/core@^0.10.3", "@aesthetic/core@^0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/core/-/core-0.10.4.tgz#d08cc084e49bcd5da6df4ae96ca8b9d431e8d473"
-  integrity sha512-3BIZX5ri9guPr4DrB0GAczYvqZ7I2Xe3e6sIw4fV2TTZB6cAaH63/9ZxE05e905TnBo2Jl7BjeYyA5DNgWsYYQ==
+"@aesthetic/core@^0.10.6":
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/@aesthetic/core/-/core-0.10.6.tgz#5b38826cb14cbe6f3748950e011d592b2a05bfd1"
+  integrity sha512-pZmA+kyjjIq1UBDofaqWEm2r3WKk+X+qXwokS/tcWJlyoPuQesP0Yu28yabIp04MIwm/F3h3OG845raK4nWoMQ==
   dependencies:
-    "@aesthetic/system" "^0.9.4"
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/system" "^0.9.6"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
 
-"@aesthetic/react-native@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@aesthetic/react-native/-/react-native-0.2.0.tgz#5632b6599a0a4281c1f773f435baf21265d277ce"
-  integrity sha512-PUHai1pke5SDIGbvqFk50/ApKaXq+cf5L0ZWspRKdiCr7UQQOsAWKWJAqSRoymmzMR52Fg6y6hw0L2aBiJG6AA==
+"@aesthetic/react-native@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/react-native/-/react-native-0.2.1.tgz#1a34f3a2076d41249196d338153b030be8d8ce22"
+  integrity sha512-5gjoBSITZu6qf28y9SY1wQT71hzG5hIAfRe95+NtxzgYSV+msRmZ1jtiVUQaLp+jHNKLnkKA5CCi3pllSrZdFQ==
   dependencies:
-    "@aesthetic/core" "^0.10.3"
-    "@aesthetic/core-react" "^0.2.0"
-    "@aesthetic/utils" "^0.8.2"
+    "@aesthetic/core" "^0.10.6"
+    "@aesthetic/core-react" "^0.2.1"
+    "@aesthetic/utils" "^0.8.4"
 
-"@aesthetic/react@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.7.0.tgz#64e697ef9ef613af896e2f0e2231af49d2858835"
-  integrity sha512-3HZ3CM6wUAXygmxa/jsGVjuQ9g1mU0ITAEa8R793MTLc0+vNuwdxd1xa/f46NJow39jxeSDFHxVD4JYpjQkERA==
+"@aesthetic/react@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@aesthetic/react/-/react-0.7.1.tgz#7ab96131e0003846bd0f133b5d6141b4493071d1"
+  integrity sha512-8IYQgOdFtF1OtykymCJon+kAKvSJfoqMmmKAN38XK4jWIqRUnhH5pz1Fd5Qi1VBdbtEllVcPyLL31Nn4RWr+VQ==
   dependencies:
-    "@aesthetic/core" "^0.10.3"
-    "@aesthetic/core-react" "^0.2.0"
-    "@aesthetic/style" "^0.9.3"
-    "@aesthetic/utils" "^0.8.2"
+    "@aesthetic/core" "^0.10.6"
+    "@aesthetic/core-react" "^0.2.1"
+    "@aesthetic/style" "^0.9.6"
+    "@aesthetic/utils" "^0.8.4"
 
-"@aesthetic/style@^0.9.3", "@aesthetic/style@^0.9.4":
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/style/-/style-0.9.4.tgz#e6bcd59bd77bd6c0769bac9ce6c8967a334554ce"
-  integrity sha512-DQAiFSe8TVhXwPo3b+Vq3Ph+30ElO4ucicdIKAHZ/FEKj75XCrkB6xpozA3+4RONlj08K9OMuoMjTVnfH/M8eg==
+"@aesthetic/style@^0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@aesthetic/style/-/style-0.9.6.tgz#cdff2babb7be832e8d7b1d05c7dee50164327035"
+  integrity sha512-pLa60jAGaKHgRMY2dwS2UUHFRId5eBaw/Lj/zDudJY0ozwQpCaow2v3NKJ8iYLmMDKHd19m4fVowrzZTeCV5sQ==
   dependencies:
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
     sort-css-media-queries "^1.5.4"
 
-"@aesthetic/system@^0.9.4":
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/@aesthetic/system/-/system-0.9.4.tgz#d8100365d57db4ac4caca19d678d547142bda6ea"
-  integrity sha512-itqtYscLF+VAIhuNtUy+cpq5hXm4xA/4/gbkYooSluiscO4zJ+r/jnTERgpxQG1OAvkR1knSzjWk2SNOD0Xvlg==
+"@aesthetic/system@^0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@aesthetic/system/-/system-0.9.6.tgz#d3d6542ae7ff56ca7bdb392db8f866945f3ec91b"
+  integrity sha512-SOyNFDT6sn2Gc1ESaO7fuxFKGA7QzlTxB4SUlJ5MsCxJJOEdU4SBCiHNEbjNWdtMq25eEqSmmLcb2eFlgwmJGg==
   dependencies:
-    "@aesthetic/types" "^0.6.3"
-    "@aesthetic/utils" "^0.8.3"
+    "@aesthetic/types" "^0.6.5"
+    "@aesthetic/utils" "^0.8.4"
 
-"@aesthetic/types@^0.6.3":
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/@aesthetic/types/-/types-0.6.3.tgz#0ca77436f6945f81dd3f3b066ee70c34ef379a48"
-  integrity sha512-hEDmytkXbs3lYY9/dv2r8fKeZoIyi3g0FQo8Zaj1Vh07WXFTdqoF3Acv6V6GC7LU1sCeHjuTkKLzslzXjR8Qew==
+"@aesthetic/types@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@aesthetic/types/-/types-0.6.5.tgz#277abf4f0a12831ccc0835c7c6e406361e277d1e"
+  integrity sha512-quZMJ+ZlLsk7FJilR9znbz5QY7lKVvDrRnvPphEM0PENiBSUjHLA0riJAaEL0tpS0rKQVjjWTb+dpLIyZFvnnw==
   dependencies:
     csstype "^3.0.8"
 
-"@aesthetic/utils@^0.8.2", "@aesthetic/utils@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@aesthetic/utils/-/utils-0.8.3.tgz#c0278b83783786f7d9e6ecf51a21cdfa795c5dc6"
-  integrity sha512-6uRmC8/YnZ/A4djYDvytsIySZivFKOnXs4QXVq1af80vL6iJ1fEUOBJMWx4lCkMEm90sqVzLbWESp7UoV1PfQw==
+"@aesthetic/utils@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@aesthetic/utils/-/utils-0.8.4.tgz#177d1de772ab358f09e4fa59e2b37d63b344fbd2"
+  integrity sha512-/56yNUu+a/0iGDaAf7Tz0bVEFyDtlL4SRvZIjx0nWjY/BBcno77bmxHtw64BTTQGtyLNUVcAZdevSM9pnkYdsQ==
   dependencies:
     string-hash "^1.1.3"
 

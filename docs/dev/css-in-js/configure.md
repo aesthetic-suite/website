@@ -32,6 +32,12 @@ information on them.
 - `directionConverter` - (`DirectionConverter`) - Function that converts a property or value to
   their opposite direction. Supported by
   [@aesthetic/addon-direction](https://www.npmjs.com/package/@aesthetic/addon-direction).
+- `injectStrategy` (`create | create-async | render`) - The strategy to use for style injection
+  (when applicable). Defaults to `create-async`.
+  - `create` - Styles are injected during style sheet creation (`createComponentStyles`, etc).
+  - `create-async` - Like `create` but injects them asynchronously.
+  - `render` - Styles are injected during an integration's render path or during an explicit render
+    (`renderComponentStyles`, etc).
 - `rootVariables` (`boolean`) - Apply CSS variables derived from the current theme to the body
   `:root`. Defaults to `false`.
 - `vendorPrefixer` (`VendorPrefixer`) - Apply vendor prefixes to properties and values that require
